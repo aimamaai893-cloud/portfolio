@@ -46,13 +46,13 @@ section{padding:72px 0}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .tabs button{background:#fff;border:1.5px solid var(--line);color:var(--mute);padding:6px 18px;border-radius:99px;cursor:pointer;font:inherit;font-size:14px}
 .tabs button.on,.tabs button:hover{border-color:var(--accent);color:var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
 .card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:.25s;text-align:left;color:inherit;font:inherit;padding:0}
 .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(108,92,231,.15)}
 .card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
 .card div{padding:16px 20px 22px}.tag{font-size:12px;color:var(--accent);font-weight:700}
 .card h3{font-size:18px;margin:2px 0 4px}.card p{color:var(--mute);font-size:14px}
-.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .sk div{background:#fff;border-radius:20px;padding:24px;border:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.chips span{border:1px solid var(--line);background:#fff;border-radius:99px;padding:4px 14px;font-size:14px;color:var(--mute)}
 .sk h3{font-size:17px;margin-bottom:4px}.sk small{color:var(--accent);font-weight:700}.sk p{color:var(--mute);font-size:14px;margin-top:8px}
@@ -67,8 +67,33 @@ dialog ul{margin:10px 0 0 20px;color:var(--mute)}
 dialog button{position:absolute;right:10px;top:6px;background:#fff;border:0;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-@media(max-width:560px){nav a.l{margin-left:10px;font-size:13px}}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:56px}.photo{max-width:260px}nav a.l{margin-left:14px}}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr;padding:48px 0 56px;gap:32px}
+.photo{max-width:320px;width:100%;margin:0 auto}
+section{padding:56px 0}
+.hd h2,footer h2{font-size:28px}
+.grid,.sk{grid-template-columns:1fr}
+.stats{gap:20px 40px}
+}
+@media(max-width:560px){
+.wrap{padding:0 20px}
+nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
+nav a.l{margin-left:0;margin-right:18px;font-size:13px}
+.logo span{font-size:10px}
+.hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
+.hero h1{font-size:28px}
+.hero p{font-size:15px}
+.btns .btn{flex:1 1 auto;text-align:center;padding:12px 16px}
+.photo{max-width:280px}
+.band{padding:48px 0}
+.band blockquote{font-size:19px}
+.tl{padding-left:22px}
+.tl div:before{left:-30px}
+.card h3{font-size:17px}
+footer{padding:48px 0 28px}
+footer .btn{display:block;margin:0 0 10px;word-break:break-all;text-align:center}
+dialog .b{padding:20px}
+}
 </style>
 </head>
 <body>
