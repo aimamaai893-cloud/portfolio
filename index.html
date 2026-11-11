@@ -6,7 +6,7 @@
 <title>Laly Chang｜Product Designer / Product Owner 履歷作品集</title>
 <meta name="description" content="Laly Chang｜Product Designer / Product Owner，6 年以上經驗：B2B 後台系統、設計系統、品牌設計與 AI 自動化工作流；實習 PO 期間負責企業內部管理系統，帶領 4 位開發實習生">
 <meta property="og:title" content="Laly Chang｜Product Designer / Product Owner">
-<meta property="og:description" content="用設計思考與 AI 工作流，把複雜需求變成好用的產品；同時以 PO 身分推進專案：需求、時程、協調與測試">
+<meta property="og:description" content="用商業思考與 AI 工作流，把複雜需求變成好用的產品；同時以 PO 身分推進專案：需求、時程、協調與測試">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#6c5ce7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c5ce7'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EL.%3C/text%3E%3C/svg%3E">
@@ -21,12 +21,23 @@ a{color:inherit;text-decoration:none}
 .dot{color:var(--accent)}
 nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
-.logo{display:flex;flex-direction:column;line-height:1.25}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
+.logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
-.hero{padding:96px 0 72px;text-align:center}
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;text-align:left}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
+/* 互動大頭：底圖 + 固定眼白 + 滑動眼珠（以 aperture 遮罩裁切） */
+.head{position:relative;width:100%;max-width:400px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
+.head-base{position:absolute;inset:0;width:100%;height:100%;display:block}
+.eye{position:absolute;width:25.6%;aspect-ratio:256/186;transform-origin:50% 50%;transition:transform .07s ease-in}
+.eye-l{left:27.6%;top:43.9%}
+.eye-r{left:53.8%;top:43.9%}
+.eye .sclera{position:absolute;inset:0;width:100%;height:100%;display:block}
+.iris-wrap{position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.eye-l .iris-wrap{-webkit-mask-image:url(assets/pixar-aperture-l-crop.png);mask-image:url(assets/pixar-aperture-l-crop.png)}
+.eye-r .iris-wrap{-webkit-mask-image:url(assets/pixar-aperture-r-crop.png);mask-image:url(assets/pixar-aperture-r-crop.png)}
+.iris{position:absolute;width:42.1875%;aspect-ratio:1;display:block;will-change:transform}
 .band{background:var(--soft);padding:64px 0;text-align:center}
 .band blockquote{font-size:clamp(19px,2.6vw,26px);line-height:1.7;max-width:760px;margin:0 auto}
 .stats{display:flex;gap:24px 72px;margin-top:40px;flex-wrap:wrap;justify-content:center;text-align:center}.stats b{display:block;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--accent);line-height:1.2}.stats span{font-size:13px;color:var(--mute)}
@@ -48,15 +59,28 @@ section{padding:72px 0}
 .tabs button{background:#fff;border:1.5px solid var(--line);color:var(--mute);padding:6px 18px;border-radius:99px;cursor:pointer;font:inherit;font-size:14px}
 .tabs button.on,.tabs button:hover{border-color:var(--accent);color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:.25s;text-align:left;color:inherit;font:inherit;padding:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:.25s;text-align:left;color:inherit;font:inherit;padding:0;display:flex;flex-direction:column;justify-content:flex-start}
 .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(108,92,231,.15)}
-.card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;flex:none}
 .card div{padding:16px 20px 22px}.tag{font-size:12px;color:var(--accent);font-weight:700}
 .card h3{font-size:18px;margin:2px 0 4px}.card p{color:var(--mute);font-size:14px}
 .sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .sk div{background:#fff;border-radius:20px;padding:24px;border:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.chips span{border:1px solid var(--line);background:#fff;border-radius:99px;padding:4px 14px;font-size:14px;color:var(--mute)}
 .sk h3{font-size:17px;margin-bottom:4px}.sk small{color:var(--accent);font-weight:700}.sk p{color:var(--mute);font-size:14px;margin-top:8px}
+.sk .ic{width:52px;height:52px;border-radius:16px;background:var(--soft);display:grid;place-items:center;margin-bottom:12px}
+.sk .ic svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cm{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.cm button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:.25s}
+.cm button:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(108,92,231,.15);border-color:var(--accent)}
+.cm small{color:var(--accent);font-weight:700}
+.cm h3{font-size:18px;margin:6px 0 4px}
+.cm p{color:var(--mute);font-size:14px}
+.cm .more{color:var(--accent);font-weight:700;font-size:14px;margin-top:12px;display:block}
+#cb{color:var(--mute);font-size:15px;margin-top:10px}
+#cb h4{color:var(--ink);font-size:16px;margin:14px 0 2px}
+#cb h4:first-child{margin-top:6px}
+#cb p{margin:0 0 4px}
 footer{background:var(--dark);color:#fff;padding:64px 0 32px}
 footer h2{font-size:32px}footer p{color:#a9a9bb;margin:10px 0 24px}
 footer .btn{border-color:#fff;color:#fff;margin-right:10px;display:inline-block}footer .btn:hover{background:var(--accent);border-color:var(--accent)}
@@ -69,7 +93,9 @@ dialog button{position:absolute;right:10px;top:6px;background:#fff;border:0;bord
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
-.hero{grid-template-columns:1fr;padding:48px 0 56px;gap:32px}
+.hero{grid-template-columns:1fr;padding:48px 0 56px;gap:24px;text-align:center}
+.hero-text{order:2}
+.head{order:1;max-width:280px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
@@ -81,7 +107,7 @@ section{padding:56px 0}
 .wrap{padding:0 20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
-.logo span{font-size:10px}
+.logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
 .hero h1{font-size:28px}
 .hero p{font-size:15px}
@@ -99,12 +125,23 @@ dialog .b{padding:20px}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><b>Laly<span class="dot">.</span>Lab</b><span>品牌實驗室 · 專注設計 + AI</span></div><div><a class="l" href="#about">關於 Laly</a><a class="l" href="#work">作品</a><a class="l" href="#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><img src="assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></div><div><a class="l" href="#about">關於 Laly</a><a class="l" href="#work">精選作品</a><a class="l" href="#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
 
 <header class="wrap hero">
-  <div>
+  <div class="hero-text">
     <small>PRODUCT DESIGNER / PRODUCT OWNER</small>
-    <h1>用設計思考與 AI 工作流，<br>把複雜需求變成<span class="dot">好用</span>的產品</h1>
+    <h1>用商業思考與 AI 工作流，<br>把複雜需求變成<span class="dot">好用</span>的產品</h1>
+  </div>
+  <div class="head" id="pixarHead" role="img" aria-label="Laly 的互動大頭：眼睛會跟著游標，點一下會眨眼">
+    <img class="head-base" src="assets/pixar-base.webp" alt="">
+    <div class="eye eye-l">
+      <img class="sclera" src="assets/pixar-sclera-l.png" alt="">
+      <div class="iris-wrap"><img class="iris" src="assets/pixar-iris-l.png" alt="" style="left:28.90625%;top:20.9677%"></div>
+    </div>
+    <div class="eye eye-r">
+      <img class="sclera" src="assets/pixar-sclera-r.png" alt="">
+      <div class="iris-wrap"><img class="iris" src="assets/pixar-iris-r.png" alt="" style="left:12.109375%;top:20.4301%"></div>
+    </div>
   </div>
 </header>
 
@@ -116,16 +153,16 @@ dialog .b{padding:20px}
 <section id="about"><div class="wrap">
   <div class="hd"><h2>關於 Laly<span class="dot">.</span></h2><span>ABOUT</span></div>
   <div class="about-grid"><div class="photo"><img src="assets/laly-about.webp" alt="Laly Chang"></div>
-  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積科技、品牌與軟體產業的經驗。目前在高雄，現職公司擔任設計師近三年，並以實習 PO 身分負責企業內部管理系統：與客戶確認需求範圍、主持 USM 工作坊、安排 Sprint Backlog、追蹤進度並擔任測試，帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於品牌設計、AI 自動化工作流、Web UI/UX 與使用者體驗，並參與團隊協助中小企業打造數位品牌與產品。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p></div>
+  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積軟體科技、品牌產業的經驗。現職外商科技公司擔任設計師近三年，並以實習 Product Owner 身分負責企業內部管理系統：負責與客戶確認需求範圍、主持 USM 工作坊，以敏捷開發方式帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於品牌設計、AI 自動化工作流、Web UI/UX 與使用者體驗。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p></div>
 </div></section>
 
 <section id="exp" class="alt"><div class="wrap">
   <div class="hd"><h2>工作經歷<span class="dot">.</span></h2><span>EXPERIENCE</span></div>
   <div class="tl">
     <div><small>持續進行</small><h3>講師與社群｜成大產學等大專院校及專業社群</h3><p>授課與舉辦設計工作坊。</p></div>
-    <div><small>2024 – 現在</small><h3>Product Designer / Product Owner｜外商軟體開發團隊</h3><p>同時承擔產品規劃與設計，並以實習 PO 身分負責企業內部管理系統：與客戶確認需求範圍、主持 USM 工作坊、安排 Sprint Backlog、追蹤進度並擔任測試，帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。範圍涵蓋客服系統、行政後台與跨產品設計系統，並運用 AI 自動化工作流優化設計與協作流程。</p></div>
-    <div><small>2023 – 2024</small><h3>UI/UX 品牌設計師｜保養品牌公司</h3><p>負責品牌視覺與 UI/UX 設計。</p></div>
-    <div><small>2020 – 2023</small><h3>UI/UX 設計師｜管顧公司網路技術部門</h3><p>負責網站與數位產品的介面與使用者體驗設計，服務 B2B 客戶。</p></div>
+    <div><small>2024 – 現在</small><h3>Product Designer / Product Owner｜外商軟體開發團隊</h3><p>同時負責產品規劃與設計 - 範圍涵蓋客服系統、行政後台與跨產品設計系統，並以實習 PO 身分負責企業內部管理系統，並運用 AI 自動化工作流優化設計與協作流程。</p></div>
+    <div><small>2023 – 2024</small><h3>UI/UX 品牌設計師｜保養品牌公司</h3><p>負責品牌視覺與電商網站整體規劃。</p></div>
+    <div><small>2020 – 2023</small><h3>UI/UX 設計師｜管顧公司網路技術部門</h3><p>負責電商網站與 GIS 數位產品的體驗設計，服務 B2B 客戶。</p></div>
   </div>
 </div></section>
 
@@ -138,14 +175,19 @@ dialog .b{padding:20px}
 <section id="skills" class="alt"><div class="wrap">
   <div class="hd"><h2>我的技能樹<span class="dot">.</span></h2><span>HOW I WORK</span></div>
   <div class="sk">
-    <div><small>01</small><h3>需求釐清與產品判斷</h3><p>以 Product Owner 的視角決定「該做什麼」，把模糊需求轉成清楚的流程與優先順序。</p></div>
-    <div><small>02</small><h3>複雜系統設計</h3><p>擅長資料密集的 B2B 後台：客服、會員、入出款、報表與結算，兼顧操作效率與風險控管。</p></div>
-    <div><small>03</small><h3>設計系統與規範化</h3><p>建立元件、色彩與字體規範，讓設計與開發能快速對齊、穩定擴充。</p></div>
-    <div><small>04</small><h3>專案規劃與進度追蹤</h3><p>以 Sprint Backlog 安排任務、追蹤進度，用 Jira 與 Confluence 紀錄與協調，確保專案依計畫推進。</p></div>
-    <div><small>05</small><h3>測試驗收與問題處理</h3><p>擔任測試人員，分析問題、彙整回饋並追蹤改善結果。</p></div>
-    <div><small>06</small><h3>跨部門溝通與帶領團隊</h3><p>帶領 4 位開發實習生，與 SM 及 Tech Coach 協作，並與大專院校及專業社群合作講課、舉辦設計工作坊。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><circle cx="12" cy="12" r="1" fill="#6c5ce7" stroke="none"/></svg></div><small>01</small><h3>需求釐清與產品判斷</h3><p>以 Product Owner 的視角決定「該做什麼」，把模糊需求轉成清楚的流程與優先順序。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 21 8l-9 5-9-5 9-5z"/><path d="M3.5 12.5 12 17l8.5-4.5"/><path d="M3.5 16.5 12 21l8.5-4.5"/></svg></div><small>02</small><h3>複雜系統設計</h3><p>擅長資料密集的 B2B 後台：客服、會員、報表與結算，兼顧操作效率與風險權限控管。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></div><small>03</small><h3>設計系統與規範化</h3><p>建立元件、色彩與字體規範，讓設計與開發能快速對齊、穩定擴充。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="m9 16 2 2 4-4"/></svg></div><small>04</small><h3>專案規劃與進度追蹤</h3><p>以 Sprint Backlog 安排任務、追蹤進度，用 Jira 與 Confluence 紀錄與協調，確保專案依計畫推進。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg></div><small>05</small><h3>測試驗收與問題處理</h3><p>擔任測試人員，分析問題、彙整回饋並追蹤改善結果。</p></div>
+    <div><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.5-3.5 2.8-5.5 5.5-5.5S14 16.5 14.5 20"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.7c2.3.3 4 2 4.5 5.3"/></svg></div><small>06</small><h3>帶領跨職能合作與培訓</h3><p>帶領 4 位開發實習生，與 SM 及 Tech Coach 協作，並與大專院校及專業社群合作講課、舉辦設計工作坊。</p></div>
   </div>
   <div class="chips"><span>Figma</span><span>Design System</span><span>User Flow</span><span>Jira</span><span>Confluence</span><span>USM</span><span>Sprint Backlog</span><span>AI Workflow Automation</span><span>3D Modeling</span></div>
+</div></section>
+
+<section id="talks"><div class="wrap">
+  <div class="hd"><h2>社群活動與講座<span class="dot">.</span></h2><span>COMMUNITY &amp; TALKS</span></div>
+  <div class="cm" id="cmGrid"></div>
 </div></section>
 
 <footer id="contact"><div class="wrap">
@@ -155,6 +197,7 @@ dialog .b{padding:20px}
 </div></footer>
 
 <dialog id="dlg"><button onclick="dlg.close()" aria-label="關閉">×</button><img id="di" alt=""><div class="b"><span class="tag" id="dt"></span><h3 id="dh"></h3><ul id="dl"></ul></div></dialog>
+<dialog id="cdlg"><button onclick="cdlg.close()" aria-label="關閉">×</button><div class="b"><span class="tag" id="ct"></span><h3 id="ch"></h3><div id="cb"></div></div></dialog>
 
 <script>
 const P=[
@@ -187,6 +230,83 @@ document.addEventListener("click",e=>{
 $("dlg").addEventListener("click",e=>{if(e.target===$("dlg"))$("dlg").close()});
 const _d=draw;draw=function(){_d();if(!$("grid").children.length)$("grid").innerHTML='<p style="color:var(--mute)">作品整理中，敬請期待。</p>'};
 draw();
+</script>
+<script>
+/* Pixar 互動大頭：眼白固定，只滑動眼珠（aperture 遮罩裁切，絕不離開眼白）；
+   眨眼 = 整組眼睛 scaleY 壓扁，露出底圖的閉眼線；點頭 = 眨眼 + 傾斜；
+   頭跟著游標平滑傾斜；尊重 prefers-reduced-motion。無圖片切換、無 debounce。 */
+(function(){
+  var head=document.getElementById('pixarHead');
+  if(!head)return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var irises=[].slice.call(head.querySelectorAll('.iris'));
+  var eyes=[].slice.call(head.querySelectorAll('.eye'));
+  var tx=0,ty=0,cx=0,cy=0,ttx=0,tty=0,ctx=0,cty=0;
+  var scale=1;
+  function measure(){scale=head.getBoundingClientRect().width/1000}
+  measure();window.addEventListener('resize',measure);
+  var DX=24.3,DY=12.1; /* 眼珠行程：圖層寬 ±9.5% / 高 ±6.5%（1000px 畫布上的 px） */
+  function onMove(e){
+    var px=e.clientX,py=e.clientY;
+    tx=Math.max(-1,Math.min(1,px/window.innerWidth*2-1));
+    ty=Math.max(-1,Math.min(1,py/window.innerHeight*2-1));
+    var r=head.getBoundingClientRect();
+    var hx=r.left+r.width/2,hy=r.top+r.height/2;
+    ttx=Math.max(-1,Math.min(1,(px-hx)/(window.innerWidth/2)))*6;
+    tty=Math.max(-1,Math.min(1,(py-hy)/(window.innerHeight/2)))*6;
+  }
+  window.addEventListener('pointermove',onMove,{passive:true});
+  document.addEventListener('pointerleave',function(){tx=0;ty=0;ttx=0;tty=0});
+  function blink(){
+    eyes.forEach(function(g){g.style.transform='scaleY(.08)'});
+    setTimeout(function(){eyes.forEach(function(g){g.style.transform=''})},90);
+  }
+  (function schedule(){
+    setTimeout(function(){blink();schedule()},2500+Math.random()*2500);
+  })();
+  head.addEventListener('click',function(){
+    blink();
+    ttx=ttx>=0?-6:6;
+    setTimeout(function(){ttx=0},350);
+  });
+  (function loop(){
+    cx+=(tx-cx)*.12; cy+=(ty-cy)*.12;
+    ctx+=(ttx-ctx)*.08; cty+=(tty-cty)*.08;
+    var dx=cx*DX*scale, dy=cy*DY*scale;
+    for(var i=0;i<irises.length;i++){
+      irises[i].style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px)';
+    }
+    head.style.transform='rotate('+ctx.toFixed(2)+'deg) translateY('+cty.toFixed(2)+'px)';
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+<script>
+/* 社群活動與講座：分類卡片，點開 popup 看細節（內容來自接案網站商業合作頁） */
+const CM=[
+ {t:"品牌講座",d:"設計、品牌與 AI 的實務分享",items:[
+  {t:"設計很美，但品牌怎麼走下去？",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。你將收穫：一套品牌合夥的思考框架、理解設計如何從「美感」轉為「商業策略」、面對合作分歧時的溝通與決策邏輯、如何讓品牌走得長遠。"},
+  {t:"視覺地獄交給 AI，溫度留給顧客！",d:"很多品牌用 AI 做產品圖、剪影片、架網站，但常遇到圖像變形、影片跑掉、網站不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
+  {t:"品牌經營盲點解密",d:"由擁有奧美行銷背景的行銷顧問帶你解密，透過真實案例，揭開品牌如何在摸索時找到新方向，用更高維度的市場洞察重新審視品牌定位，打造持續成長的商業動能。"}]},
+ {t:"創業與職涯",d:"創業現場與職涯選擇的真實經驗",items:[
+  {t:"開甜點店的「創業」之路有哪些意料之外！",d:"2026 首場品牌活動。以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨；不談成功神話，而是一位甜點創業者在開店之後才真正明白的那些事。"},
+  {t:"職涯諮詢師告訴你—如何逐步離開職場，成為真正的數位遊牧者！",d:"不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力。陪你把混亂的想法，整理成一條可評估、走得下去的路。"}]},
+ {t:"成大合作",d:"與成大產學合作的講座與工作坊",items:[
+  {t:"成大CCP 企業代表教練",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
+  {t:"成大CCP講師授課",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"}]},
+ {t:"主持與社區",d:"婚禮主持與偏鄉社區計畫",items:[
+  {t:"婚禮證婚 & 晚宴主持人",d:"海境渡假民宿 Ocean Paradise Resort，擔任戶外婚禮的活動規劃 & 證婚 & 晚宴派對主持人。"},
+  {t:"大武山下的BabyBoss",d:"台東偏鄉社區國中小生職涯探索計畫。"}]}
+];
+$("cmGrid").innerHTML=CM.map((c,i)=>`<button class="cm-card" data-cm="${i}"><small>0${i+1}</small><h3>${c.t}</h3><p>${c.d}</p><span class="more">點開看詳情 →</span></button>`).join("");
+document.addEventListener("click",e=>{
+ const m=e.target.closest("[data-cm]");if(!m)return;
+ const c=CM[+m.dataset.cm];
+ $("ct").textContent="社群活動與講座";$("ch").textContent=c.t;
+ $("cb").innerHTML=c.items.map(x=>`<h4>${x.t}</h4><p>${x.d}</p>`).join("");
+ $("cdlg").showModal();
+});
+$("cdlg").addEventListener("click",e=>{if(e.target===$("cdlg"))$("cdlg").close()});
 </script>
 </body>
 </html>
