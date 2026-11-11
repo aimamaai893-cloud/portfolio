@@ -70,14 +70,12 @@ section{padding:72px 0}
 .sk h3{font-size:17px;margin-bottom:4px}.sk small{color:var(--accent);font-weight:700}.sk p{color:var(--mute);font-size:14px;margin-top:8px}
 .sk .ic{width:52px;height:52px;border-radius:16px;background:var(--soft);display:grid;place-items:center;margin-bottom:12px}
 .sk .ic svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.talk{margin-bottom:56px}
-.talk:last-child{margin-bottom:0}
-.talk-hd small{color:var(--accent);font-weight:700}
-.talk-hd h3{font-size:22px;margin:4px 0 2px}
-.talk-hd p{color:var(--mute);font-size:14px;margin-bottom:18px}
+footer button.btn{font:inherit;background:transparent;cursor:pointer}
+footer .btn.copied{border-color:var(--accent);background:var(--accent);color:#fff}
 .car{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .slide{display:none;padding:28px 32px;animation:fade .45s ease}
-.slide.on{display:block}
+.slide.on{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+.slide-img img{width:100%;max-height:320px;object-fit:contain;background:var(--soft);border-radius:16px;display:block}
 .slide h4{font-size:19px;margin-bottom:8px}
 .slide p{color:var(--mute);font-size:15px}
 .slide .hl{color:var(--ink);font-weight:700;margin-top:12px}
@@ -104,6 +102,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
 .hero{grid-template-columns:1fr;padding:48px 0 56px;gap:24px;text-align:center}
+.slide.on{grid-template-columns:1fr;gap:16px}
+.slide{padding:20px}
+.slide-img img{max-height:260px}
 .hero-text{order:2}
 .head{order:1;max-width:280px}
 .photo{max-width:320px;width:100%;margin:0 auto}
@@ -196,13 +197,13 @@ dialog .b{padding:20px}
 </div></section>
 
 <section id="talks"><div class="wrap">
-  <div class="hd"><h2>社群活動與講座<span class="dot">.</span></h2><span>COMMUNITY &amp; TALKS</span></div>
+  <div class="hd"><h2>活動講座合作<span class="dot">.</span></h2><span>EVENTS &amp; TALKS</span></div>
   <div id="talkWrap"></div>
 </div></section>
 
 <footer id="contact"><div class="wrap">
   <h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p>
-  <a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium 文章</a>
+  <button class="btn" id="copyEmail" type="button" data-email="lalydesignwork2023@gmail.com" title="點一下複製信箱">lalydesignwork2023@gmail.com</button><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium 文章</a>
   <small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small>
 </div></footer>
 
@@ -291,28 +292,23 @@ draw();
 })();
 </script>
 <script>
-/* 社群活動與講座：兩大區塊，各自輪播（內容來自接案網站商業合作頁） */
-const TALK=[
- {t:"舉辦職人社群講座",sub:"品牌、創業與職涯的現場分享",items:[
-  {t:"[職人分享] 設計很美，但品牌怎麼走下去？",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，走過的不只是光鮮，而是不停調整與重建。這場分享將揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。",h:["一套品牌合夥的思考框架（避免只憑感覺做決定）","理解設計如何從「美感」轉為「商業策略」","面對合作分歧時的溝通與決策邏輯","如何讓品牌走得長遠，而不是只紅一陣子","實務經驗分享與現場交流機會"]},
-  {t:"[職人分享] 視覺地獄交給 AI，溫度留給顧客！",d:"很多品牌開始用 AI 做產品圖、剪影片、架網站，但常常遇到一個問題：圖像變形、影片跑掉、網站做完卻不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
-  {t:"開甜點店的“創業“之路有哪些意料之外!",d:"[2026 首場品牌活動] 以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨。這場分享，不談成功神話，而是一位甜點創業者，在開店之後才真正明白的那些事。"},
-  {t:"職涯諮詢師告訴你-如何逐步離開職場，成為真正的數位遊牧者！",d:"成為數位遊牧前，你該先想清楚的事：「不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力！」你可能對數位遊牧感到嚮往，卻同時感到焦慮、不確定、甚至有點害怕—怕收入不穩、怕走錯路、怕只是逃避現在的工作。這場分享，不是要你立刻辭職，而是陪你把混亂的想法，整理成一條「可評估、走得下去的路」。"},
-  {t:"行銷顧問眼中的品牌轉折",d:"你是否也曾覺得品牌經營到某個階段就出現盲點？明明定位清楚、策略穩定、內容也不錯，但市場反應比原先規劃不同。這場分享，由擁有奧美行銷背景的行銷顧問親自帶你解密，透過真實案例，揭開那些品牌如何在摸索時找到新方向。你將學會如何用更高維度的市場洞察，重新審視品牌定位，並打造持續成長的商業動能。"}]},
- {t:"企業/校園講座合作",sub:"企業與校園的講座與工作坊合作",items:[
-  {t:"成大CCP 企業代表教練",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
-  {t:"成功大學_校園演講",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"},
-  {t:"敏捷產品設計師的日常 - 設計工作坊",d:"受到高雄敏捷 (Agile Kaohsiung) 社群邀請擔任講師授課，透過 Scrum workshop 的方式，讓大家分組扮演產品設計團隊和產品開發團隊，實際跑過整個產品的開發流程，不只了解設計師的工作內容也更了解 Scrum 方法與精神"},
-  {t:"大武山下的BabyBoss",d:"台東偏鄉社區國中小生職涯探索計劃。"}]}
+/* 活動講座合作：單一輪播，9 則投影片，每則左邊放照片（內容與照片來自接案網站商業合作頁） */
+const SLIDES=[
+  {t:"[設計職人分享] 設計很美，但品牌怎麼走下去？",img:"assets/talks/talk-1.jpg",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，走過的不只是光鮮，而是不停調整與重建。這場分享將揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。",h:["一套品牌合夥的思考框架（避免只憑感覺做決定）","理解設計如何從「美感」轉為「商業策略」","面對合作分歧時的溝通與決策邏輯","如何讓品牌走得長遠，而不是只紅一陣子","實務經驗分享與現場交流機會"]},
+  {t:"[職人分享] 視覺地獄交給 AI，溫度留給顧客！",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E6%88%AA%E5%9C%96+2026-10-06+%E6%99%9A%E4%B8%8A11.02.57-1920w.png",d:"很多品牌開始用 AI 做產品圖、剪影片、架網站，但常常遇到一個問題：圖像變形、影片跑掉、網站做完卻不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
+  {t:"開甜點店的“創業“之路有哪些意料之外!",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/HBP-1920w.jpg",d:"[2026 首場品牌活動] 以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨。這場分享，不談成功神話，而是一位甜點創業者，在開店之後才真正明白的那些事。"},
+  {t:"職涯諮詢師告訴你-如何逐步離開職場，成為真正的數位遊牧者！",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/EDM-1920w.jpg",d:"成為數位遊牧前，你該先想清楚的事：「不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力！」你可能對數位遊牧感到嚮往，卻同時感到焦慮、不確定、甚至有點害怕—怕收入不穩、怕走錯路、怕只是逃避現在的工作。這場分享，不是要你立刻辭職，而是陪你把混亂的想法，整理成一條「可評估、走得下去的路」。"},
+  {t:"行銷顧問眼中的品牌轉折",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E5%BE%9E%E9%9B%B6%E6%89%93%E9%80%A0%E6%9C%83%E8%B3%BA%E9%8C%A2%E7%9A%84%E5%93%81%E7%89%8C+-+%E5%A5%A7%E7%BE%8E%E8%A1%8C%E9%8A%B7%E5%B0%88%E5%AE%B6%E6%95%99%E4%BD%A0%E5%93%81%E7%89%8C%E7%B6%93%E7%87%9F%E5%85%A8%E6%94%BB%E7%95%A5+%281%29-1920w.jpg",d:"你是否也曾覺得品牌經營到某個階段就出現盲點？明明定位清楚、策略穩定、內容也不錯，但市場反應比原先規劃不同。這場分享，由擁有奧美行銷背景的行銷顧問親自帶你解密，透過真實案例，揭開那些品牌如何在摸索時找到新方向。你將學會如何用更高維度的市場洞察，重新審視品牌定位，並打造持續成長的商業動能。"},
+  {t:"成大CCP 企業代表教練",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_2025726%E7%B6%B2%E8%B7%AF%E4%B8%AD%E5%BF%83%E5%95%9F%E5%8B%95%E6%9C%83%E8%AD%B0%E5%92%8CHBP_251110_2-1920w.jpg",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
+  {t:"成功大學_校園演講",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_%E7%AC%AC%E4%B8%80%E5%A0%82%E8%AA%B2_250331_11-1920w.jpg",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"},
+  {t:"敏捷產品設計師的日常 - 設計工作坊",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/505758287_24663921793197827_1462163480465823171_n-1920w.jpg",d:"受到高雄敏捷 (Agile Kaohsiung) 社群邀請擔任講師授課，透過 Scrum workshop 的方式，讓大家分組扮演產品設計團隊和產品開發團隊，實際跑過整個產品的開發流程，不只了解設計師的工作內容也更了解 Scrum 方法與精神"},
+  {t:"大武山下的BabyBoss",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/481985549_958433716479516_2197320049027152688_n-1920w.jpg",d:"台東偏鄉社區國中小生職涯探索計劃。"}
 ];
-$("talkWrap").innerHTML=TALK.map((b,bi)=>`
- <div class="talk">
-  <div class="talk-hd"><small>0${bi+1}</small><h3>${b.t}</h3><p>${b.sub}</p></div>
-  <div class="car" data-bi="${bi}">
-   <div class="slides">${b.items.map((x,i)=>`<div class="slide${i==0?" on":""}"><h4>${x.t}</h4>${x.d?`<p>${x.d}</p>`:""}${x.h?`<p class="hl">你將收穫：</p><ul>${x.h.map(y=>`<li>${y}</li>`).join("")}</ul>`:""}</div>`).join("")}</div>
-   <div class="car-ctl"><div class="cdots">${b.items.map((_,i)=>`<button class="cdot${i==0?" on":""}" data-i="${i}" aria-label="第 ${i+1} 則"></button>`).join("")}</div><div class="arrows"><button class="car-btn prev" aria-label="上一則">‹</button><button class="car-btn next" aria-label="下一則">›</button></div></div>
-  </div>
- </div>`).join("");
+$("talkWrap").innerHTML=`
+  <div class="car">
+   <div class="slides">${SLIDES.map((x,i)=>`<div class="slide${i==0?" on":""}"><div class="slide-img"><img loading="lazy" referrerpolicy="no-referrer" src="${x.img}" alt="${x.t}"></div><div class="slide-body"><h4>${x.t}</h4>${x.d?`<p>${x.d}</p>`:""}${x.h?`<p class="hl">你將收穫：</p><ul>${x.h.map(y=>`<li>${y}</li>`).join("")}</ul>`:""}</div></div>`).join("")}</div>
+   <div class="car-ctl"><div class="cdots">${SLIDES.map((_,i)=>`<button class="cdot${i==0?" on":""}" data-i="${i}" aria-label="第 ${i+1} 則"></button>`).join("")}</div><div class="arrows"><button class="car-btn prev" aria-label="上一則">‹</button><button class="car-btn next" aria-label="下一則">›</button></div></div>
+  </div>`;
 document.querySelectorAll(".car").forEach(function(car){
  var slides=[].slice.call(car.querySelectorAll(".slide"));
  var dots=[].slice.call(car.querySelectorAll(".cdot"));
@@ -334,6 +330,17 @@ document.querySelectorAll(".car").forEach(function(car){
  car.addEventListener("focusout",auto);
  auto();
 });
+/* 頁尾信箱：點一下複製 */
+(function(){
+ var b=document.getElementById("copyEmail");if(!b)return;
+ var email=b.dataset.email||"";
+ function done(){var o=b.textContent;b.textContent="已複製 ✓";b.classList.add("copied");setTimeout(function(){b.textContent=o;b.classList.remove("copied")},2000)}
+ function fallback(){var t=document.createElement("textarea");t.value=email;document.body.appendChild(t);t.select();try{document.execCommand("copy");done()}catch(e){window.location.href="mailto:"+email}document.body.removeChild(t)}
+ b.addEventListener("click",function(){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).then(done,function(){fallback()})}
+  else{fallback()}
+ });
+})();
 </script>
 </body>
 </html>
