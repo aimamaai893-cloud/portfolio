@@ -23,12 +23,12 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
-.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;text-align:left}
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
 /* 互動大頭：底圖 + 固定眼白 + 滑動眼珠（以 aperture 遮罩裁切） */
-.head{position:relative;width:100%;max-width:400px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
+.head{position:relative;width:100%;max-width:500px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
 .head-base{position:absolute;inset:0;width:100%;height:100%;display:block}
 .eye{position:absolute;width:25.6%;aspect-ratio:256/186;transform-origin:50% 50%;transition:transform .07s ease-in}
 .eye-l{left:27.6%;top:43.9%}
@@ -106,7 +106,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .slide{padding:20px}
 .slide-img img{max-height:260px}
 .hero-text{order:2}
-.head{order:1;max-width:280px}
+.head{order:1;max-width:320px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
@@ -255,15 +255,15 @@ draw();
   var scale=1;
   function measure(){scale=head.getBoundingClientRect().width/1000}
   measure();window.addEventListener('resize',measure);
-  var DX=24.3,DY=12.1; /* 眼珠行程：圖層寬 ±9.5% / 高 ±6.5%（1000px 畫布上的 px） */
+  var DX=12,DY=6; /* 眼珠行程減半：游標移到畫面邊緣也不會歪（1000px 畫布上的 px） */
   function onMove(e){
     var px=e.clientX,py=e.clientY;
     tx=Math.max(-1,Math.min(1,px/window.innerWidth*2-1));
     ty=Math.max(-1,Math.min(1,py/window.innerHeight*2-1));
     var r=head.getBoundingClientRect();
     var hx=r.left+r.width/2,hy=r.top+r.height/2;
-    ttx=Math.max(-1,Math.min(1,(px-hx)/(window.innerWidth/2)))*6;
-    tty=Math.max(-1,Math.min(1,(py-hy)/(window.innerHeight/2)))*6;
+    ttx=Math.max(-1,Math.min(1,(px-hx)/(window.innerWidth/2)))*3;
+    tty=Math.max(-1,Math.min(1,(py-hy)/(window.innerHeight/2)))*3;
   }
   window.addEventListener('pointermove',onMove,{passive:true});
   document.addEventListener('pointerleave',function(){tx=0;ty=0;ttx=0;tty=0});
@@ -276,11 +276,12 @@ draw();
   })();
   head.addEventListener('click',function(){
     blink();
-    ttx=ttx>=0?-6:6;
+    ttx=ttx>=0?-3:3;
     setTimeout(function(){ttx=0},350);
   });
   (function loop(){
     cx+=(tx-cx)*.12; cy+=(ty-cy)*.12;
+    var gm=Math.hypot(cx,cy); if(gm>1){cx/=gm;cy/=gm} /* 圓形限制：游標在角落時眼珠也不跑到眼角 */
     ctx+=(ttx-ctx)*.08; cty+=(tty-cty)*.08;
     var dx=cx*DX*scale, dy=cy*DY*scale;
     for(var i=0;i<irises.length;i++){
