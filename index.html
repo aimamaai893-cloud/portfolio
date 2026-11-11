@@ -23,19 +23,20 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
-.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero{padding:96px 0 72px;text-align:center}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
 .band{background:var(--soft);padding:64px 0;text-align:center}
 .band blockquote{font-size:clamp(19px,2.6vw,26px);line-height:1.7;max-width:760px;margin:0 auto}
 .stats{display:flex;gap:24px 72px;margin-top:40px;flex-wrap:wrap;justify-content:center;text-align:center}.stats b{display:block;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--accent);line-height:1.2}.stats span{font-size:13px;color:var(--mute)}
-.btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn{padding:11px 26px;border-radius:99px;font-size:15px;border:1.5px solid var(--ink)}
 .btn.p{background:var(--ink);color:#fff}.btn:hover{border-color:var(--accent);background:var(--accent);color:#fff}
 .photo{position:relative;overflow:hidden}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .photo{aspect-ratio:1;border-radius:32px;background:linear-gradient(135deg,var(--soft),#e4e0fa);display:grid;place-items:center;color:var(--accent);font-size:14px}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
 section{padding:72px 0}
 .alt{background:var(--soft)}
 .hd{margin-bottom:36px}.hd h2{font-size:32px;line-height:1.2}.hd span{color:var(--mute);font-size:14px;letter-spacing:.15em}
@@ -73,6 +74,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
 .grid,.sk{grid-template-columns:1fr}
+.about-grid{grid-template-columns:1fr}
 .stats{gap:20px 40px}
 }
 @media(max-width:560px){
@@ -103,20 +105,18 @@ dialog .b{padding:20px}
   <div>
     <small>PRODUCT DESIGNER / PRODUCT OWNER / PROJECT MANAGER</small>
     <h1>用設計思考與 AI 工作流，<br>把複雜需求變成<span class="dot">好用</span>的產品</h1>
-    <p>6 年以上跨領域經驗，橫跨科技、品牌與軟體產業。擔任實習 PO 期間負責企業內部管理系統：與客戶確認需求範圍、主持 USM 工作坊、安排 Sprint Backlog、追蹤進度並擔任測試，帶領 4 位開發實習生，與 SM 及 Tech Coach 協作；同時從釐清需求、規劃產品到介面與設計系統交付，並以 AI 自動化工作流提升團隊協作效率。</p>
     <div class="btns"><a class="btn p" href="#work">查看作品</a><a class="btn" href="resume.pdf">下載履歷</a></div>
   </div>
-  <div class="photo"><img src="assets/laly.jpg" alt="Laly Chang"></div>
 </header>
 
 <section class="band"><div class="wrap">
-  <blockquote>在 Laly<span class="dot">.</span>Lab，我相信品牌不僅僅是美感的呈現，<br>而是結合策略、技術與創意的完整體驗</blockquote>
   <div class="stats"><div><b>6+</b><span>年設計經驗</span></div><div><b>B2B / B2C</b><span>產品設計</span></div><div><b>3</b><span>套設計系統</span></div></div>
 </div></section>
 
 <section id="about"><div class="wrap">
   <div class="hd"><h2>關於 Laly<span class="dot">.</span></h2><span>ABOUT</span></div>
-  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積科技、品牌與軟體產業的經驗。目前在高雄，現職公司擔任設計師近三年，並以實習 PO 身分負責企業內部管理系統：與客戶確認需求範圍、主持 USM 工作坊、安排 Sprint Backlog、追蹤進度並擔任測試，帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於品牌設計、AI 自動化工作流、Web UI/UX 與使用者體驗，並參與團隊協助中小企業打造數位品牌與產品。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p>
+  <div class="about-grid"><div class="photo"><img src="assets/laly-about.webp" alt="Laly Chang"></div>
+  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積科技、品牌與軟體產業的經驗。目前在高雄，現職公司擔任設計師近三年，並以實習 PO 身分負責企業內部管理系統：與客戶確認需求範圍、主持 USM 工作坊、安排 Sprint Backlog、追蹤進度並擔任測試，帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於品牌設計、AI 自動化工作流、Web UI/UX 與使用者體驗，並參與團隊協助中小企業打造數位品牌與產品。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p></div>
 </div></section>
 
 <section id="exp" class="alt"><div class="wrap">
