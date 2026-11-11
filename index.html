@@ -70,17 +70,27 @@ section{padding:72px 0}
 .sk h3{font-size:17px;margin-bottom:4px}.sk small{color:var(--accent);font-weight:700}.sk p{color:var(--mute);font-size:14px;margin-top:8px}
 .sk .ic{width:52px;height:52px;border-radius:16px;background:var(--soft);display:grid;place-items:center;margin-bottom:12px}
 .sk .ic svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.cm{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.cm button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:.25s}
-.cm button:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(108,92,231,.15);border-color:var(--accent)}
-.cm small{color:var(--accent);font-weight:700}
-.cm h3{font-size:18px;margin:6px 0 4px}
-.cm p{color:var(--mute);font-size:14px}
-.cm .more{color:var(--accent);font-weight:700;font-size:14px;margin-top:12px;display:block}
-#cb{color:var(--mute);font-size:15px;margin-top:10px}
-#cb h4{color:var(--ink);font-size:16px;margin:14px 0 2px}
-#cb h4:first-child{margin-top:6px}
-#cb p{margin:0 0 4px}
+.talk{margin-bottom:56px}
+.talk:last-child{margin-bottom:0}
+.talk-hd small{color:var(--accent);font-weight:700}
+.talk-hd h3{font-size:22px;margin:4px 0 2px}
+.talk-hd p{color:var(--mute);font-size:14px;margin-bottom:18px}
+.car{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.slide{display:none;padding:28px 32px;animation:fade .45s ease}
+.slide.on{display:block}
+.slide h4{font-size:19px;margin-bottom:8px}
+.slide p{color:var(--mute);font-size:15px}
+.slide .hl{color:var(--ink);font-weight:700;margin-top:12px}
+.slide ul{margin:6px 0 0 20px;color:var(--mute);font-size:14px}
+.car-ctl{display:flex;justify-content:space-between;align-items:center;padding:0 20px 16px}
+.cdots{display:flex;gap:8px}
+.cdots .cdot{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
+.cdots .cdot.on{background:var(--accent)}
+.arrows{display:flex;gap:8px}
+.car-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
+.car-btn:hover{border-color:var(--accent);color:var(--accent)}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.slide{animation:none}}
 footer{background:var(--dark);color:#fff;padding:64px 0 32px}
 footer h2{font-size:32px}footer p{color:#a9a9bb;margin:10px 0 24px}
 footer .btn{border-color:#fff;color:#fff;margin-right:10px;display:inline-block}footer .btn:hover{background:var(--accent);border-color:var(--accent)}
@@ -187,7 +197,7 @@ dialog .b{padding:20px}
 
 <section id="talks"><div class="wrap">
   <div class="hd"><h2>社群活動與講座<span class="dot">.</span></h2><span>COMMUNITY &amp; TALKS</span></div>
-  <div class="cm" id="cmGrid"></div>
+  <div id="talkWrap"></div>
 </div></section>
 
 <footer id="contact"><div class="wrap">
@@ -197,7 +207,6 @@ dialog .b{padding:20px}
 </div></footer>
 
 <dialog id="dlg"><button onclick="dlg.close()" aria-label="關閉">×</button><img id="di" alt=""><div class="b"><span class="tag" id="dt"></span><h3 id="dh"></h3><ul id="dl"></ul></div></dialog>
-<dialog id="cdlg"><button onclick="cdlg.close()" aria-label="關閉">×</button><div class="b"><span class="tag" id="ct"></span><h3 id="ch"></h3><div id="cb"></div></div></dialog>
 
 <script>
 const P=[
@@ -282,25 +291,49 @@ draw();
 })();
 </script>
 <script>
-/* 社群活動與講座：分類卡片，點開 popup 看細節（內容來自接案網站商業合作頁） */
-const CM=[
- {t:"品牌講座",d:"設計、品牌與 AI 的實務分享",items:[
-  {t:"設計很美，但品牌怎麼走下去？",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。你將收穫：一套品牌合夥的思考框架、理解設計如何從「美感」轉為「商業策略」、面對合作分歧時的溝通與決策邏輯、如何讓品牌走得長遠。"},
-  {t:"視覺地獄交給 AI，溫度留給顧客！",d:"很多品牌用 AI 做產品圖、剪影片、架網站，但常遇到圖像變形、影片跑掉、網站不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
-  {t:"品牌經營盲點解密",d:"由擁有奧美行銷背景的行銷顧問帶你解密，透過真實案例，揭開品牌如何在摸索時找到新方向，用更高維度的市場洞察重新審視品牌定位，打造持續成長的商業動能。"}]},
- {t:"企業/校園講座合作",d:"企業與校園的講座與工作坊合作",items:[
+/* 社群活動與講座：兩大區塊，各自輪播（內容來自接案網站商業合作頁） */
+const TALK=[
+ {t:"舉辦職人社群講座",sub:"品牌、創業與職涯的現場分享",items:[
+  {t:"[職人分享] 設計很美，但品牌怎麼走下去？",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，走過的不只是光鮮，而是不停調整與重建。這場分享將揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。",h:["一套品牌合夥的思考框架（避免只憑感覺做決定）","理解設計如何從「美感」轉為「商業策略」","面對合作分歧時的溝通與決策邏輯","如何讓品牌走得長遠，而不是只紅一陣子","實務經驗分享與現場交流機會"]},
+  {t:"[職人分享] 視覺地獄交給 AI，溫度留給顧客！",d:"很多品牌開始用 AI 做產品圖、剪影片、架網站，但常常遇到一個問題：圖像變形、影片跑掉、網站做完卻不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
+  {t:"開甜點店的“創業“之路有哪些意料之外!",d:"[2026 首場品牌活動] 以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨。這場分享，不談成功神話，而是一位甜點創業者，在開店之後才真正明白的那些事。"},
+  {t:"職涯諮詢師告訴你-如何逐步離開職場，成為真正的數位遊牧者！",d:"成為數位遊牧前，你該先想清楚的事：「不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力！」你可能對數位遊牧感到嚮往，卻同時感到焦慮、不確定、甚至有點害怕—怕收入不穩、怕走錯路、怕只是逃避現在的工作。這場分享，不是要你立刻辭職，而是陪你把混亂的想法，整理成一條「可評估、走得下去的路」。"},
+  {t:"行銷顧問眼中的品牌轉折",d:"你是否也曾覺得品牌經營到某個階段就出現盲點？明明定位清楚、策略穩定、內容也不錯，但市場反應比原先規劃不同。這場分享，由擁有奧美行銷背景的行銷顧問親自帶你解密，透過真實案例，揭開那些品牌如何在摸索時找到新方向。你將學會如何用更高維度的市場洞察，重新審視品牌定位，並打造持續成長的商業動能。"}]},
+ {t:"企業/校園講座合作",sub:"企業與校園的講座與工作坊合作",items:[
   {t:"成大CCP 企業代表教練",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
-  {t:"成大CCP講師授課",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"}]}
+  {t:"成功大學_校園演講",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"},
+  {t:"敏捷產品設計師的日常 - 設計工作坊",d:"受到高雄敏捷 (Agile Kaohsiung) 社群邀請擔任講師授課，透過 Scrum workshop 的方式，讓大家分組扮演產品設計團隊和產品開發團隊，實際跑過整個產品的開發流程，不只了解設計師的工作內容也更了解 Scrum 方法與精神"},
+  {t:"大武山下的BabyBoss",d:"台東偏鄉社區國中小生職涯探索計劃。"}]}
 ];
-$("cmGrid").innerHTML=CM.map((c,i)=>`<button class="cm-card" data-cm="${i}"><small>0${i+1}</small><h3>${c.t}</h3><p>${c.d}</p><span class="more">點開看詳情 →</span></button>`).join("");
-document.addEventListener("click",e=>{
- const m=e.target.closest("[data-cm]");if(!m)return;
- const c=CM[+m.dataset.cm];
- $("ct").textContent="社群活動與講座";$("ch").textContent=c.t;
- $("cb").innerHTML=c.items.map(x=>`<h4>${x.t}</h4><p>${x.d}</p>`).join("");
- $("cdlg").showModal();
+$("talkWrap").innerHTML=TALK.map((b,bi)=>`
+ <div class="talk">
+  <div class="talk-hd"><small>0${bi+1}</small><h3>${b.t}</h3><p>${b.sub}</p></div>
+  <div class="car" data-bi="${bi}">
+   <div class="slides">${b.items.map((x,i)=>`<div class="slide${i==0?" on":""}"><h4>${x.t}</h4>${x.d?`<p>${x.d}</p>`:""}${x.h?`<p class="hl">你將收穫：</p><ul>${x.h.map(y=>`<li>${y}</li>`).join("")}</ul>`:""}</div>`).join("")}</div>
+   <div class="car-ctl"><div class="cdots">${b.items.map((_,i)=>`<button class="cdot${i==0?" on":""}" data-i="${i}" aria-label="第 ${i+1} 則"></button>`).join("")}</div><div class="arrows"><button class="car-btn prev" aria-label="上一則">‹</button><button class="car-btn next" aria-label="下一則">›</button></div></div>
+  </div>
+ </div>`).join("");
+document.querySelectorAll(".car").forEach(function(car){
+ var slides=[].slice.call(car.querySelectorAll(".slide"));
+ var dots=[].slice.call(car.querySelectorAll(".cdot"));
+ var cur=0,timer=null;
+ var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ function show(n){
+  cur=(n+slides.length)%slides.length;
+  slides.forEach(function(s,i){s.classList.toggle("on",i==cur)});
+  dots.forEach(function(d,i){d.classList.toggle("on",i==cur)});
+ }
+ function auto(){if(reduce)return;stop();timer=setInterval(function(){show(cur+1)},5500)}
+ function stop(){if(timer){clearInterval(timer);timer=null}}
+ car.querySelector(".prev").addEventListener("click",function(){show(cur-1);auto()});
+ car.querySelector(".next").addEventListener("click",function(){show(cur+1);auto()});
+ dots.forEach(function(d,i){d.addEventListener("click",function(){show(i);auto()})});
+ car.addEventListener("mouseenter",stop);
+ car.addEventListener("mouseleave",auto);
+ car.addEventListener("focusin",stop);
+ car.addEventListener("focusout",auto);
+ auto();
 });
-$("cdlg").addEventListener("click",e=>{if(e.target===$("cdlg"))$("cdlg").close()});
 </script>
 </body>
 </html>
