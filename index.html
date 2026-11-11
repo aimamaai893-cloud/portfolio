@@ -24,20 +24,17 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:6
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
 .hero{padding:96px 0 72px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
+header.hero{max-width:1320px}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
-.hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
+.hero h1{font-size:clamp(26px,3.5vw,40px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
-/* 互動大頭：底圖 + 固定眼白 + 滑動眼珠（以 aperture 遮罩裁切） */
-.head{position:relative;width:100%;max-width:500px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
+/* 互動大頭：底圖 + 整顆眼球（眼白+眼珠一體）跟著游標滑動，open 遮罩裁切眼眶 */
+.head{position:relative;width:100%;max-width:620px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
 .head-base{position:absolute;inset:0;width:100%;height:100%;display:block}
-.eye{position:absolute;width:25.6%;aspect-ratio:256/186;transform-origin:50% 50%;transition:transform .07s ease-in}
-.eye-l{left:27.6%;top:43.9%}
-.eye-r{left:53.8%;top:43.9%}
-.eye .sclera{position:absolute;inset:0;width:100%;height:100%;display:block}
-.iris-wrap{position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
-.eye-l .iris-wrap{-webkit-mask-image:url(assets/pixar-aperture-l-crop.png);mask-image:url(assets/pixar-aperture-l-crop.png)}
-.eye-r .iris-wrap{-webkit-mask-image:url(assets/pixar-aperture-r-crop.png);mask-image:url(assets/pixar-aperture-r-crop.png)}
-.iris{position:absolute;width:42.1875%;aspect-ratio:1;display:block;will-change:transform}
+.eye{position:absolute;width:25.6%;aspect-ratio:256/186;overflow:hidden;transform-origin:50% 50%;transition:transform .07s ease-in;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.eye-l{left:27.6%;top:43.9%;-webkit-mask-image:url(assets/pixar-open-l.png);mask-image:url(assets/pixar-open-l.png)}
+.eye-r{left:53.8%;top:43.9%;-webkit-mask-image:url(assets/pixar-open-r.png);mask-image:url(assets/pixar-open-r.png)}
+.ball{position:absolute;left:-7.8125%;top:-10.7527%;width:115.625%;aspect-ratio:296/226;display:block;will-change:transform}
 .band{background:var(--soft);padding:64px 0;text-align:center}
 .band blockquote{font-size:clamp(19px,2.6vw,26px);line-height:1.7;max-width:760px;margin:0 auto}
 .stats{display:flex;gap:24px 72px;margin-top:40px;flex-wrap:wrap;justify-content:center;text-align:center}.stats b{display:block;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--accent);line-height:1.2}.stats span{font-size:13px;color:var(--mute)}
@@ -74,9 +71,11 @@ footer button.btn{font:inherit;background:transparent;cursor:pointer}
 footer .btn.copied{border-color:var(--accent);background:var(--accent);color:#fff}
 .car{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .slide{display:none;padding:28px 32px;animation:fade .45s ease}
-.slide.on{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
-.slide-img img{width:100%;max-height:320px;object-fit:contain;background:var(--soft);border-radius:16px;display:block}
+#talks .wrap{max-width:1320px}
+.slide.on{display:grid;grid-template-columns:480px 1fr;gap:28px;align-items:start}
+.slide-img img{width:100%;max-height:460px;object-fit:contain;background:#fff;border-radius:16px;display:block}
 .slide h4{font-size:19px;margin-bottom:8px}
+.slide-sub{font-size:14px;margin:12px 0 0}
 .slide p{color:var(--mute);font-size:15px}
 .slide .hl{color:var(--ink);font-weight:700;margin-top:12px}
 .slide ul{margin:6px 0 0 20px;color:var(--mute);font-size:14px}
@@ -104,9 +103,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .hero{grid-template-columns:1fr;padding:48px 0 56px;gap:24px;text-align:center}
 .slide.on{grid-template-columns:1fr;gap:16px}
 .slide{padding:20px}
-.slide-img img{max-height:260px}
+.slide-img img{max-height:300px}
 .hero-text{order:2}
-.head{order:1;max-width:320px}
+.head{order:1;max-width:380px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
@@ -120,7 +119,7 @@ nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10p
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
-.hero h1{font-size:28px}
+.hero h1{font-size:clamp(23px,6.8vw,26px)}
 .hero p{font-size:15px}
 .btns .btn{flex:1 1 auto;text-align:center;padding:12px 16px}
 .photo{max-width:280px}
@@ -146,12 +145,10 @@ dialog .b{padding:20px}
   <div class="head" id="pixarHead" role="img" aria-label="Laly 的互動大頭：眼睛會跟著游標，點一下會眨眼">
     <img class="head-base" src="assets/pixar-base.webp" alt="">
     <div class="eye eye-l">
-      <img class="sclera" src="assets/pixar-sclera-l.png" alt="">
-      <div class="iris-wrap"><img class="iris" src="assets/pixar-iris-l.png" alt="" style="left:28.90625%;top:20.9677%"></div>
+      <img class="ball" src="assets/pixar-ball-l.png" alt="">
     </div>
     <div class="eye eye-r">
-      <img class="sclera" src="assets/pixar-sclera-r.png" alt="">
-      <div class="iris-wrap"><img class="iris" src="assets/pixar-iris-r.png" alt="" style="left:12.109375%;top:20.4301%"></div>
+      <img class="ball" src="assets/pixar-ball-r.png" alt="">
     </div>
   </div>
 </header>
@@ -215,7 +212,6 @@ const P=[
  {c:"CS 客服系統",t:"Customer Service 客服系統",i:"02_Saiyan_Customer_Service",l:["Call report 通話報表","CRM log","Satisfaction Report 滿意度報表","CS Member Mgmt 客服人員管理"]},
  {c:"ACC 行政系統",t:"Settlement 結算",i:"08_Saiyan_Settlement",l:["Internal Transfer 內部轉帳"]},
  {c:"Design System",t:"Saiyan Design System",i:"Saiyan__Design_System",l:["Components 元件","Colors / Typography 色彩與字體"]},
- {c:"ACC 行政系統",t:"Interbank Transfer 跨行轉帳",i:"MTBO_Interbank_Transfer",l:["List type 列表樣式","Pending Settlement 待結算"]},
  {c:"Design System",t:"MTBO Design System",i:"MTBO_Design_system",l:["Components 元件","Styles 樣式"]},
  {c:"Design System",t:"Nami Design System",i:"Nami_Design_system",l:["Components 元件","Styles 樣式"]},
  {"c": "企業網站/APP", "t": "TRANSFER 數位化交易平台", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/89d572160006847.64002efdc28a7-1920w.jpg", "l": ["數位化交易平台", "網站設計"], "page": "works/transfer.html"},
@@ -242,20 +238,20 @@ const _d=draw;draw=function(){_d();if(!$("grid").children.length)$("grid").inner
 draw();
 </script>
 <script>
-/* Pixar 互動大頭：眼白固定，只滑動眼珠（aperture 遮罩裁切，絕不離開眼白）；
+/* Pixar 互動大頭：整顆眼球（眼白+眼珠一體）跟著游標滑動（open 遮罩裁切眼眶，絕不離開眼白）；
    眨眼 = 整組眼睛 scaleY 壓扁，露出底圖的閉眼線；點頭 = 眨眼 + 傾斜；
    頭跟著游標平滑傾斜；尊重 prefers-reduced-motion。無圖片切換、無 debounce。 */
 (function(){
   var head=document.getElementById('pixarHead');
   if(!head)return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var irises=[].slice.call(head.querySelectorAll('.iris'));
+  var balls=[].slice.call(head.querySelectorAll('.ball'));
   var eyes=[].slice.call(head.querySelectorAll('.eye'));
   var tx=0,ty=0,cx=0,cy=0,ttx=0,tty=0,ctx=0,cty=0;
   var scale=1;
   function measure(){scale=head.getBoundingClientRect().width/1000}
   measure();window.addEventListener('resize',measure);
-  var DX=12,DY=6; /* 眼珠行程減半：游標移到畫面邊緣也不會歪（1000px 畫布上的 px） */
+  var DX=12,DY=6; /* 眼球行程減半：游標移到畫面邊緣也不會歪（1000px 畫布上的 px） */
   function onMove(e){
     var px=e.clientX,py=e.clientY;
     tx=Math.max(-1,Math.min(1,px/window.innerWidth*2-1));
@@ -281,11 +277,11 @@ draw();
   });
   (function loop(){
     cx+=(tx-cx)*.12; cy+=(ty-cy)*.12;
-    var gm=Math.hypot(cx,cy); if(gm>1){cx/=gm;cy/=gm} /* 圓形限制：游標在角落時眼珠也不跑到眼角 */
+    var gm=Math.hypot(cx,cy); if(gm>1){cx/=gm;cy/=gm} /* 圓形限制：游標在角落時眼球也不跑到眼角 */
     ctx+=(ttx-ctx)*.08; cty+=(tty-cty)*.08;
     var dx=cx*DX*scale, dy=cy*DY*scale;
-    for(var i=0;i<irises.length;i++){
-      irises[i].style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px)';
+    for(var i=0;i<balls.length;i++){
+      balls[i].style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px)';
     }
     head.style.transform='rotate('+ctx.toFixed(2)+'deg) translateY('+cty.toFixed(2)+'px)';
     requestAnimationFrame(loop);
@@ -295,19 +291,19 @@ draw();
 <script>
 /* 活動講座合作：單一輪播，9 則投影片，每則左邊放照片（內容與照片來自接案網站商業合作頁） */
 const SLIDES=[
-  {t:"[設計職人分享] 設計很美，但品牌怎麼走下去？",img:"assets/talks/talk-1.jpg",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，走過的不只是光鮮，而是不停調整與重建。這場分享將揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。",h:["一套品牌合夥的思考框架（避免只憑感覺做決定）","理解設計如何從「美感」轉為「商業策略」","面對合作分歧時的溝通與決策邏輯","如何讓品牌走得長遠，而不是只紅一陣子","實務經驗分享與現場交流機會"]},
-  {t:"[職人分享] 視覺地獄交給 AI，溫度留給顧客！",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E6%88%AA%E5%9C%96+2026-10-06+%E6%99%9A%E4%B8%8A11.02.57-1920w.png",d:"很多品牌開始用 AI 做產品圖、剪影片、架網站，但常常遇到一個問題：圖像變形、影片跑掉、網站做完卻不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
-  {t:"開甜點店的“創業“之路有哪些意料之外!",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/HBP-1920w.jpg",d:"[2026 首場品牌活動] 以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨。這場分享，不談成功神話，而是一位甜點創業者，在開店之後才真正明白的那些事。"},
-  {t:"職涯諮詢師告訴你-如何逐步離開職場，成為真正的數位遊牧者！",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/EDM-1920w.jpg",d:"成為數位遊牧前，你該先想清楚的事：「不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力！」你可能對數位遊牧感到嚮往，卻同時感到焦慮、不確定、甚至有點害怕—怕收入不穩、怕走錯路、怕只是逃避現在的工作。這場分享，不是要你立刻辭職，而是陪你把混亂的想法，整理成一條「可評估、走得下去的路」。"},
-  {t:"行銷顧問眼中的品牌轉折",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E5%BE%9E%E9%9B%B6%E6%89%93%E9%80%A0%E6%9C%83%E8%B3%BA%E9%8C%A2%E7%9A%84%E5%93%81%E7%89%8C+-+%E5%A5%A7%E7%BE%8E%E8%A1%8C%E9%8A%B7%E5%B0%88%E5%AE%B6%E6%95%99%E4%BD%A0%E5%93%81%E7%89%8C%E7%B6%93%E7%87%9F%E5%85%A8%E6%94%BB%E7%95%A5+%281%29-1920w.jpg",d:"你是否也曾覺得品牌經營到某個階段就出現盲點？明明定位清楚、策略穩定、內容也不錯，但市場反應比原先規劃不同。這場分享，由擁有奧美行銷背景的行銷顧問親自帶你解密，透過真實案例，揭開那些品牌如何在摸索時找到新方向。你將學會如何用更高維度的市場洞察，重新審視品牌定位，並打造持續成長的商業動能。"},
-  {t:"成大CCP 企業代表教練",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_2025726%E7%B6%B2%E8%B7%AF%E4%B8%AD%E5%BF%83%E5%95%9F%E5%8B%95%E6%9C%83%E8%AD%B0%E5%92%8CHBP_251110_2-1920w.jpg",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
-  {t:"成功大學_校園演講",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_%E7%AC%AC%E4%B8%80%E5%A0%82%E8%AA%B2_250331_11-1920w.jpg",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"},
-  {t:"敏捷產品設計師的日常 - 設計工作坊",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/505758287_24663921793197827_1462163480465823171_n-1920w.jpg",d:"受到高雄敏捷 (Agile Kaohsiung) 社群邀請擔任講師授課，透過 Scrum workshop 的方式，讓大家分組扮演產品設計團隊和產品開發團隊，實際跑過整個產品的開發流程，不只了解設計師的工作內容也更了解 Scrum 方法與精神"},
-  {t:"大武山下的BabyBoss",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/481985549_958433716479516_2197320049027152688_n-1920w.jpg",d:"台東偏鄉社區國中小生職涯探索計劃。"}
+  {t:"[設計職人分享] 設計很美，但品牌怎麼走下去？",sub:"邀請講師：帝特設計x那格家居 Johnny",img:"assets/talks/talk-1.jpg",d:"當設計變成品牌，面對的不只是創作，而是決策。從理想到家居品牌經營，走過的不只是光鮮，而是不停調整與重建。這場分享將揭開「品牌合夥的生存法則與成長邏輯」：如何在合作中保持專業、在分歧中找到方向，讓品牌不只好看，而是走得遠。"},
+  {t:"[設計職人分享] 視覺地獄交給 AI，溫度留給顧客！",sub:"主講：Laly",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E6%88%AA%E5%9C%96+2026-10-06+%E6%99%9A%E4%B8%8A11.02.57-1920w.png",d:"很多品牌開始用 AI 做產品圖、剪影片、架網站，但常常遇到一個問題：圖像變形、影片跑掉、網站做完卻不適合自己的商業模式。AI 可以提升效率，但不代表所有事都適合交給 AI。"},
+  {t:"開甜點店的“創業“之路有哪些意料之外!",sub:"邀請講師：填一點 凱莉",img:"assets/talks/talk-3.jpg",d:"[品牌職人分享] 以為開的是一間甜點店，實際上學的是如何面對現實、選擇取捨。這場分享，不談成功神話，而是一位甜點創業者，在開店之後才真正明白的那些事。"},
+  {t:"[職涯主題分享] 職涯諮詢師告訴你-如何逐步離開職場，成為真正的數位遊牧者！",sub:"邀請講師：職涯諮詢師 Lolita",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/EDM-1920w.jpg",d:"成為數位遊牧前，你該先想清楚的事：「不是每個人都要成為數位遊牧，但每個人都值得擁有選擇工作方式的能力！」你可能對數位遊牧感到嚮往，卻同時感到焦慮、不確定、甚至有點害怕—怕收入不穩、怕走錯路、怕只是逃避現在的工作。這場分享，不是要你立刻辭職，而是陪你把混亂的想法，整理成一條「可評估、走得下去的路」。"},
+  {t:"[行銷職人分享] 行銷顧問眼中的品牌轉折",sub:"邀請講師：大聲創作 Lynda",img:"assets/talks/talk-5.jpg",d:"你是否也曾覺得品牌經營到某個階段就出現盲點？明明定位清楚、策略穩定、內容也不錯，但市場反應比原先規劃不同。這場分享，由擁有奧美行銷背景的行銷顧問親自帶你解密，透過真實案例，揭開那些品牌如何在摸索時找到新方向。你將學會如何用更高維度的市場洞察，重新審視品牌定位，並打造持續成長的商業動能。"},
+  {t:"[校園演講/工作坊] 成大CCP 企業代表教練",img:"assets/talks/talk-6.jpg",d:"擔任2025年成大CCP企業教練，與成大生涯發展與就業輔導組合作，籌劃5場職涯講座/工作坊：2場設計講座、1場程式講座、1場專案實作工作坊、1場企業參訪。"},
+  {t:"[校園演講/工作坊] 成功大學_校園演講",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_%E7%AC%AC%E4%B8%80%E5%A0%82%E8%AA%B2_250331_11-1920w.jpg",d:"受邀擔任成大CCP講師授課，主題：透過UIUX設計優化好產品（網站）。"},
+  {t:"[校園演講/工作坊] 敏捷產品設計師的日常 - 設計工作坊",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/505758287_24663921793197827_1462163480465823171_n-1920w.jpg",d:"受到高雄敏捷 (Agile Kaohsiung) 社群邀請擔任講師授課，透過 Scrum workshop 的方式，讓大家分組扮演產品設計團隊和產品開發團隊，實際跑過整個產品的開發流程，不只了解設計師的工作內容也更了解 Scrum 方法與精神"},
+  {t:"[地方教育演講/工作坊] 大武山下的BabyBoss",img:"https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/481985549_958433716479516_2197320049027152688_n-1920w.jpg",d:"台東偏鄉社區國中小生職涯探索計劃。"}
 ];
 $("talkWrap").innerHTML=`
   <div class="car">
-   <div class="slides">${SLIDES.map((x,i)=>`<div class="slide${i==0?" on":""}"><div class="slide-img"><img loading="lazy" referrerpolicy="no-referrer" src="${x.img}" alt="${x.t}"></div><div class="slide-body"><h4>${x.t}</h4>${x.d?`<p>${x.d}</p>`:""}${x.h?`<p class="hl">你將收穫：</p><ul>${x.h.map(y=>`<li>${y}</li>`).join("")}</ul>`:""}</div></div>`).join("")}</div>
+   <div class="slides">${SLIDES.map((x,i)=>`<div class="slide${i==0?" on":""}"><div class="slide-img"><img loading="lazy" referrerpolicy="no-referrer" src="${x.img}" alt="${x.t}"></div><div class="slide-body"><h4>${x.t}</h4>${x.d?`<p>${x.d}</p>`:""}${x.sub?`<p class="slide-sub">${x.sub}</p>`:""}</div></div>`).join("")}</div>
    <div class="car-ctl"><div class="cdots">${SLIDES.map((_,i)=>`<button class="cdot${i==0?" on":""}" data-i="${i}" aria-label="第 ${i+1} 則"></button>`).join("")}</div><div class="arrows"><button class="car-btn prev" aria-label="上一則">‹</button><button class="car-btn next" aria-label="下一則">›</button></div></div>
   </div>`;
 document.querySelectorAll(".car").forEach(function(car){
