@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Hand-drawn style signpost icon for city exploration metaphor -->
+  <!-- Ground/grass tufts -->
+  <path d="M45 108 C48 104, 52 104, 55 108" stroke="#2EC4B6" stroke-width="2" fill="none"/>
+  <path d="M62 110 C65 106, 69 106, 72 110" stroke="#2EC4B6" stroke-width="2" fill="none"/>
+  <!-- Post -->
+  <rect x="56" y="28" width="8" height="82" rx="2" fill="#3D5A80" stroke="#3D5A80" stroke-width="1.5"/>
+  <!-- Top decoration (ball finial) -->
+  <circle cx="60" cy="22" r="6" fill="#FF6B35" stroke="#3D5A80" stroke-width="2"/>
+  <!-- Sign 1 - pointing right (top) -->
+  <path d="M62 36 L100 36 L108 44 L100 52 L62 52 Z" fill="#C44709" stroke="#3D5A80" stroke-width="2"/>
+  <text x="80" y="47" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#FFF8E7">團隊</text>
+  <!-- Sign 2 - pointing left (middle) -->
+  <path d="M58 58 L20 58 L12 66 L20 74 L58 74 Z" fill="#1A7D72" stroke="#3D5A80" stroke-width="2"/>
+  <text x="38" y="69" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#FFF8E7">學習</text>
+  <!-- Sign 3 - pointing right (bottom) -->
+  <path d="M62 80 L95 80 L103 88 L95 96 L62 96 Z" fill="#FFF8E7" stroke="#3D5A80" stroke-width="2"/>
+  <text x="78" y="91" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#3D5A80">文化</text>
+</svg>

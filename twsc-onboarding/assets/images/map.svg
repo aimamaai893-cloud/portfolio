@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Hand-drawn style map icon for city exploration metaphor -->
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="54" fill="#FFF8E7" stroke="#3D5A80" stroke-width="2.5" stroke-dasharray="4 2"/>
+  <!-- Folded map body -->
+  <path d="M30 38 L50 32 L70 38 L90 32 L90 88 L70 82 L50 88 L30 82 Z" fill="#FFF8E7" stroke="#3D5A80" stroke-width="2.5"/>
+  <!-- Map fold lines -->
+  <path d="M50 32 L50 88" stroke="#3D5A80" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <path d="M70 38 L70 82" stroke="#3D5A80" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <!-- Dotted path on map (exploration route) -->
+  <path d="M36 50 C42 45, 48 55, 55 48 C62 41, 68 52, 75 50 C80 48, 82 55, 84 60" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="4 3" fill="none"/>
+  <!-- Location pin -->
+  <path d="M62 58 C62 52, 72 52, 72 58 C72 64, 67 70, 67 70 C67 70, 62 64, 62 58 Z" fill="#FF6B35" stroke="#3D5A80" stroke-width="1.5"/>
+  <circle cx="67" cy="58" r="2.5" fill="#FFF8E7"/>
+  <!-- Small X marks on map -->
+  <path d="M38 65 L42 69 M42 65 L38 69" stroke="#2EC4B6" stroke-width="2"/>
+  <path d="M78 42 L82 46 M82 42 L78 46" stroke="#2EC4B6" stroke-width="2"/>
+</svg>
