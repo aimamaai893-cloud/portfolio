@@ -1,0 +1,636 @@
+/* ============================================================
+   welcome.css — 首頁專用視覺（柔藍 × 暖黃 · 圓角流動風）
+   Mobile First · CSS Variables · BEM
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+/* ---------- Design Tokens ---------- */
+:root {
+  /* Colors */
+  --c-primary:       #59C3F0;
+  --c-primary-light: #78D4F5;
+  --c-cta:           #2589BD;   /* 深一階藍，白字按鈕可過 AA 大字 */
+  --c-link:          #1E86B8;   /* 連結文字 (white bg AA) */
+  --c-secondary:     #FFD84D;
+  --c-secondary-deep:#7A5A00;   /* 黃底上的文字 */
+  --c-bg:            #F7FCFF;
+  --c-surface:       #FFFFFF;
+  --c-heading:       #173B52;
+  --c-text:          #4C6173;
+  --c-text-soft:     #6B8094;
+
+  /* Typography */
+  --font: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Radius */
+  --radius-card: 32px;
+  --radius-md:   18px;
+  --radius-pill: 999px;
+
+  /* Shadow (soft, floating) */
+  --shadow-soft:  0 14px 36px rgba(40, 120, 170, 0.14);
+  --shadow-hover: 0 24px 50px rgba(40, 120, 170, 0.22);
+  --shadow-nav:   0 6px 20px rgba(40, 120, 170, 0.10);
+
+  /* Spacing rhythm */
+  --space-section: 4rem;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--c-text);
+  background-color: var(--c-bg);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+h1, h2, h3 { color: var(--c-heading); font-weight: 700; line-height: 1.3; }
+
+:focus-visible {
+  outline: 3px solid var(--c-cta);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- Layout helper ---------- */
+.shell {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* ============================================================
+   Navbar (BEM classes kept for nav.js compatibility)
+   ============================================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(247, 252, 255, 0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  box-shadow: var(--shadow-nav);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding: 0.75rem 1.25rem;
+  min-height: 66px;
+}
+
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-heading);
+}
+
+.navbar__logo-img { width: 28px; height: 28px; flex-shrink: 0; }
+
+.navbar__links { display: none; align-items: center; gap: 0.5rem; }
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  color: var(--c-heading);
+  border-radius: var(--radius-pill);
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.navbar__link:hover { background-color: rgba(89, 195, 240, 0.16); color: var(--c-link); }
+
+.navbar__link--active {
+  background-color: var(--c-primary);
+  color: #0E3A50;
+  font-weight: 700;
+}
+
+.navbar__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.navbar__toggle-bar {
+  width: 22px;
+  height: 2.5px;
+  background-color: var(--c-heading);
+  border-radius: 99px;
+  transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(2) { opacity: 0; }
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.navbar__overlay {
+  position: fixed;
+  inset: 66px 0 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 3rem;
+  background-color: var(--c-bg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+}
+
+.navbar__overlay[aria-hidden="false"] { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.navbar__overlay-link {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--c-heading);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-pill);
+}
+
+.navbar__overlay-link--active { background-color: var(--c-primary); color: #0E3A50; font-weight: 700; }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 52px;
+  padding: 0.75rem 2rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+
+.btn--primary {
+  background-color: var(--c-cta);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(37, 137, 189, 0.35);
+}
+.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(37, 137, 189, 0.42); }
+
+.btn--secondary {
+  background-color: #fff;
+  color: var(--c-link);
+  border: 2.5px solid var(--c-primary);
+}
+.btn--secondary:hover { background-color: var(--c-primary); color: #0E3A50; transform: translateY(-3px); }
+
+.btn--ghost {
+  background-color: var(--c-secondary);
+  color: var(--c-secondary-deep);
+  box-shadow: 0 10px 22px rgba(255, 216, 77, 0.45);
+}
+.btn--ghost:hover { transform: translateY(-3px); }
+
+/* ============================================================
+   Decorations — floating blobs, dots, plant
+   ============================================================ */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  z-index: 0;
+  pointer-events: none;
+}
+.blob--yellow { background-color: var(--c-secondary); opacity: 0.9; }
+.blob--blue   { background-color: var(--c-primary-light); opacity: 0.55; }
+
+.dots {
+  position: absolute;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 10px);
+  gap: 9px;
+  pointer-events: none;
+}
+.dots span { width: 10px; height: 10px; border-radius: 50%; background-color: var(--c-primary); opacity: 0.4; }
+
+.float { animation: float 6s ease-in-out infinite; }
+.float--slow { animation-duration: 9s; }
+.float--alt  { animation-duration: 7.5s; animation-delay: -2s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50%      { transform: translateY(-22px) rotate(3deg); }
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  position: relative;
+  padding-block: 3rem 5rem;
+  background: linear-gradient(160deg, var(--c-primary-light) 0%, var(--c-primary) 100%);
+  overflow: hidden;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--c-link);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-size: clamp(1.6rem, 3.4vw, 2.7rem);
+  font-weight: 900;
+  color: #0E3A50;
+  margin-bottom: 1.25rem;
+  white-space: nowrap;
+}
+
+.hero__text {
+  font-size: 1.05rem;
+  color: #14506B;
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+/* 文字欄以標題寬度為準，段落與標題同寬 */
+.hero__copy {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+
+.hero__visual {
+  position: relative;
+  width: min(90vw, 480px);
+  margin-inline: auto;
+}
+
+.hero__logo {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+}
+
+/* 船下方的海波浪（前/後兩層，緩緩漂動） */
+.hero__sea {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 116%;
+  height: 210px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero__sea--back  { bottom: 14%; z-index: 0; }
+.hero__sea--front { bottom: 5%;  z-index: 2; }
+
+.hero__sea svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  animation: wave-drift 8s linear infinite;
+}
+.hero__sea--back svg { animation-duration: 13s; animation-direction: reverse; }
+
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Wave divider at bottom of hero */
+.hero__wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  z-index: 1;
+  line-height: 0;
+}
+.hero__wave svg { width: 100%; height: 70px; }
+
+/* ============================================================
+   Section headers
+   ============================================================ */
+.section { position: relative; padding-block: var(--space-section); }
+
+.section__head { text-align: center; margin-bottom: 3rem; position: relative; z-index: 2; }
+
+.section__eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-link);
+  margin-bottom: 0.5rem;
+}
+
+.section__title { font-size: clamp(1.6rem, 4.5vw, 2.4rem); margin-bottom: 0.75rem; }
+.section__title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin: 0.9rem auto 0;
+  background-color: var(--c-secondary);
+  border-radius: 99px;
+}
+
+.section__lead { color: var(--c-text-soft); max-width: 46ch; margin-inline: auto; }
+
+/* 探索路線的導語不換行（小螢幕自動縮字避免被切掉） */
+#journey .section__lead {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(0.72rem, 3.2vw, 1rem);
+}
+
+/* ============================================================
+   Feature rows — 探索路線（左右交錯）
+   ============================================================ */
+.features { display: flex; flex-direction: column; gap: 3.5rem; position: relative; z-index: 2; }
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.feature__media {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-card);
+  background: linear-gradient(155deg, var(--c-primary-light), var(--c-primary));
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.feature__media:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+
+/* 純圖媒體（無藍色色塊）— 用於 logo 圖 */
+.feature__media--plain {
+  background: none;
+  box-shadow: none;
+  aspect-ratio: auto;
+  overflow: visible;
+}
+.feature__media--plain:hover { box-shadow: none; }
+.feature__img { width: 100%; height: auto; }
+
+.feature__icon { font-size: 5rem; filter: drop-shadow(0 8px 14px rgba(14, 58, 80, 0.25)); }
+
+.feature__num {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1;
+}
+
+/* 大號碼移到文字側、改主色 */
+.feature__num--solo {
+  position: static;
+  display: block;
+  color: var(--c-primary);
+  margin-bottom: 0.25rem;
+}
+
+.feature__body { width: 100%; max-width: 460px; }
+
+.feature__title { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.feature__title-mark { color: var(--c-link); }
+
+.feature__text { color: var(--c-text); margin-bottom: 1.5rem; }
+
+.feature__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--c-link);
+}
+.feature__link::after { content: '→'; transition: transform 0.2s var(--ease); }
+.feature__link:hover::after { transform: translateX(5px); }
+
+/* ============================================================
+   Notes — 旅程須知（柔色面板 + 卡片）
+   ============================================================ */
+.notes { position: relative; }
+.notes__panel {
+  position: relative;
+  z-index: 2;
+  background-color: var(--c-surface);
+  border-radius: 40px;
+  box-shadow: var(--shadow-soft);
+  padding: 3rem 1.5rem;
+}
+
+.notes__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.note-card {
+  position: relative;
+  background-color: var(--c-bg);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.note-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-soft); }
+
+.note-card__badge {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  background-color: var(--c-secondary);
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(255, 216, 77, 0.5);
+}
+
+.note-card__title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.note-card__text { font-size: 0.95rem; color: var(--c-text-soft); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer { position: relative; margin-top: 4rem; }
+
+.footer__wave { line-height: 0; }
+.footer__wave svg { width: 100%; height: 60px; }
+
+.footer__body {
+  background: linear-gradient(160deg, var(--c-primary) 0%, var(--c-cta) 100%);
+  padding: 2rem 1.25rem 2.5rem;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+.footer__logo {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.footer__logo img { width: 42px; height: 42px; }
+.footer__info { text-align: center; }
+.footer__text { color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; }
+.footer__addr { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-top: 0.2rem; }
+
+@media (min-width: 768px) {
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .footer__info { text-align: right; }
+}
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   Responsive — Tablet & up
+   ============================================================ */
+@media (min-width: 768px) {
+  .navbar__links { display: flex; }
+  .navbar__toggle { display: none; }
+  .navbar__overlay { display: none; }
+
+  .navbar__logo { font-size: 1.25rem; }
+  .navbar__logo-img { width: 36px; height: 36px; }
+
+  .hero { padding-block: 4.5rem 7rem; }
+  .hero__inner {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .hero__actions { justify-content: flex-start; }
+  .hero__copy { flex: 0 1 auto; margin-inline: 0; }
+  .hero__visual { width: min(52vw, 600px); flex-shrink: 0; }
+
+  .feature { flex-direction: row; justify-content: space-between; gap: 3rem; }
+  .feature--reverse { flex-direction: row-reverse; }
+  .feature__media { flex: 1; }
+  .feature__body { flex: 1; }
+
+  .notes__panel { padding: 3.5rem 3rem; }
+  .notes__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  .hero__title { font-size: 3rem; }
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
