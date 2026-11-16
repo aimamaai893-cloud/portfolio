@@ -147,7 +147,7 @@ dialog .b{padding:20px}
     <small>PRODUCT DESIGNER / PRODUCT OWNER</small>
     <h1>用商業思考與 AI 工作流，<br>把複雜需求變成<span class="dot">好用</span>的產品</h1>
   </div>
-  <div class="head" id="pixarHead" role="img" aria-label="Laly 的互動大頭：眼睛會跟著游標，點一下會眨眼">
+  <div class="head" id="pixarHead" role="img" aria-label="Laly 的互動大頭：眼珠會跟著游標移動">
     <img class="head-base" src="assets/pixar-base.webp" alt="">
     <div class="eye eye-l">
       <img class="sclera" src="assets/pixar-sclera-l.png" alt="">
@@ -168,7 +168,7 @@ dialog .b{padding:20px}
 <section id="about"><div class="wrap">
   <div class="hd"><h2>關於 Laly<span class="dot">.</span></h2><span>ABOUT</span></div>
   <div class="about-grid"><div class="photo"><img src="assets/laly-about.webp" alt="Laly Chang"></div>
-  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積軟體科技、品牌產業的經驗。現職外商科技公司擔任設計師近三年，並以實習 Product Owner 身分負責企業內部管理系統：負責與客戶確認需求範圍、主持 USM 工作坊，以敏捷開發方式帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於品牌設計、AI 自動化工作流、Web UI/UX 與使用者體驗。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p></div>
+  <p style="max-width:760px;color:var(--mute)">Hi，我是 Laly，擁有超過六年跨領域設計經驗的 Product Designer，負責 B2B、B2C 數位產品設計，累積軟體科技、品牌產業的經驗。現職外商科技公司擔任設計師近三年，並以實習 Product Owner 身分負責企業內部管理系統：負責與客戶確認需求範圍、主持 USM 工作坊，以敏捷開發方式帶領 4 位開發實習生，與 SM 及 Tech Coach 協作。專注於 B2B SaaS 產品設計與設計系統，並以 AI 自動化工作流提升設計與協作效率。曾與成大產學等大專院校及專業社群合作講課、舉辦設計工作坊，致力於推動設計、品牌與產業之間的連結。</p></div>
 </div></section>
 
 <section id="exp" class="alt"><div class="wrap">
@@ -223,6 +223,7 @@ const P=[
  {c:"Design System",t:"Nami Design System",i:"Nami_Design_system",l:["Components 元件","Styles 樣式"],"page":"works/nami-design-system.html"},
  {"c": "企業網站/APP", "t": "TRANSFER 數位化交易平台", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/89d572160006847.64002efdc28a7-1920w.jpg", "l": ["數位化交易平台", "網站設計"], "page": "works/transfer.html"},
  {"c": "企業網站/APP", "t": "多維度國家空間資訊服務平臺｜內政部國土測繪中心", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/1b8487160006847.6403147fdba53+%281%29-1920w.jpg", "l": ["內政部國土測繪中心", "網站設計"], "page": "works/multidim.html"},
+ {"c": "企業網站/APP", "t": "Join It ! 線上票券與行銷平台", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/ae6eb3160006847.64031611a10f1-427b3244-1920w.jpg", "l": ["電商平台網站設計", "UI Guideline 設計規範", "Wireframe 線框規劃"], "page": "works/joinit.html"},
  {"c": "3D 建模設計 / 渲染", "t": "美容 3D 模擬立體圖｜Heiwei", "img": "https://lirp.cdn-website.com/4d17563d/dms3rep/multi/opt/LINE_ALBUM_2023818_250907_1-1920w.jpg", "l": ["美容產品 3D 建模", "立體模擬圖渲染"], "page": "works/heiwei-3d.html"},
  {"c": "3D 建模設計 / 渲染", "t": "企業 3D 客製化公仔｜Titansoft", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E6%88%AA%E5%9C%96+2025-09-07+%E6%99%9A%E4%B8%8A11.24.07-1920w.png", "l": ["企業客製化公仔", "3D 建模與渲染"], "page": "works/titansoft-3d.html"},
  {"c": "3D 建模設計 / 渲染", "t": "低面數 3D 模型｜農業部鳳山熱帶園區試驗所", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/%E4%BD%9C%E5%93%81%E9%9B%86-551a99f6-1920w.jpg", "l": ["低面數 3D 模型設計"], "page": "works/lowpoly-3d.html"},
@@ -245,15 +246,14 @@ const _d=draw;draw=function(){_d();if(!$("grid").children.length)$("grid").inner
 draw();
 </script>
 <script>
-/* Pixar 互動大頭：眼白與睫毛固定、只有眼珠在眼白內滑動（aperture 遮罩裁切，絕不離開眼白）；
-   眨眼 = 整組眼睛 scaleY 壓扁，露出底圖的閉眼線；點頭 = 眨眼 + 傾斜；
+/* Pixar 互動大頭：只有眼珠在眼白內滑動（aperture 遮罩裁切，絕不離開眼白）；
+   眼白與睫毛完全固定、不眨眼；點一下 = 頭傾斜換邊；
    頭跟著游標平滑傾斜；尊重 prefers-reduced-motion。無圖片切換、無 debounce。 */
 (function(){
   var head=document.getElementById('pixarHead');
   if(!head)return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var irises=[].slice.call(head.querySelectorAll('.iris'));
-  var eyes=[].slice.call(head.querySelectorAll('.eye'));
   var tx=0,ty=0,cx=0,cy=0,ttx=0,tty=0,ctx=0,cty=0;
   var scale=1;
   function measure(){scale=head.getBoundingClientRect().width/1000}
@@ -270,15 +270,7 @@ draw();
   }
   window.addEventListener('pointermove',onMove,{passive:true});
   document.addEventListener('pointerleave',function(){tx=0;ty=0;ttx=0;tty=0});
-  function blink(){
-    eyes.forEach(function(g){g.style.transform='scaleY(.08)'});
-    setTimeout(function(){eyes.forEach(function(g){g.style.transform=''})},90);
-  }
-  (function schedule(){
-    setTimeout(function(){blink();schedule()},2500+Math.random()*2500);
-  })();
   head.addEventListener('click',function(){
-    blink();
     ttx=ttx>=0?-3:3;
     setTimeout(function(){ttx=0},350);
   });
