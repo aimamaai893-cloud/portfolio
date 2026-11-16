@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TWSC 新人入職訓練計畫 — 探索東藍，認識團隊、學習路徑與工作文化">
+  <meta property="og:title" content="探索東藍 — 新人入職訓練計畫">
+  <meta property="og:description" content="TWSC 新進同仁的入職旅程指南，以城市探索的方式認識團隊與產品">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/twsc-favicon.svg">
+  <title>首頁 - TWSC 新人入職訓練計畫</title>
+  <link rel="stylesheet" href="assets/css/welcome.css">
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" aria-label="主要導覽">
+    <div class="navbar__container">
+      <a href="welcome.html" class="navbar__logo">
+        <img src="assets/images/twsc-logo.svg" alt="" class="navbar__logo-img">
+        TWSC 新人入職訓練計畫
+      </a>
+
+      <ul class="navbar__links">
+        <li><a href="welcome.html" class="navbar__link">首頁</a></li>
+        <li><a href="team.html" class="navbar__link">團隊成員</a></li>
+        <li><a href="learning.html" class="navbar__link">學習航線</a></li>
+        <li><a href="culture.html" class="navbar__link">船隊文化</a></li>
+      </ul>
+
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="開啟選單">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar__overlay" id="mobile-menu" aria-hidden="true">
+      <a href="welcome.html" class="navbar__overlay-link">首頁</a>
+      <a href="team.html" class="navbar__overlay-link">團隊成員</a>
+      <a href="learning.html" class="navbar__overlay-link">學習航線</a>
+      <a href="culture.html" class="navbar__overlay-link">船隊文化</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <header class="hero" aria-labelledby="hero-heading">
+      <span class="blob blob--yellow float" style="width:120px;height:120px;top:14%;left:6%;" aria-hidden="true"></span>
+      <span class="blob blob--blue float float--slow" style="width:180px;height:180px;bottom:8%;right:4%;" aria-hidden="true"></span>
+      <span class="dots float--alt" style="top:22%;right:12%;" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </span>
+
+      <div class="shell hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-heading">歡迎登船，新夥伴！</h1>
+          <p class="hero__text">
+            你已正式加入我們的船隊，準備展開一段學習旅行。這裡有熱情的團隊、多元的學習路徑，還有獨特的工作文化等你探索，這份指南會帶你認識每個角落，快速融入大家庭！
+          </p>
+          <div class="hero__actions">
+            <a href="#journey" class="btn btn--primary">開始探索旅程</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <span class="hero__sea hero__sea--back">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 50 q150 -46 300 0 t300 0 t300 0 t300 0 L1200 120 L0 120 Z" fill="#59C3F0" opacity="0.5"/>
+            </svg>
+          </span>
+          <img src="assets/images/seal_boat.svg" alt="" class="hero__logo float float--slow">
+          <span class="hero__sea hero__sea--front">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 60 q150 -44 300 0 t300 0 t300 0 t300 0 L1200 120 L0 120 Z" fill="#78D4F5" opacity="0.85"/>
+              <path d="M0 80 q150 -34 300 0 t300 0 t300 0 t300 0 L1200 120 L0 120 Z" fill="#EAF6FF" opacity="0.9"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 40 C240 90 480 0 720 30 C960 60 1200 90 1440 40 L1440 80 L0 80 Z" fill="#F7FCFF"/>
+        </svg>
+      </div>
+    </header>
+
+    <!-- ===== 探索路線 (alternating feature rows) ===== -->
+    <section class="section" id="journey" aria-labelledby="journey-heading">
+      <span class="blob blob--yellow float" style="width:90px;height:90px;top:4%;right:8%;opacity:.5;" aria-hidden="true"></span>
+
+      <div class="shell">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Explore</span>
+          <h2 class="section__title" id="journey-heading">探索路線</h2>
+          <p class="section__lead">你的入職旅程從這裡開始——選擇一個方向，探索這座城市的不同角落。</p>
+        </div>
+
+        <div class="features">
+          <!-- 01 團隊 -->
+          <article class="feature reveal">
+            <a class="feature__media feature__media--plain" href="team.html" aria-label="前往團隊成員頁面">
+              <img src="assets/images/twsc-logo.svg" alt="" class="feature__img float float--slow">
+            </a>
+            <div class="feature__body">
+              <span class="feature__num feature__num--solo">01</span>
+              <h3 class="feature__title">認識<span class="feature__title-mark">團隊成員</span></h3>
+              <p class="feature__text">認識每一位船員夥伴！了解每位成員的名字與職責與所屬團隊，最後找到屬於你的位置！</p>
+              <a href="team.html" class="feature__link">認識團隊成員</a>
+            </div>
+          </article>
+
+          <!-- 02 學習 -->
+          <article class="feature feature--reverse reveal">
+            <a class="feature__media feature__media--plain" href="learning.html" aria-label="前往學習路徑頁面">
+              <img src="assets/images/learning_route.svg" alt="" class="feature__img float float--slow">
+            </a>
+            <div class="feature__body">
+              <span class="feature__num feature__num--solo">02</span>
+              <h3 class="feature__title">啟航<span class="feature__title-mark">學習航線</span></h3>
+              <p class="feature__text">準備好出航了嗎？這裡有 12 週的訓練時程、課程清單與產品海圖，跟著航線一站一站前進，穩穩累積實力、駛向成長！</p>
+              <a href="learning.html" class="feature__link">查看學習路徑</a>
+            </div>
+          </article>
+
+          <!-- 03 文化 -->
+          <article class="feature reveal">
+            <a class="feature__media feature__media--plain" href="culture.html" aria-label="前往工作文化頁面">
+              <img src="assets/images/fleet_culture.svg" alt="" class="feature__img float float--slow">
+            </a>
+            <div class="feature__body">
+              <span class="feature__num feature__num--solo">03</span>
+              <h3 class="feature__title">認識<span class="feature__title-mark">船隊文化</span></h3>
+              <p class="feature__text">每艘船都有自己的航行默契！了解我們的工作規範、Definition of Done 與 Scrum 節奏，跟上大家的步調，成為可靠的船員！</p>
+              <a href="culture.html" class="feature__link">了解工作文化</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 旅程須知 ===== -->
+    <section class="section notes" aria-labelledby="notes-heading">
+      <span class="blob blob--blue float float--alt" style="width:150px;height:150px;bottom:6%;left:3%;opacity:.4;" aria-hidden="true"></span>
+
+      <div class="shell">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Good to know</span>
+          <h2 class="section__title" id="notes-heading">旅程須知</h2>
+          <p class="section__lead">關於這趟入職旅程，你需要知道的重要資訊。</p>
+        </div>
+
+        <div class="notes__panel reveal">
+          <div class="notes__grid">
+            <article class="note-card">
+              <div class="note-card__badge" aria-hidden="true">📅</div>
+              <h3 class="note-card__title">試用期間</h3>
+              <p class="note-card__text">入職 3 個月（12 週）起，涵蓋課程學習、團隊協作與各項考核。</p>
+            </article>
+
+            <article class="note-card">
+              <div class="note-card__badge" aria-hidden="true">🎯</div>
+              <h3 class="note-card__title">適用對象</h3>
+              <p class="note-card__text">TWSC 新進試用期夥伴，這份起航指南專為你準備。</p>
+            </article>
+
+            <article class="note-card">
+              <div class="note-card__badge" aria-hidden="true">🤝</div>
+              <h3 class="note-card__title">Mentor 陪伴</h3>
+              <p class="note-card__text">每位新人都有專屬 Mentor，協助安排課程、追蹤進度，陪你度過前 3 個月。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 C240 0 480 60 720 35 C960 10 1200 0 1440 30 L1440 60 L0 60 Z" fill="#59C3F0"/>
+      </svg>
+    </div>
+    <div class="footer__body">
+      <div class="footer__container">
+        <span class="footer__brand">
+          <span class="footer__logo"><img src="assets/images/twsc-logo.svg" alt=""></span>
+          TWSC 新人入職訓練計畫
+        </span>
+        <div class="footer__info">
+          <p class="footer__text">讓我們一起航向 All Blue 吧！</p>
+          <p class="footer__addr">停泊地點：高雄市三民區九如一路502號</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(function (e) { e.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('is-visible');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="12 週訓練時程、課程清單與產品資訊 — TWSC 新人訓練計畫">
+  <meta property="og:title" content="學習航線 — 探索東藍">
+  <meta property="og:description" content="12 週訓練時程、課程清單與產品資訊 — TWSC 新人訓練計畫">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/twsc-favicon.svg">
+  <title>學習航線 - TWSC 新人入職訓練計畫</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="主要導覽">
+    <div class="navbar__container">
+      <a href="welcome.html" class="navbar__logo"><img src="assets/images/twsc-logo.svg" alt="" class="navbar__logo-img">TWSC 新人入職訓練計畫</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links">
+        <li><a href="welcome.html" class="navbar__link">首頁</a></li>
+        <li><a href="team.html" class="navbar__link">團隊成員</a></li>
+        <li><a href="learning.html" class="navbar__link">學習航線</a></li>
+        <li><a href="culture.html" class="navbar__link">船隊文化</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="開啟選單">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="navbar__overlay" id="mobile-menu" aria-hidden="true">
+      <a href="welcome.html" class="navbar__overlay-link">首頁</a>
+      <a href="team.html" class="navbar__overlay-link">團隊成員</a>
+      <a href="learning.html" class="navbar__overlay-link">學習航線</a>
+      <a href="culture.html" class="navbar__overlay-link">船隊文化</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Page Header -->
+    <section class="section reveal" aria-labelledby="learning-heading" style="position:relative">
+      <span class="blob blob--blue float float--slow" style="position:absolute;width:140px;height:140px;top:-16px;right:0;z-index:-1;" aria-hidden="true"></span>
+      <div class="section__header">
+        <h1 class="section__title" id="learning-heading">學習航線</h1>
+        <p class="section__subtitle">12 週的訓練時程、課程清單與產品資訊，跟著航線前進！</p>
+      </div>
+
+      <nav class="page-tabs" aria-label="章節快速跳轉">
+        <a href="#timeline-heading" class="page-tab">航線訓練時程</a>
+        <a href="#courses-heading" class="page-tab">課程清單與產品對應</a>
+        <a href="#ska-heading" class="page-tab">Jira 看板追蹤</a>
+        <a href="#levels-heading" class="page-tab">職級期待</a>
+      </nav>
+    </section>
+
+    <!-- Timeline (Task 5.x) -->
+    <section class="section reveal" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="section__title">航線訓練時程</h2>
+      <div id="timeline-section"></div>
+    </section>
+
+    <!-- Course List & Product Map (Task 6.x) -->
+    <section class="section reveal" aria-labelledby="courses-heading">
+      <h2 id="courses-heading" class="section__title">課程清單與產品對應</h2>
+      <div id="courses-section"></div>
+    </section>
+
+    <!-- Jira SKA Progress -->
+    <section class="section reveal" aria-labelledby="ska-heading">
+      <h2 id="ska-heading" class="section__title">Jira 看板追蹤</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--space-lg); line-height: var(--line-height-relaxed);">產品推進皆運用 Jira 看板追蹤；新成員也能透過 SKA Jira 看板，練習掌握自己的學習進度。狀態流程如下：</p>
+      <div class="jira-workflow">
+        <div class="jira-workflow__diagram" role="img" aria-label="Jira 工作流程：To Do、Course In Progress、SKA In Progress、SKA In Review、Done">
+          <div class="jira-workflow__stage jira-workflow__stage--1">
+            <span class="jira-workflow__label">To Do</span>
+          </div>
+          <span class="jira-workflow__arrow" aria-hidden="true">→</span>
+          <div class="jira-workflow__stage jira-workflow__stage--2">
+            <span class="jira-workflow__label">Course In Progress</span>
+          </div>
+          <span class="jira-workflow__arrow" aria-hidden="true">→</span>
+          <div class="jira-workflow__stage jira-workflow__stage--3">
+            <span class="jira-workflow__label">SKA In Progress</span>
+          </div>
+          <span class="jira-workflow__arrow" aria-hidden="true">→</span>
+          <div class="jira-workflow__stage jira-workflow__stage--4">
+            <span class="jira-workflow__label">SKA In Review</span>
+          </div>
+          <span class="jira-workflow__arrow" aria-hidden="true">→</span>
+          <div class="jira-workflow__stage jira-workflow__stage--5">
+            <span class="jira-workflow__label">Done</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: var(--space-lg);">
+        <a href="https://ironman.atlassian.net/jira/software/projects/TNC/boards/3174" target="_blank" rel="noopener" class="btn btn--primary btn--sm">開啟 SKA Jira 看板 ↗</a>
+      </p>
+    </section>
+
+    <!-- Level Expectations (Task 4.2) -->
+    <section class="section reveal" aria-labelledby="levels-heading">
+      <h2 id="levels-heading" class="section__title">職級期待</h2>
+      <div id="level-expectations" class="level-expectations">
+        <details class="level-card level-card--e3-8">
+          <summary class="level-card__summary">
+            <span class="level-card__title">E3/8</span>
+            <span class="level-card__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="level-card__content">
+            <ul class="level-card__list">
+              <li>主動學習發問</li>
+              <li>願意承擔團隊任務</li>
+              <li>系統性思考</li>
+              <li>舉一反三的能力</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="level-card level-card--e3-9">
+          <summary class="level-card__summary">
+            <span class="level-card__title">E3/9</span>
+            <span class="level-card__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="level-card__content">
+            <ul class="level-card__list">
+              <li>能獨立解決例行問題</li>
+              <li>主動提出產品想法</li>
+              <li>提供團隊運作建議</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="level-card level-card--e3-10">
+          <summary class="level-card__summary">
+            <span class="level-card__title">E3/10</span>
+            <span class="level-card__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="level-card__content">
+            <ul class="level-card__list">
+              <li>能提出多種方案並分析</li>
+              <li>展現指導初階成員的潛力</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="level-card level-card--e4-11">
+          <summary class="level-card__summary">
+            <span class="level-card__title">E4/11</span>
+            <span class="level-card__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="level-card__content">
+            <ul class="level-card__list">
+              <li>正向影響初階成員</li>
+              <li>能獨立解決問題</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 C240 0 480 60 720 35 C960 10 1200 0 1440 30 L1440 60 L0 60 Z" fill="#59C3F0"/>
+      </svg>
+    </div>
+    <div class="footer__body">
+      <div class="footer__container">
+        <span class="footer__brand">
+          <span class="footer__logo"><img src="assets/images/twsc-logo.svg" alt=""></span>
+          TWSC 新人入職訓練計畫
+        </span>
+        <div class="footer__info">
+          <p class="footer__text">讓我們一起航向 All Blue 吧！</p>
+          <p class="footer__addr">停泊地點：高雄市三民區九如一路502號</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const TIMELINE = [
+      { week: 1, activities: ['以課程為主', '詳見「課程清單與產品對應」'], milestone: null },
+      { week: 2, activities: ['以課程為主', '詳見「課程清單與產品對應」'], milestone: null },
+      { week: 3, activities: ['第一次 TEST Report', '開始加入團隊開發'], milestone: 'tests' },
+      { week: 4, activities: ['加入團隊開發', '第一次 Monthly Sharing', 'QBQ 閱讀心得', 'DM 1-on-1'], milestone: 'monthly' },
+      { week: 5, activities: ['第二次 TEST Report'], milestone: 'tests' },
+      { week: 6, activities: ['Support 實習 (Pair Support)'], milestone: 'support' },
+      { week: 7, activities: ['第一次正式 Support', '第三次 TEST Report (Domain Check)'], milestone: 'tests' },
+      { week: 8, activities: ['第二次 Monthly Sharing', 'DM 1-on-1'], milestone: 'monthly' },
+      { week: 9, activities: ['第二次正式 Support', '第四次 TEST Report'], milestone: 'tests' },
+      { week: 10, activities: ['第五次 TEST Report (Domain Check)', '討論試用期結果'], milestone: 'tests' },
+      { week: 11, activities: ['第六次 TEST Report (Final)'], milestone: 'final' },
+      { week: 12, activities: [], milestone: null },
+    ];
+
+    const COURSES = [
+      { name: '介紹新人計畫', duration: '1hr', category: 'orientation', lecturer: 'Mentor', week: 1 },
+      { name: '介紹團隊運作', duration: '1hr', category: 'orientation', week: 1 },
+      { name: '安裝新手包', duration: '4hr', category: 'dev-setup', week: 1 },
+      { name: 'Git Basics', duration: '1hr', category: 'dev-tools', week: 1 },
+      { name: 'ASP.NET Web API', duration: '1hr', category: 'dev-tools', week: 1 },
+      { name: 'Hotkey (VIM)', duration: '3hr', category: 'dev-tools', week: 1 },
+      { name: '公司部門介紹', duration: '0.5hr', category: 'orientation', week: 2 },
+      { name: 'Payment Domain Introduction', duration: '1hr', category: 'domain', week: 2 },
+      { name: 'Product and Project Relationship', duration: '1hr', category: 'domain', week: 2 },
+      { name: 'SBO Table Introduce', duration: '1hr', category: 'product', week: 2 },
+      { name: 'Bacchus + QuickSilver Table Introduction', duration: '4hr (2 sessions)', category: 'product', week: 2 },
+      { name: 'Payment Integration', duration: '2hr (2 sessions)', category: 'product', week: 3 },
+      { name: 'TrexDino + TypeORM', duration: '1.5hr', category: 'product', week: 3 },
+      { name: 'TrexDino 運作機制', duration: '2hr', category: 'product', week: 3 },
+      { name: 'New Leo Saiyan', duration: '1hr', category: 'product', week: 4 },
+      { name: 'Call Center Overview', duration: '1hr', category: 'product', week: 4 },
+      { name: 'What NOC Can Do for You', duration: null, category: 'general', week: 4 },
+      { name: 'Support Orientation', duration: '4hr (2 sessions)', category: 'support', week: 4 },
+      { name: 'Incident Management', duration: null, category: 'general', week: 4 },
+      { name: 'B2B Payment Introduction', duration: '3hr', category: 'product', week: 4 },
+      { name: 'B2C Product Overview', duration: '1hr', category: 'product', week: 4 },
+      { name: 'Chatbot', duration: '1hr', category: 'product', week: 4 },
+      { name: 'Crawler', duration: '1hr', category: 'product', week: 4 },
+      { name: 'GeoIP + InfoCenter', duration: '1hr', category: 'product', week: 4 },
+      { name: 'C# (Basics + Intermediate + Advanced)', duration: null, category: 'general', week: 4 },
+    ];
+
+    const PRODUCTS = [
+      { name: 'Payment (Deposit/Withdraw)', icon: '💳' },
+      { name: 'Bacchus', icon: '🏛️' },
+      { name: 'QuickSilver', icon: '⚡' },
+      { name: 'SBO Table', icon: '📋' },
+      { name: 'TrexDino', icon: '🦖' },
+      { name: 'New Leo Saiyan', icon: '🦁' },
+      { name: 'Call Center', icon: '📞' },
+      { name: 'NOC', icon: '🖥️' },
+      { name: 'B2B Payment', icon: '🏢' },
+      { name: 'B2C Products', icon: '🛒' },
+      { name: 'Chatbot', icon: '🤖' },
+      { name: 'Crawler', icon: '🕷️' },
+      { name: 'GeoIP + InfoCenter', icon: 'ℹ️' },
+    ];
+
+    // Milestone icon mapping
+    const MILESTONE_ICONS = {
+      tests: '⭐',
+      monthly: '📅',
+      support: '🤝',
+      final: '🏁'
+    };
+
+    function renderTimelineLegend(container) {
+      const legendEl = document.createElement('div');
+      legendEl.className = 'timeline-legend';
+      legendEl.setAttribute('aria-label', '時程圖示說明');
+
+      const legendItems = [
+        { icon: '●', label: '一般週次', className: 'timeline-legend__item--regular' },
+        { icon: '⭐', label: 'TEST Report', className: 'timeline-legend__item--tests' },
+        { icon: '📅', label: 'Monthly Sharing', className: 'timeline-legend__item--monthly' },
+        { icon: '🤝', label: 'Support', className: 'timeline-legend__item--support' },
+        { icon: '🏁', label: 'Final Report', className: 'timeline-legend__item--final' }
+      ];
+
+      legendItems.forEach(function(item) {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'timeline-legend__item ' + item.className;
+
+        const iconEl = document.createElement('span');
+        iconEl.className = 'timeline-legend__icon';
+        iconEl.setAttribute('aria-hidden', 'true');
+        iconEl.textContent = item.icon;
+
+        const labelEl = document.createElement('span');
+        labelEl.className = 'timeline-legend__label';
+        labelEl.textContent = item.label;
+
+        itemEl.appendChild(iconEl);
+        itemEl.appendChild(labelEl);
+        legendEl.appendChild(itemEl);
+      });
+
+      container.appendChild(legendEl);
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timeline-section');
+      if (!container) return;
+
+      // Create wrapper for positioning arrows
+      const wrapperEl = document.createElement('div');
+      wrapperEl.className = 'timeline-wrapper';
+
+      const timelineEl = document.createElement('div');
+      timelineEl.className = 'timeline';
+      timelineEl.setAttribute('role', 'img');
+      timelineEl.setAttribute('aria-label', '12 週訓練時程路線圖');
+
+      const trackEl = document.createElement('div');
+      trackEl.className = 'timeline__track';
+
+      TIMELINE.forEach(function(item) {
+        const nodeClass = item.milestone
+          ? 'timeline__node timeline__node--' + item.milestone
+          : 'timeline__node';
+
+        const nodeEl = document.createElement('div');
+        nodeEl.className = nodeClass;
+        nodeEl.setAttribute('data-week', item.week);
+
+        // Activities — alternate above (odd) / below (even)
+        const isAbove = item.week % 2 !== 0;
+        const activitiesEl = document.createElement('div');
+        activitiesEl.className = 'timeline__activities timeline__activities--' + (isAbove ? 'above' : 'below');
+
+        item.activities.forEach(function(activity) {
+          const span = document.createElement('span');
+          span.className = 'timeline__activity';
+          span.textContent = activity;
+          activitiesEl.appendChild(span);
+        });
+
+        // Dot
+        const dotEl = document.createElement('div');
+        dotEl.className = 'timeline__dot';
+
+        // Add icon inside dot for milestones
+        if (item.milestone && MILESTONE_ICONS[item.milestone]) {
+          const iconEl = document.createElement('span');
+          iconEl.className = 'timeline__dot-icon';
+          iconEl.setAttribute('aria-hidden', 'true');
+          iconEl.textContent = MILESTONE_ICONS[item.milestone];
+          dotEl.appendChild(iconEl);
+        }
+
+        // Week label
+        const labelEl = document.createElement('div');
+        labelEl.className = 'timeline__week-label';
+        labelEl.textContent = '第 ' + item.week + ' 週';
+
+        // Assemble node: activities above → dot → week label → activities below
+        if (isAbove) {
+          nodeEl.appendChild(activitiesEl);
+          nodeEl.appendChild(dotEl);
+          nodeEl.appendChild(labelEl);
+        } else {
+          nodeEl.appendChild(dotEl);
+          nodeEl.appendChild(labelEl);
+          nodeEl.appendChild(activitiesEl);
+        }
+
+        trackEl.appendChild(nodeEl);
+      });
+
+      timelineEl.appendChild(trackEl);
+
+      // Arrow navigation buttons
+      var leftArrow = document.createElement('button');
+      leftArrow.className = 'timeline-arrow timeline-arrow--left timeline-arrow--hidden';
+      leftArrow.setAttribute('aria-label', '向左捲動時程');
+      leftArrow.innerHTML = '<span class="timeline-arrow__icon" aria-hidden="true"></span>';
+
+      var rightArrow = document.createElement('button');
+      rightArrow.className = 'timeline-arrow timeline-arrow--right';
+      rightArrow.setAttribute('aria-label', '向右捲動時程');
+      rightArrow.innerHTML = '<span class="timeline-arrow__icon" aria-hidden="true"></span>';
+
+      wrapperEl.appendChild(leftArrow);
+      wrapperEl.appendChild(timelineEl);
+      wrapperEl.appendChild(rightArrow);
+      container.appendChild(wrapperEl);
+
+      // Arrow scroll logic
+      var scrollAmount = 300;
+
+      function updateArrowVisibility() {
+        var scrollLeft = timelineEl.scrollLeft;
+        var maxScroll = timelineEl.scrollWidth - timelineEl.clientWidth;
+
+        if (scrollLeft <= 0) {
+          leftArrow.classList.add('timeline-arrow--hidden');
+        } else {
+          leftArrow.classList.remove('timeline-arrow--hidden');
+        }
+
+        if (scrollLeft >= maxScroll - 1) {
+          rightArrow.classList.add('timeline-arrow--hidden');
+        } else {
+          rightArrow.classList.remove('timeline-arrow--hidden');
+        }
+      }
+
+      leftArrow.addEventListener('click', function() {
+        timelineEl.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      rightArrow.addEventListener('click', function() {
+        timelineEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      timelineEl.addEventListener('scroll', updateArrowVisibility);
+
+      // Initial check after layout renders
+      setTimeout(updateArrowVisibility, 100);
+      window.addEventListener('resize', updateArrowVisibility);
+
+      // Add legend below the timeline
+      renderTimelineLegend(container);
+
+      // Notes：進階課程 + 里程碑說明（同一區塊）
+      var notes = document.createElement('div');
+      notes.className = 'timeline-notes';
+      notes.setAttribute('role', 'note');
+      notes.innerHTML =
+        '<p class="timeline-note"><span class="timeline-note__icon" aria-hidden="true">⭐</span><span><strong>TEST Report：</strong>什麼是 Test Report？<a href="https://titansoft.com/tw/agile_toolkits/TEST-REPORT" target="_blank" rel="noopener">請看介紹</a></span></p>' +
+        '<p class="timeline-note"><span class="timeline-note__icon" aria-hidden="true">📅</span><span><strong>Monthly Sharing：</strong>由新人於試用期間，每個月把學到的事情、踩過的坑等分享給部門。</span></p>' +
+        '<p class="timeline-note"><span class="timeline-note__icon" aria-hidden="true">💡</span><span>進階課程將在第 4-6 個月（試用期後）提供，包含更深入的技術與產品訓練。</span></p>';
+      container.appendChild(notes);
+    }
+
+    const CATEGORY_LABELS = {
+      'orientation': '入門',
+      'dev-setup': '環境設置',
+      'dev-tools': '開發工具',
+      'domain': '領域知識',
+      'product': '產品',
+      'support': 'Support',
+      'general': '通識'
+    };
+
+    function renderCourses() {
+      var container = document.getElementById('courses-section');
+      if (!container) return;
+
+      var WEEK_LABELS = { 1: '第 1 週', 2: '第 2 週', 3: '第 3 週', 4: '4 週後（進階課程）' };
+
+      var listEl = document.createElement('div');
+      listEl.className = 'course-list';
+
+      COURSES.slice().sort(function(a, b) { return a.week - b.week; }).forEach(function(course) {
+        var itemEl = document.createElement('div');
+        itemEl.className = 'course-item';
+
+        var infoEl = document.createElement('div');
+        infoEl.className = 'course-item__info';
+
+        var weekEl = document.createElement('span');
+        weekEl.className = 'course-item__week course-item__week--w' + course.week;
+        weekEl.textContent = WEEK_LABELS[course.week] || ('第 ' + course.week + ' 週');
+
+        var nameEl = document.createElement('span');
+        nameEl.className = 'course-item__name';
+        nameEl.textContent = course.name;
+
+        var durationEl = document.createElement('span');
+        durationEl.className = 'course-item__duration';
+        durationEl.textContent = course.duration || '時間未定';
+
+        infoEl.appendChild(weekEl);
+        infoEl.appendChild(nameEl);
+        infoEl.appendChild(durationEl);
+
+        var badgeEl = document.createElement('span');
+        badgeEl.className = 'course-item__badge course-item__badge--' + course.category;
+        badgeEl.textContent = CATEGORY_LABELS[course.category] || course.category;
+
+        itemEl.appendChild(infoEl);
+        itemEl.appendChild(badgeEl);
+        listEl.appendChild(itemEl);
+      });
+
+      container.appendChild(listEl);
+    }
+
+    const PRODUCT_DESCRIPTIONS = {
+      'Payment (Deposit/Withdraw)': '存款與取款系統',
+      'Bacchus': '紅利與獎金系統',
+      'QuickSilver': '快速交易引擎',
+      'SBO Table': '體育博彩表格',
+      'TrexDino': '後端核心服務',
+      'New Leo Saiyan': '新一代前端平台',
+      'Call Center': '客服中心系統',
+      'NOC': '網路營運中心',
+      'B2B Payment': '企業間支付',
+      'B2C Products': '面向用戶產品',
+      'Chatbot': '智能客服機器人',
+      'Crawler': '資料爬蟲系統',
+      'GeoIP + InfoCenter': '地理定位與資訊中心'
+    };
+
+    function renderProducts() {
+      var container = document.getElementById('courses-section');
+      if (!container) return;
+
+      var mapEl = document.createElement('div');
+      mapEl.className = 'product-map';
+      mapEl.id = 'product-map';
+
+      var titleEl = document.createElement('h3');
+      titleEl.className = 'product-map__title';
+      titleEl.textContent = '🗺️ 產品地圖';
+      mapEl.appendChild(titleEl);
+
+      var gridEl = document.createElement('div');
+      gridEl.className = 'grid grid--3col';
+
+      PRODUCTS.forEach(function(product) {
+        var cardEl = document.createElement('div');
+        cardEl.className = 'product-card card card--compact';
+
+        var iconEl = document.createElement('div');
+        iconEl.className = 'card__icon';
+        iconEl.textContent = product.icon;
+
+        var nameEl = document.createElement('h4');
+        nameEl.className = 'card__title';
+        nameEl.textContent = product.name;
+
+        var descEl = document.createElement('p');
+        descEl.className = 'card__body';
+        descEl.textContent = PRODUCT_DESCRIPTIONS[product.name] || '';
+
+        cardEl.appendChild(iconEl);
+        cardEl.appendChild(nameEl);
+        cardEl.appendChild(descEl);
+        gridEl.appendChild(cardEl);
+      });
+
+      mapEl.appendChild(gridEl);
+      container.appendChild(mapEl);
+    }
+
+    function renderCourseMappingPlaceholder() {
+      var container = document.getElementById('courses-section');
+      if (!container) return;
+
+      var placeholderEl = document.createElement('div');
+      placeholderEl.className = 'info-note';
+      placeholderEl.setAttribute('role', 'note');
+      placeholderEl.setAttribute('aria-label', '課程與產品對應說明');
+
+      var iconEl = document.createElement('span');
+      iconEl.className = 'info-note__icon';
+      iconEl.setAttribute('aria-hidden', 'true');
+      iconEl.textContent = '📝';
+
+      var textEl = document.createElement('p');
+      textEl.className = 'info-note__text';
+      textEl.textContent = '課程與產品的詳細對應關係圖正在準備中，後續將以視覺化方式呈現課程與產品之間的連結。';
+
+      placeholderEl.appendChild(iconEl);
+      placeholderEl.appendChild(textEl);
+      container.appendChild(placeholderEl);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderTimeline();
+      renderCourses();
+      renderProducts();
+      renderCourseMappingPlaceholder();
+    });
+  </script>
+  <script src="assets/js/nav.js" defer></script>
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(function (e) { e.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('is-visible');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="認識東藍四支團隊 — Manta、Mola、Eels、Otter 的夥伴們">
+  <meta property="og:title" content="團隊介紹 — 探索東藍">
+  <meta property="og:description" content="認識東藍四支團隊 — Manta、Mola、Eels、Otter 的夥伴們">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/twsc-favicon.svg">
+  <title>團隊成員 - TWSC 新人入職訓練計畫</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="主要導覽">
+    <div class="navbar__container">
+      <a href="welcome.html" class="navbar__logo"><img src="assets/images/twsc-logo.svg" alt="" class="navbar__logo-img">TWSC 新人入職訓練計畫</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links">
+        <li><a href="welcome.html" class="navbar__link">首頁</a></li>
+        <li><a href="team.html" class="navbar__link">團隊成員</a></li>
+        <li><a href="learning.html" class="navbar__link">學習航線</a></li>
+        <li><a href="culture.html" class="navbar__link">船隊文化</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="開啟選單">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="navbar__overlay" id="mobile-menu" aria-hidden="true">
+      <a href="welcome.html" class="navbar__overlay-link">首頁</a>
+      <a href="team.html" class="navbar__overlay-link">團隊成員</a>
+      <a href="learning.html" class="navbar__overlay-link">學習航線</a>
+      <a href="culture.html" class="navbar__overlay-link">船隊文化</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Section Header -->
+    <section class="section reveal" aria-labelledby="team-heading" style="position:relative">
+      <span class="blob blob--yellow float" style="position:absolute;width:120px;height:120px;top:-12px;right:0;z-index:-1;" aria-hidden="true"></span>
+      <div class="section__header">
+        <h1 class="section__title" id="team-heading">認識團隊成員</h1>
+        <p class="section__subtitle section__subtitle--nowrap">認識每一位船員夥伴！了解每位成員的名字與職責與所屬團隊，最後找到屬於你的位置！</p>
+      </div>
+
+      <!-- Placeholder for team content (populated by subsequent tasks) -->
+      <div id="team-content"></div>
+    </section>
+
+    <!-- Seating Map -->
+    <section class="section reveal" aria-labelledby="map-heading">
+      <div class="section__header">
+        <h2 class="section__title" id="map-heading">船艙座位圖</h2>
+        <p class="section__subtitle">各團隊有自己的 Room，Seal 與 PO 則不固定穿梭在各處～</p>
+      </div>
+
+      <div class="office" role="img" aria-label="團隊座位分布圖：右側由上而下為 Garden eel、Molamola、Manta、Otter，左下為 Support room（兩位 Support），Seal 與 PO 成員散佈其間">
+        <div class="office__room office__room--eel" style="--team-color:#E0A500">
+          <img class="office__room-icon" src="assets/images/eel.svg" alt="">
+          <span class="office__room-name">Garden eel</span>
+        </div>
+        <div class="office__room office__room--mola" style="--team-color:#1490A6">
+          <img class="office__room-icon" src="assets/images/mola.svg" alt="">
+          <span class="office__room-name">Molamola</span>
+        </div>
+        <div class="office__room office__room--manta" style="--team-color:#1E6BA8">
+          <img class="office__room-icon" src="assets/images/manta.svg" alt="">
+          <span class="office__room-name">Manta</span>
+        </div>
+        <div class="office__room office__room--otter" style="--team-color:#C99000">
+          <img class="office__room-icon" src="assets/images/otter.svg" alt="">
+          <span class="office__room-name">Otter</span>
+        </div>
+        <div class="office__room office__room--support" style="--team-color:#5C7C92">
+          <span class="office__room-emoji" aria-hidden="true">🛟</span>
+          <span class="office__room-name">Support</span>
+          <span class="office__seats" aria-hidden="true"><i class="office__seat"></i><i class="office__seat"></i></span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 C240 0 480 60 720 35 C960 10 1200 0 1440 30 L1440 60 L0 60 Z" fill="#59C3F0"/>
+      </svg>
+    </div>
+    <div class="footer__body">
+      <div class="footer__container">
+        <span class="footer__brand">
+          <span class="footer__logo"><img src="assets/images/twsc-logo.svg" alt=""></span>
+          TWSC 新人入職訓練計畫
+        </span>
+        <div class="footer__info">
+          <p class="footer__text">讓我們一起航向 All Blue 吧！</p>
+          <p class="footer__addr">停泊地點：高雄市三民區九如一路502號</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const TEAMS = {
+      seal: {
+        name: 'Seal',
+        color: '#103A5E',
+        icon: 'assets/images/seal.svg',
+        members: [
+          { name: 'Cloud', gender: 'm', title: 'Department Manager', abbr: 'DM' },
+          { name: 'Sally', gender: 'f', title: 'Scrum Master', abbr: 'SM' },
+          { name: 'Chloe', gender: 'f', title: 'Executive Assistant', abbr: 'EA' }
+        ]
+      },
+      twscPos: {
+        name: 'TWSC POs',
+        color: '#2E8BC0',
+        icon: 'assets/images/po.svg',
+        members: [
+          { name: 'Kitty', gender: 'f', title: 'Product Owner', abbr: 'PO' },
+          { name: 'Tim', gender: 'm', title: 'Product Owner', abbr: 'PO' }
+        ]
+      },
+      manta: {
+        name: 'Manta',
+        color: '#1E6BA8',
+        icon: 'assets/images/manta.svg',
+        members: [
+          { name: 'Angela', gender: 'f', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Bear', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Audrey', gender: 'f', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Tony', gender: 'm', title: 'Product Developer', abbr: 'PD' }
+        ]
+      },
+      mola: {
+        name: 'Molamola',
+        color: '#1490A6',
+        icon: 'assets/images/mola.svg',
+        members: [
+          { name: 'Sherry', gender: 'f', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Jack', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Larson', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Hannah', gender: 'f', title: 'Product Developer', abbr: 'PD' }
+        ]
+      },
+      eels: {
+        name: 'Garden eel',
+        color: '#E0A500',
+        icon: 'assets/images/eel.svg',
+        members: [
+          { name: 'Allen', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Erwin', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Alex', gender: 'm', title: 'Product Developer', abbr: 'PD' }
+        ],
+        subgroups: [
+          {
+            name: 'Buttercup (Jellyfish)',
+            icon: '🪼',
+            members: [
+              { name: 'Windy', gender: 'f', title: 'Product Designer', abbr: '' },
+              { name: 'Laly', gender: 'f', title: 'Product Designer', abbr: '' }
+            ]
+          }
+        ]
+      },
+      otter: {
+        name: 'Otter',
+        color: '#C99000',
+        icon: 'assets/images/otter.svg',
+        members: [
+          { name: 'Kyo', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Keima', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Vern', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Andy', gender: 'm', title: 'Product Developer', abbr: 'PD' },
+          { name: 'Pan', gender: 'f', title: 'Product Developer', abbr: 'PD' }
+        ]
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const teamContent = document.getElementById('team-content');
+
+      function avatarUrl(member) {
+        var url = 'https://api.dicebear.com/7.x/adventurer/svg?seed=' + encodeURIComponent(member.name)
+          + '&skinColor=f2d3b1,ecad80'
+          + '&mouth=variant03,variant04,variant05,variant07,variant16,variant19,variant21,variant24,variant25,variant26'
+          + '&glassesProbability=0'
+          + '&earringsProbability=0'
+          + '&featuresProbability=0'
+          + '&hairProbability=100';
+        if (member.gender === 'f') {
+          url += '&hair=long01,long02,long03,long04,long05,long07,long08,long10,long12,long13,long15,long16,long20,long21,long23,long26';
+        } else if (member.gender === 'm') {
+          url += '&hair=short02,short03,short04,short05,short07,short08,short09,short11,short13,short16';
+        }
+        return url;
+      }
+
+      function makeIcon(iconSrc, extraClass) {
+        if (/\.(svg|png|jpg|webp)$/i.test(iconSrc)) {
+          const img = document.createElement('img');
+          img.className = 'team-group__icon' + (extraClass || '');
+          img.src = iconSrc;
+          img.alt = '';
+          img.loading = 'lazy';
+          return img;
+        }
+        const span = document.createElement('span');
+        span.className = 'team-group__icon team-group__icon--emoji' + (extraClass || '');
+        span.textContent = iconSrc;
+        span.setAttribute('aria-hidden', 'true');
+        return span;
+      }
+
+      function makeMemberCard(member, color) {
+        const memberCard = document.createElement('div');
+        memberCard.className = 'team-card card card--compact';
+        memberCard.style.setProperty('--team-color', color);
+
+        const avatar = document.createElement('img');
+        avatar.className = 'team-card__avatar';
+        avatar.src = avatarUrl(member);
+        avatar.alt = member.name + ' 的頭像';
+        avatar.loading = 'lazy';
+        avatar.width = 80;
+        avatar.height = 80;
+
+        const nameEl = document.createElement('p');
+        nameEl.className = 'team-card__name';
+        nameEl.textContent = member.name;
+
+        const badge = document.createElement('span');
+        badge.className = 'team-card__badge';
+        badge.style.borderColor = color;
+
+        const role = document.createElement('span');
+        role.className = 'team-card__role';
+        role.textContent = member.title;
+        badge.appendChild(role);
+
+        if (member.abbr) {
+          const abbr = document.createElement('span');
+          abbr.className = 'team-card__abbr';
+          abbr.textContent = '(' + member.abbr + ')';
+          badge.appendChild(abbr);
+        }
+
+        memberCard.appendChild(avatar);
+        memberCard.appendChild(nameEl);
+        memberCard.appendChild(badge);
+        return memberCard;
+      }
+
+      function makeMembersGrid(members, color) {
+        const grid = document.createElement('div');
+        grid.className = 'team-group__members grid grid--4col';
+        members.forEach(function(member) {
+          grid.appendChild(makeMemberCard(member, color));
+        });
+        return grid;
+      }
+
+      Object.entries(TEAMS).forEach(function([key, team]) {
+        const article = document.createElement('article');
+        article.className = 'team-group';
+        article.style.setProperty('--team-color', team.color);
+
+        const header = document.createElement('div');
+        header.className = 'team-group__header';
+        header.appendChild(makeIcon(team.icon));
+
+        const name = document.createElement('h2');
+        name.className = 'team-group__name';
+        name.textContent = team.name;
+        header.appendChild(name);
+
+        article.appendChild(header);
+        article.appendChild(makeMembersGrid(team.members, team.color));
+
+        if (team.subgroups) {
+          team.subgroups.forEach(function(sub) {
+            const subHeader = document.createElement('div');
+            subHeader.className = 'team-subgroup__header';
+            subHeader.appendChild(makeIcon(sub.icon, ' team-subgroup__icon'));
+
+            const subName = document.createElement('h3');
+            subName.className = 'team-subgroup__name';
+            subName.textContent = sub.name;
+            subHeader.appendChild(subName);
+
+            article.appendChild(subHeader);
+            article.appendChild(makeMembersGrid(sub.members, team.color));
+          });
+        }
+
+        teamContent.appendChild(article);
+      });
+    });
+  </script>
+  <script src="assets/js/nav.js" defer></script>
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(function (e) { e.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('is-visible');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+</body>
+</html>

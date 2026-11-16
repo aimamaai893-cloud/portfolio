@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="工作規範、Definition of Done 與 Scrum Schedule — TWSC 團隊文化">
+  <meta property="og:title" content="船隊文化 — 探索東藍">
+  <meta property="og:description" content="工作規範、Definition of Done 與 Scrum Schedule — TWSC 團隊文化">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/twsc-favicon.svg">
+  <title>船隊文化 - TWSC 新人入職訓練計畫</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="主要導覽">
+    <div class="navbar__container">
+      <a href="welcome.html" class="navbar__logo"><img src="assets/images/twsc-logo.svg" alt="" class="navbar__logo-img">TWSC 新人入職訓練計畫</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links">
+        <li><a href="welcome.html" class="navbar__link">首頁</a></li>
+        <li><a href="team.html" class="navbar__link">團隊成員</a></li>
+        <li><a href="learning.html" class="navbar__link">學習航線</a></li>
+        <li><a href="culture.html" class="navbar__link">船隊文化</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="開啟選單">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="navbar__overlay" id="mobile-menu" aria-hidden="true">
+      <a href="welcome.html" class="navbar__overlay-link">首頁</a>
+      <a href="team.html" class="navbar__overlay-link">團隊成員</a>
+      <a href="learning.html" class="navbar__overlay-link">學習航線</a>
+      <a href="culture.html" class="navbar__overlay-link">船隊文化</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Page Header -->
+    <section class="section reveal" aria-labelledby="culture-heading" style="position:relative; padding-bottom:0; margin-bottom:0;">
+      <span class="blob blob--yellow float float--alt" style="position:absolute;width:120px;height:120px;top:-12px;left:0;z-index:-1;" aria-hidden="true"></span>
+      <div class="section__header">
+        <h1 class="section__title" id="culture-heading">船隊文化</h1>
+        <p class="section__subtitle">每艘船都有自己的航行默契！了解我們的文化與工作規範，跟上大家的步調，成為可靠的船員！</p>
+      </div>
+    </section>
+
+    <!-- Scrum Schedule (opening info) -->
+    <section class="section section--filled reveal" aria-labelledby="scrum-heading">
+      <h2 id="scrum-heading" class="section__title scrum-title" style="font-size: var(--font-size-xl);">Scrum Schedule (Scrum 行程)</h2>
+      <p style="margin-bottom: var(--space-sm); color: var(--color-text-light); line-height: var(--line-height-relaxed);">一個 Sprint 為期兩週，兩週各有不同的 Scrum 會議安排。</p>
+      <span class="scrum-rule" aria-hidden="true"></span>
+      <div style="overflow-x: auto;">
+        <table class="scrum-table" style="width: 100%; border-collapse: collapse; font-size: var(--font-size-sm); min-width: 600px;">
+          <thead>
+            <tr style="background-color: var(--color-bg);">
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;"></th>
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;">Mon (Support Leave)</th>
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;">Tue</th>
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;">Wed</th>
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;">Thu</th>
+              <th style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); text-align: left;">Fri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); font-weight: bold; vertical-align: top;">Week 1</td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">10:00-12:00</span> <span style="color: var(--color-primary); font-weight: 500;">PBR</span><br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">12:00-13:00</span> Sprint Planning Part I<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00-16:00</span> Sprint Planning Part II
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); font-weight: bold; vertical-align: top;">Week 2</td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">10:00-12:00</span> <span style="color: var(--color-primary); font-weight: 500;">PBR</span><br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">12:00-13:00</span> <span style="color: #B8860B; font-weight: 700;">Design Refinement</span>
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">11:00</span> Support Daily<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00</span> Cross-team Daily
+              </td>
+              <td style="padding: var(--space-sm) 10px; border: 1px solid var(--color-border); vertical-align: top;">
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">10:00-12:00</span> Sprint Review<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">12:00-13:00</span> <span style="color: #B8860B; font-weight: 700;">PD Time</span><br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">14:00-15:30</span> Sprint Retro<br>
+                <span style="background: var(--color-border); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">15:30-16:30</span> Overall Retro
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: var(--space-md); font-size: var(--font-size-sm); color: var(--color-text-light);">TWSC's Scrum Event v2026.06</p>
+    </section>
+
+    <!-- Accordion Content: Working Agreement, DoD (Task 7.2-7.3) -->
+    <section class="section reveal" aria-labelledby="agreements-heading">
+      <h2 id="agreements-heading" class="section__title" style="font-size: var(--font-size-xl);">Cross-team Collaboration</h2>
+      <div id="culture-accordions">
+        <details class="accordion-item">
+          <summary class="accordion-item__summary">
+            <span class="accordion-item__title">Working Agreement (工作協議)</span>
+            <span class="accordion-item__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="accordion-item__content">
+            <p style="margin-bottom: var(--space-lg); font-weight: var(--font-weight-bold); color: var(--color-dark);">Cross-team Working Agreement <span style="font-weight: var(--font-weight-regular); color: var(--color-text-light); font-size: var(--font-size-sm);">· 2026-01-09 TWSC Overall Retro</span></p>
+            <ol class="wa-list">
+              <li class="wa-item"><p class="wa-item__goal">為了降低公車係數和確保品質，我們實施跨 team testing</p></li>
+              <li class="wa-item"><p class="wa-item__goal">為了降低公車係數，我們需要落實 team pair and sync</p></li>
+              <li class="wa-item"><p class="wa-item__goal">為了讓 support 專心處理線上問題，同時避免掉球，team item 交接 or release follow up 應該由 team 執行（team ↔ team／support ↔ support）</p></li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了避免有 business loss</p>
+                <ul class="wa-item__points">
+                  <li>我們要確實測試要上線的 code &amp; feature</li>
+                  <li>IDR／MMK 必須測試 3 個 0 的問題</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了避免資訊落差</p>
+                <ul class="wa-item__points">
+                  <li>handover 可以制定格式讓不同 team member 可以有效交接</li>
+                  <li>看過之後也需要留言告知</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了解決 item deadline 太趕的問題</p>
+                <ul class="wa-item__points">
+                  <li>團隊如果發現無法在預期時程內完成，要提早告知 PO／DM</li>
+                  <li>由 PO／DM 進行時程的溝通協調</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了更好管控 designer 臨時插件問題</p>
+                <ul class="wa-item__points">
+                  <li>PD &amp; designer 可以共同開 item 紀錄內容及結果</li>
+                  <li>由 designer 向 PO 同步</li>
+                  <li>designer or PD 在 slack channel 同步資訊</li>
+                  <li>team 協助開 item 在 daily board</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了避免在設計中同時要與 writer 對齊</p>
+                <ul class="wa-item__points">
+                  <li>design &amp; wording 要先一起溝通和設計，再把結果 sync to PO</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了避免開發中才發現 design flow or wording 有缺，需要 designer or writer 緊急趕工</p>
+                <ul class="wa-item__points">
+                  <li>refine 過的 item 如果超過兩個月都沒進開發，就需要重新順 flow + wording（可考慮重新 refine）</li>
+                </ul>
+              </li>
+              <li class="wa-item">
+                <p class="wa-item__goal">為了讓團隊 &amp; PO co-work 更順利</p>
+                <ul class="wa-item__points">
+                  <li>對單一功能的細節可以跟客戶直接進行確認</li>
+                  <li>跟其他 product line 的合作會需要 PO 協助</li>
+                  <li>鼓勵設計師直接跟客戶聯絡，取得回饋</li>
+                </ul>
+              </li>
+              <li class="wa-item"><p class="wa-item__goal">如果未來沒有可以彈性支援的機動團隊，那就把所有需要做的事都開成 item，跟合作的產品線討論價值和緊急程度，再依照優先順序排進團隊的 backlog</p></li>
+              <li class="wa-item"><p class="wa-item__goal">和 Leo 有關的 item，先找 PIC 才進 PBR or 開 survey item</p></li>
+            </ol>
+
+            <p class="wa-subhead">🚩 各團隊 Working Agreement</p>
+            <div class="wa-teams">
+              <details class="wa-team" style="--team-color:#1E6BA8">
+                <summary class="wa-team__summary">
+                  <span class="wa-team__title"><img src="assets/images/manta.svg" alt="" class="wa-team-icon">Manta</span>
+                  <span class="wa-team__meta">
+                    <span class="wa-team__ver">v20260112</span>
+                    <span class="wa-team__chevron" aria-hidden="true"></span>
+                  </span>
+                </summary>
+                <div class="wa-team__content">
+                  <div class="wa-doc">
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🕚 Time</h4>
+                      <ul class="wa-doc__list">
+                        <li>Manta time：14:00 - 17:00</li>
+                        <li>Daily：11:00（after Support Daily）</li>
+                        <li>Handover：第一個下班的人要提醒團隊貼 handover 到 channel</li>
+                        <li>有會議可以優先 book 10:00 - 11:00 的時間</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">💻 Dev agreements</h4>
+                      <ul class="wa-doc__list">
+                        <li>use digital scrum board</li>
+                        <li>Sprint Goal 貼在 handover title</li>
+                        <li>Task 要盡量拆成 E2E</li>
+                      </ul>
+
+                      <p class="wa-doc__subtitle">SP2</p>
+                      <ul class="wa-doc__list">
+                        <li>Define the API detail and Table format.</li>
+                        <li>Define toggle／branch (feat/TWSC-xxxx) at first</li>
+                        <li>Sync result to PO after SP2</li>
+                      </ul>
+
+                      <p class="wa-doc__subtitle">開發過程</p>
+                      <ul class="wa-doc__list">
+                        <li>Core logic need pair with「*」sign on task</li>
+                        <li>Add prod data need to be 4 eyes</li>
+                        <li>下班前把做好的 commit 都推上去，並測試確保主要流程正常或有 toggle／branch 保護</li>
+                        <li>Refactor 要在隨時可停的範圍</li>
+                      </ul>
+
+                      <p class="wa-doc__subtitle">Code review</p>
+                      <ul class="wa-doc__list">
+                        <li>Daily 後 code review</li>
+                        <li>Release 前 code review</li>
+                      </ul>
+
+                      <p class="wa-doc__subtitle">Sprint Review</p>
+                      <ul class="wa-doc__list">
+                        <li>Review 時多分享 monitor item 的情況</li>
+                        <li>Review 前一天下午前準備 review document &amp; 寫好擺攤資訊</li>
+                        <li>跨部門／產品線合作的 item 讓至少 2 人以上和相關團隊一起 PBR，避免 bus factor
+                          <ul>
+                            <li>可以視情況確認是否需要全部團隊一起去</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🌟 Team cultures</h4>
+                      <ul class="wa-doc__list">
+                        <li>當有人發起討論時，team 要給予回應
+                          <ul>
+                            <li>example：想要 code review 就直接發起</li>
+                          </ul>
+                        </li>
+                        <li>將各種會議的 action 放在 slack channel 的 canvas 以供提醒
+                          <ul>
+                            <li>ex：double link、overall retro、team retro…等</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details class="wa-team" style="--team-color:#1490A6">
+                <summary class="wa-team__summary">
+                  <span class="wa-team__title"><img src="assets/images/mola.svg" alt="" class="wa-team-icon">Mola</span>
+                  <span class="wa-team__meta">
+                    <span class="wa-team__ver">v20260112</span>
+                    <span class="wa-team__chevron" aria-hidden="true"></span>
+                  </span>
+                </summary>
+                <div class="wa-team__content">
+                  <div class="wa-doc">
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🕚 上班時間</h4>
+                      <ul class="wa-doc__list">
+                        <li>日常上班時間為 11:00 ~ 18:00（19:00）。</li>
+                        <li>若遇到 issue，會加班處理。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">☀️ After Daily</h4>
+                      <ul class="wa-doc__list">
+                        <li>檢查若沒有與其他專案有相依性，就應該要 release。</li>
+                        <li>進行 code review。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">👥 Pair</h4>
+                      <ul class="wa-doc__list">
+                        <li>在開 task 時決定是否一定要 pair（must）。</li>
+                        <li>若為 must pair 的 task，會加上標記「*」。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔍 Code Review</h4>
+                      <ul class="wa-doc__list">
+                        <li>至少要有 1 位事主（寫 code 的人）與 1 位公正第三方（沒有一起 pair 的人）共同進行 code review。</li>
+                        <li>要 release 時，一定要先完成 code review。</li>
+                        <li>若說明不清楚，要退件處理。
+                          <ul>
+                            <li>例如：AI 寫的 code，但開發者無法清楚解釋其邏輯。</li>
+                          </ul>
+                        </li>
+                        <li>Code review 時機：
+                          <ul>
+                            <li>daily 結束後。</li>
+                            <li>累積 ≥ 4 張 task 時。</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🧪 品質與測試</h4>
+                      <ul class="wa-doc__list">
+                        <li>Focus on item 的品質，落實「有邏輯就有測試」。</li>
+                        <li>Review 時要分享 monitor（監控）的情況。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">⏰ Mola Time</h4>
+                      <ul class="wa-doc__list">
+                        <li>保留 Mola time：14:00 ~ 17:00。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📅 請假與會議紀錄</h4>
+                      <ul class="wa-doc__list">
+                        <li>請假時需在 calendar 上註記。</li>
+                        <li>開會或請假時，要主動通知其他成員。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">👀 資料異動（4 eyes 原則）</h4>
+                      <ul class="wa-doc__list">
+                        <li>新增資料（Add data）時，需要「4 eyes」確認。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📝 Planning Part 2</h4>
+                      <ul class="wa-doc__list">
+                        <li>Part 2 需要落實相關邏輯與關係，例如：
+                          <ul>
+                            <li>Project Name</li>
+                            <li>Function Name(包含 parameters)</li>
+                          </ul>
+                        </li>
+                        <li>Part 2 的詳細資訊可以記錄在白板或電子版上：
+                          <ul>
+                            <li>要將 task 實際要做的內容列出來。</li>
+                            <li>排出各 task 的 priority（優先順序）。</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🤝 跨團隊合作</h4>
+                      <ul class="wa-doc__list">
+                        <li>跨部門／跨團隊合作前，需先進行簡易 domain 交流。</li>
+                        <li>雙方先各自提出 solution，並互相了解後，再一起調整 solution 方案。</li>
+                        <li>會議以整個 team 優先參與；若人力不足，再由代表參加。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔄 Handover 注意事項</h4>
+                      <ul class="wa-doc__list">
+                        <li>handover 時要先 sync 隔天誰會不在，避免沒有交接到。</li>
+                        <li>交接內容需完整紀錄在各自的 task 中。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🚀 Release Plan（有相依功能）</h4>
+                      <ul class="wa-doc__list">
+                        <li>有相依的功能要 release 時，需先列出 release plan。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📄 線上文件管理</h4>
+                      <ul class="wa-doc__list">
+                        <li>線上版文件下載後要留紀錄。</li>
+                        <li>文件放在 Domain Document 中。</li>
+                        <li>若 Provider 頻繁修改文件，請通知 PO。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔐 BO 帳號與敏感資訊</h4>
+                      <ul class="wa-doc__list">
+                        <li>將 BO 帳號等敏感資訊透過 PMS 加密後，放到 Domain Document。</li>
+                        <li>Owner：@Larson Gao</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🌳 Master 分支狀態</h4>
+                      <ul class="wa-doc__list">
+                        <li>確保 master 隨時可被 release。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">⚙️ GlobalSetting／SP 設定</h4>
+                      <ul class="wa-doc__list">
+                        <li>新增 GlobalSetting 或 SP 時，要在 handover 中記錄其 release 狀態。</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📋 Handover</h4>
+                      <ul class="wa-doc__list">
+                        <li>handover 時間為 17:30。</li>
+                        <li>Project、GlobalSetting、SP 的狀態。</li>
+                        <li>各 item 的 status（今天實際做了哪些內容）。</li>
+                        <li>遇到的困難、瓶頸與學習。</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details class="wa-team" style="--team-color:#E0A500">
+                <summary class="wa-team__summary">
+                  <span class="wa-team__title"><img src="assets/images/eel.svg" alt="" class="wa-team-icon">Garden eel</span>
+                  <span class="wa-team__meta">
+                    <span class="wa-team__ver">v20260112</span>
+                    <span class="wa-team__chevron" aria-hidden="true"></span>
+                  </span>
+                </summary>
+                <div class="wa-team__content">
+                  <div class="wa-doc">
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🗓️ Daily</h4>
+                      <ul class="wa-doc__list">
+                        <li>Daily 時間 11:00（等 Support Daily 之後）</li>
+                        <li>依照領的 item 決定要不要共同 daily
+                          <ul>
+                            <li>若 sprint 內有設計 &amp; 開發共同製作的 item，將會共同 daily</li>
+                            <li>若 sprint 無設計 &amp; 開發共同製作的 item，將分開 daily</li>
+                          </ul>
+                        </li>
+                        <li>需提供兩個信心指數 — PD／Designer</li>
+                        <li>Jira 將採用電子板</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔁 Double link／Cross-team daily／Cross-team retro／retro</h4>
+                      <ul class="wa-doc__list">
+                        <li>將安排輪值表進行上述活動</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📌 需遵守的原則</h4>
+                      <ul class="wa-doc__list">
+                        <li>早到晚退（11–18）需要在 team 說明</li>
+                        <li>團隊內可以放音樂</li>
+                        <li>Design review 需要額外約會議室，Garden eel 最少要有兩位 PD 參加，且會議需發公告</li>
+                        <li>若有溝通不好理解的狀況，可以視覺化內容</li>
+                        <li>不在 team room 開非團隊的會議，若有需要額外租會議室</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">👥 PD-related</h4>
+                      <ul class="wa-doc__list">
+                        <li>PD 盡量兩人在團隊，Support 需要隔週 support</li>
+                        <li>若有 code 出現之後再做的狀況，可以記錄下來之後再找時間處理</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">💻 開發模式</h4>
+                      <ol class="wa-doc__list wa-doc__list--roman" type="i">
+                        <li>需要 Pair 時，向團隊提出並討論</li>
+                        <li>Pair 以討論開發方向與釐清需求為主</li>
+                        <li>完成第 ii 點後，可以各自獨立開發</li>
+                      </ol>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🧭 Mindset</h4>
+                      <ul class="wa-doc__list">
+                        <li>前端按照 task 順序 by task code review</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <details class="wa-team" style="--team-color:#C99000">
+                <summary class="wa-team__summary">
+                  <span class="wa-team__title"><img src="assets/images/otter.svg" alt="" class="wa-team-icon">Otter</span>
+                  <span class="wa-team__meta">
+                    <span class="wa-team__ver">v20260112</span>
+                    <span class="wa-team__chevron" aria-hidden="true"></span>
+                  </span>
+                </summary>
+                <div class="wa-team__content">
+                  <div class="wa-doc">
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🗓️ Daily</h4>
+                      <ul class="wa-doc__list">
+                        <li>信心指數：1、2、4、5</li>
+                        <li>Task 數不算</li>
+                        <li>10:30 開始</li>
+                        <li>review 前一天的 daily 要討論要不要寫 review document</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">📋 JIRA Board</h4>
+                      <ul class="wa-doc__list">
+                        <li>設 label 在 task 上</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🗣️ English Day（週四）</h4>
+                      <ul class="wa-doc__list">
+                        <li>每週四為 English Day</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🕚 上班時間</h4>
+                      <ul class="wa-doc__list">
+                        <li>10:00～18:00：早到早走</li>
+                        <li>10:30～18:30：晚到晚走</li>
+                        <li>核心工時
+                          <ul>
+                            <li>14:00～17:00</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔄 Handover</h4>
+                      <ul class="wa-doc__list">
+                        <li>隨時記錄，不特別找時間（以 PD、PO 角度思考內容可讀性）</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">👥 Pair</h4>
+                      <ul class="wa-doc__list">
+                        <li>標記有需要 pair（重要 flow）</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">🔍 Code(Task) Review</h4>
+                      <ul class="wa-doc__list">
+                        <li>Daily 後發生或主動發生</li>
+                        <li>包含 Test plan、Release Note</li>
+                        <li>可以 release 就直接 release</li>
+                        <li>保持 master 可 release</li>
+                      </ul>
+                    </div>
+
+                    <div class="wa-doc__group">
+                      <h4 class="wa-doc__title">♻️ Retro Action</h4>
+                      <ul class="wa-doc__list">
+                        <li>看到貼就 OK</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-item__summary">
+            <span class="accordion-item__title">Definition of Done (DoD - 完成的定義)</span>
+            <span class="accordion-item__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="accordion-item__content">
+            <h4 style="margin-bottom: var(--space-md); color: var(--color-manta);">🎨 Design Item DoD</h4>
+            <ul style="list-style: disc; padding-left: var(--space-xl); margin-bottom: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm);">
+              <li>Item 須紀錄 Goal、設計背景、Survey 資訊</li>
+              <li>User Flow 須經過 Team & PO & Designer Review 並記錄 Domain 文件</li>
+              <li>UI Flow demo 資訊需貼近產品真實使用情境</li>
+              <li>視覺類需求（e.g. greeting card、banner），須經過 PO & Stakeholder review 並完成修改</li>
+              <li>Wording 有 final 版本</li>
+            </ul>
+            <h4 style="margin-bottom: var(--space-md); color: var(--color-primary);">⚙️ PD Item DoD</h4>
+            <ul style="list-style: disc; padding-left: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm);">
+              <li>完成需求，符合 AC（e.g. monitor / UI 與 Figma 一致 / 寄送 release note 並 inform 相關人員）</li>
+              <li>有 2 分鐘內可執行完成的 Rollback Plan</li>
+              <li>文件更新（e.g. domain doc / SOP / Review doc / README / .md / test plan）</li>
+              <li>Release 前，通過 E10 以上的 Reviewer Code Review（包含：update query, store procedure）</li>
+              <li>有規劃的手動測試（e.g. 貼近 Prod 環境執行 Test Plan / 由非開發團隊 Validate）</li>
+              <li>通過程式碼品質標準（e.g. Sonarqube）</li>
+              <li>Release to Prod 後需測試 main flow（e.g. deposit / Live Chat …）</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- QBQ Reading Section (Task 7.4) -->
+    <section class="section reveal" aria-labelledby="qbq-heading">
+      <h2 id="qbq-heading" class="section__title" style="font-size: var(--font-size-xl);">QBQ 閱讀任務</h2>
+      <div id="qbq-reading">
+        <div class="card card--accent" style="border-top-color: var(--color-otter)">
+          <div class="card__icon">📖</div>
+          <h3 class="card__title">QBQ 閱讀心得</h3>
+          <p class="card__body">
+            《QBQ! 問題背後的問題》是入職必讀書籍，探討個人當責與主動思考的重要性。
+            <br><br>
+            <strong>繳交時間：</strong>第 4 週
+            <br>
+            <strong>要求：</strong>閱讀全書並撰寫閱讀心得
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 C240 0 480 60 720 35 C960 10 1200 0 1440 30 L1440 60 L0 60 Z" fill="#59C3F0"/>
+      </svg>
+    </div>
+    <div class="footer__body">
+      <div class="footer__container">
+        <span class="footer__brand">
+          <span class="footer__logo"><img src="assets/images/twsc-logo.svg" alt=""></span>
+          TWSC 新人入職訓練計畫
+        </span>
+        <div class="footer__info">
+          <p class="footer__text">讓我們一起航向 All Blue 吧！</p>
+          <p class="footer__addr">停泊地點：高雄市三民區九如一路502號</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(function (e) { e.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('is-visible');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+</body>
+</html>
