@@ -128,25 +128,29 @@ dialog .b{padding:20px}
 .f-fork{display:flex;gap:8px 24px;justify-content:center;margin:6px 0 24px;flex-wrap:wrap}
 .f-fork span{font-size:13px;color:var(--mute)}
 .f-fork b.t{color:#0d7d76}.f-fork b.r{color:#c0392b}
-.lanes{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-.lane{border:1.5px solid var(--line);border-radius:20px;padding:20px;background:#fff}
+.lanes{display:flex;flex-direction:column;gap:20px}
+.lane{border:1.5px solid var(--line);border-radius:20px;padding:20px 20px 14px;background:#fff}
 .lane.t{border-color:#2bb3a3;background:#f4fcfb}
 .lane.r{border-color:#e0655a;background:#fef6f5}
+.lane-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .lane h3{font-size:17px;margin-bottom:4px}
 .lane.t h3{color:#0d7d76}.lane.r h3{color:#c0392b}
-.lane .lane-sub{color:var(--mute);font-size:13px;margin-bottom:16px}
-.f-group{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--mute);margin:20px 0 10px}
-.f-group:first-of-type{margin-top:0}
-.f-step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
-.f-step:last-child{margin-bottom:0}
+.lane .lane-sub{color:var(--mute);font-size:13px;margin-bottom:14px}
+.f-hint{color:var(--mute);font-size:12px;white-space:nowrap}
+.f-track{display:flex;align-items:stretch;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:thin}
+.f-track .f-arrow{flex:none;align-self:center;padding:0 8px;font-size:20px}
+.lane.t .f-track .f-arrow{color:#2bb3a3}.lane.r .f-track .f-arrow{color:#e0655a}
+.f-step{flex:0 0 252px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.f-step .f-num{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+.lane.t .f-step .f-num{color:#0d7d76}.lane.r .f-step .f-num{color:#c0392b}
+.f-step .f-over{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mute);margin-bottom:4px}
 .f-step b{font-size:15px}
 .f-step p{color:var(--mute);font-size:14px;margin-top:2px}
 .f-step .f-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .f-step .f-tags span{font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:#fff}
 .f-step.decision{border-style:dashed}
 .f-step.decision b:before{content:"◆ ";color:var(--accent)}
-.f-down{text-align:center;font-size:18px;line-height:1.2;padding:0 0 8px}
-.lane.t .f-down{color:#2bb3a3}.lane.r .f-down{color:#e0655a}
+@media(max-width:560px){.f-step{flex-basis:232px}}
 .flow-note{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:20px 24px}
 .flow-note h3{font-size:16px;margin-bottom:6px}
 .flow-note p{color:var(--mute);font-size:14px}
@@ -184,35 +188,36 @@ dialog .b{padding:20px}
     <div class="f-fork"><span><b class="t">是 → 主管 / 組長</b></span><span><b class="r">否 → 電銷人員</b></span></div>
     <div class="lanes">
       <div class="lane t">
-        <h3>主管 / 組長</h3>
-        <p class="lane-sub">排班、分派、報表各自獨立進行，也可直接外撥</p>
-        <div class="f-group">報表與查詢</div>
-        <div class="f-step"><b>通話報表 · 三個分頁</b><p>Current：查看當期名單，篩選 Report type、Country。History：Report type 選「No deposit attempt」，依 Country、Date range 查詢歷史紀錄。Performance：依 Supervisor、Report type、Country、Date range 查看績效，預設為 No Deposit Attempt。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step decision"><b>History 有資料嗎？</b><p>有 → 查看 History；無 → No result found。</p></div>
-        <div class="f-group">排班與分派</div>
-        <div class="f-step"><b>Weekly Roster 排班</b><p>點 Weekly Roster 開啟排班表，依角色顯示範圍：Supervisor 看全部團隊，Team Lead 看自己團隊；可排週、日班／夜班與成員。</p></div>
-        <div class="f-step"><b>Daily Assign 每日分派</b><p>把玩家名單分派給電銷人員：單一分派（Single assign）或多選批次分派（Multi assign），依國家篩選、選組別與班別，儲存後名單進入電銷人員的 Current 分頁。</p><div class="f-tags"><span>Country Filter</span><span>Team Group</span><span>Day / Night Shift</span></div></div>
-        <div class="f-group">外撥</div>
-        <div class="f-step"><b>篩選名單並撥打</b><p>在 Current 分頁篩選名單，點 Call 直接外撥；名單無資料時顯示 No result found。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step decision"><b>接通了嗎？</b><p>是 → 開啟通話系統，通話中查看用戶資訊，點 CRM 按鈕紀錄後儲存；否 → 顯示通話失敗訊息。</p></div>
+        <div class="lane-head"><div><h3>主管 / 組長</h3><p class="lane-sub">排班、分派、報表各自獨立進行，也可直接外撥</p></div><span class="f-hint">向右滑動 →</span></div>
+        <div class="f-track">
+          <div class="f-step"><span class="f-num">01</span><span class="f-over">報表與查詢</span><b>通話報表 · 三個分頁</b><p>Current：查看當期名單，篩選 Report type、Country。History：Report type 選「No deposit attempt」，依 Country、Date range 查詢歷史紀錄。Performance：依 Supervisor、Report type、Country、Date range 查看績效，預設為 No Deposit Attempt。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step decision"><span class="f-num">02</span><span class="f-over">報表與查詢</span><b>History 有資料嗎？</b><p>有 → 查看 History；無 → No result found。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">03</span><span class="f-over">排班與分派</span><b>Weekly Roster 排班</b><p>點 Weekly Roster 開啟排班表，依角色顯示範圍：Supervisor 看全部團隊，Team Lead 看自己團隊；可排週、日班／夜班與成員。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">04</span><span class="f-over">排班與分派</span><b>Daily Assign 每日分派</b><p>把玩家名單分派給電銷人員：單一分派（Single assign）或多選批次分派（Multi assign），依國家篩選、選組別與班別，儲存後名單進入電銷人員的 Current 分頁。</p><div class="f-tags"><span>Country Filter</span><span>Team Group</span><span>Day / Night Shift</span></div></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">05</span><span class="f-over">外撥</span><b>篩選名單並撥打</b><p>在 Current 分頁篩選名單，點 Call 直接外撥；名單無資料時顯示 No result found。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step decision"><span class="f-num">06</span><span class="f-over">外撥</span><b>接通了嗎？</b><p>是 → 開啟通話系統，通話中查看用戶資訊，點 CRM 按鈕紀錄後儲存；否 → 顯示通話失敗訊息。</p></div>
+        </div>
       </div>
       <div class="lane r">
-        <h3>電銷人員</h3>
-        <p class="lane-sub">處理已分派的名單，外撥並記錄</p>
-        <div class="f-group">查看已分派名單</div>
-        <div class="f-step"><b>通話報表 · Current 分頁</b><p>Report type 選「No deposit attempt」；已有 team 時，Country 會自動帶入所屬國家。</p><div class="f-tags"><span>e.g. Indonesia</span></div></div>
-        <div class="f-down">↓</div>
-        <div class="f-step"><b>在清單查看用戶資訊</b><p>點 Call 撥打。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step decision"><b>接通了嗎？</b><p>否 → 顯示通話失敗訊息；是 → 進入通話。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step"><b>通話中查看用戶資訊</b><p>與用戶通話，同時確認用戶資料。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step decision"><b>語言相符嗎？</b><p>是 → 點 CRM 按鈕，填寫紀錄後儲存；否 → 轉接給其他團隊成員。</p></div>
-        <div class="f-down">↓</div>
-        <div class="f-step"><b>轉接其他團隊成員</b><p>語言不符時轉接給同語言的團隊成員，後續流程待定。</p></div>
+        <div class="lane-head"><div><h3>電銷人員</h3><p class="lane-sub">處理已分派的名單，外撥並記錄</p></div><span class="f-hint">向右滑動 →</span></div>
+        <div class="f-track">
+          <div class="f-step"><span class="f-num">01</span><span class="f-over">查看已分派名單</span><b>通話報表 · Current 分頁</b><p>Report type 選「No deposit attempt」；已有 team 時，Country 會自動帶入所屬國家。</p><div class="f-tags"><span>e.g. Indonesia</span></div></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">02</span><span class="f-over">查看已分派名單</span><b>在清單查看用戶資訊</b><p>點 Call 撥打。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step decision"><span class="f-num">03</span><b>接通了嗎？</b><p>否 → 顯示通話失敗訊息；是 → 進入通話。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">04</span><b>通話中查看用戶資訊</b><p>與用戶通話，同時確認用戶資料。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step decision"><span class="f-num">05</span><b>語言相符嗎？</b><p>是 → 點 CRM 按鈕，填寫紀錄後儲存；否 → 轉接給其他團隊成員。</p></div>
+          <div class="f-arrow">→</div>
+          <div class="f-step"><span class="f-num">06</span><b>轉接其他團隊成員</b><p>語言不符時轉接給同語言的團隊成員，後續流程待定。</p></div>
+        </div>
       </div>
     </div>
     <div class="flow-note">
