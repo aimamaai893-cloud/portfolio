@@ -14,7 +14,7 @@
 html{scroll-behavior:smooth}
 body{background:#fff;color:var(--ink);font:16px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
 .dot{color:var(--accent)}
 nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
@@ -75,7 +75,7 @@ section{padding:56px 0}
 .stats{gap:20px 40px}
 }
 @media(max-width:560px){
-.wrap{padding:0 20px}
+.wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
@@ -94,7 +94,7 @@ footer .btn{display:block;margin:0 0 10px;word-break:break-all;text-align:center
 dialog .b{padding:20px}
 }
 
-.work{padding:56px 0 24px}
+.work{padding-top:56px;padding-bottom:24px}
 .work .back{display:inline-block;color:var(--mute);font-size:14px;margin-bottom:28px}
 .work .back:hover{color:var(--accent)}
 .work .tag{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.1em}
@@ -114,6 +114,7 @@ dialog .b{padding:20px}
 .pager a span{color:var(--mute);font-size:13px;display:block}
 .flow{padding:56px 0 8px}
 .flow-intro{color:var(--mute);max-width:760px;margin-top:12px}
+.fc-wrap{max-width:1040px;margin:28px auto 0}.fc-wrap svg{width:100%;height:auto;display:block}
 .legend{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}
 .legend span{border:1.5px solid var(--line);border-radius:99px;padding:5px 14px;font-size:13px;color:var(--mute);background:#fff}
 .legend .lg-t{border-color:#2bb3a3;color:#0d7d76}
@@ -170,7 +171,7 @@ dialog .b{padding:20px}
   <div><span class="tag">CS 客服系統</span>
   <h1>Customer Service 客服系統</h1>
   
-  <div class="chips"><span>Call report 通話報表</span><span>CRM log</span><span>Satisfaction Report 滿意度報表</span><span>CS Member Mgmt 客服人員管理</span></div>
+  <div class="chips"><span>Call report 通話與每月報表</span></div>
   <p class="intro">整合通話報表、CRM 紀錄與滿意度報表，協助客服團隊追蹤服務品質與人員管理的後台。</p>
   
   
@@ -178,57 +179,110 @@ dialog .b{padding:20px}
   <div class="hero-img"><img src="../assets/02_Saiyan_Customer_Service.png" alt="Customer Service 客服系統"></div>
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
-    <p class="flow-intro">針對「未存款嘗試」（No Deposit Attempt）名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
+    <p class="flow-intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
     <div class="legend"><span class="lg-t">■ 主管 / 組長 Supervisor / Team Lead</span><span class="lg-r">■ 電銷人員 Telemarketer</span><span>◆ 判斷點</span></div>
-    <div class="f-entry">
-      <div class="f-node">登入後台系統<small>Backend system · Login</small></div>
-      <div class="f-arrow">→</div>
-      <div class="f-decision"><i>◆</i> 是否為主管 / 組長？<small>Is a supervisor / Team Lead?</small></div>
-    </div>
-    <div class="f-fork"><span><b class="t">是 → 主管 / 組長</b></span><span><b class="r">否 → 電銷人員</b></span></div>
-    <div class="lanes">
-      <div class="lane t">
-        <div class="lane-head"><div><h3>主管 / 組長</h3><p class="lane-sub">排班、分派、報表各自獨立進行，也可直接外撥</p></div><span class="f-hint">向右滑動 →</span></div>
-        <div class="f-track">
-          <div class="f-step"><span class="f-num">01</span><span class="f-over">報表與查詢</span><b>通話報表 · 三個分頁</b><p>Current：查看當期名單，篩選 Report type、Country。History：Report type 選「No deposit attempt」，依 Country、Date range 查詢歷史紀錄。Performance：依 Supervisor、Report type、Country、Date range 查看績效，預設為 No Deposit Attempt。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step decision"><span class="f-num">02</span><span class="f-over">報表與查詢</span><b>History 有資料嗎？</b><p>有 → 查看 History；無 → No result found。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">03</span><span class="f-over">排班與分派</span><b>Weekly Roster 排班</b><p>點 Weekly Roster 開啟排班表，依角色顯示範圍：Supervisor 看全部團隊，Team Lead 看自己團隊；可排週、日班／夜班與成員。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">04</span><span class="f-over">排班與分派</span><b>Daily Assign 每日分派</b><p>把玩家名單分派給電銷人員：單一分派（Single assign）或多選批次分派（Multi assign），依國家篩選、選組別與班別，儲存後名單進入電銷人員的 Current 分頁。</p><div class="f-tags"><span>Country Filter</span><span>Team Group</span><span>Day / Night Shift</span></div></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">05</span><span class="f-over">外撥</span><b>篩選名單並撥打</b><p>在 Current 分頁篩選名單，點 Call 直接外撥；名單無資料時顯示 No result found。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step decision"><span class="f-num">06</span><span class="f-over">外撥</span><b>接通了嗎？</b><p>是 → 開啟通話系統，通話中查看用戶資訊，點 CRM 按鈕紀錄後儲存；否 → 顯示通話失敗訊息。</p></div>
-        </div>
-      </div>
-      <div class="lane r">
-        <div class="lane-head"><div><h3>電銷人員</h3><p class="lane-sub">處理已分派的名單，外撥並記錄</p></div><span class="f-hint">向右滑動 →</span></div>
-        <div class="f-track">
-          <div class="f-step"><span class="f-num">01</span><span class="f-over">查看已分派名單</span><b>通話報表 · Current 分頁</b><p>Report type 選「No deposit attempt」；已有 team 時，Country 會自動帶入所屬國家。</p><div class="f-tags"><span>e.g. Indonesia</span></div></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">02</span><span class="f-over">查看已分派名單</span><b>在清單查看用戶資訊</b><p>點 Call 撥打。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step decision"><span class="f-num">03</span><b>接通了嗎？</b><p>否 → 顯示通話失敗訊息；是 → 進入通話。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">04</span><b>通話中查看用戶資訊</b><p>與用戶通話，同時確認用戶資料。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step decision"><span class="f-num">05</span><b>語言相符嗎？</b><p>是 → 點 CRM 按鈕，填寫紀錄後儲存；否 → 轉接給其他團隊成員。</p></div>
-          <div class="f-arrow">→</div>
-          <div class="f-step"><span class="f-num">06</span><b>轉接其他團隊成員</b><p>語言不符時轉接給同語言的團隊成員，後續流程待定。</p></div>
-        </div>
-      </div>
+    <div class="fc-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 1000" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service 使用者流程圖：登入後依角色分為主管與電銷兩條線">
+      <title>Customer Service 使用者流程圖</title>
+      <defs>
+      <marker id="ar-teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2bb3a3"/></marker>
+      <marker id="ar-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#e0655a"/></marker>
+      <marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
+      </defs>
+      <rect x="20" y="210" width="480" height="770" rx="20" fill="#f4fcfb" stroke="#2bb3a3" stroke-width="1.5"/>
+      <rect x="540" y="210" width="480" height="770" rx="20" fill="#fef6f5" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="36" y="240" font-size="16" font-weight="700" fill="#0d7d76">主管 / 組長</text>
+      <text x="36" y="260" font-size="12" fill="#6b6b7b">Supervisor / Team Lead</text>
+      <text x="556" y="240" font-size="16" font-weight="700" fill="#c0392b">電銷人員</text>
+      <text x="556" y="260" font-size="12" fill="#6b6b7b">Telemarketer</text>
+      <rect x="430" y="13" width="180" height="44" rx="22" fill="#1b1b24" stroke="#1b1b24" stroke-width="1.5"/>
+      <text x="520" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">登入後台系統</text>
+      <line x1="520" y1="57" x2="520" y2="80" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <polygon points="520,82 630,137 520,192 410,137" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="520" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">是否為主管</text>
+      <text x="520" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">或組長？</text>
+      <polyline points="410,137 240,137 240,264" fill="none" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <polyline points="630,137 760,137 760,264" fill="none" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <text x="318" y="126" font-size="13" font-weight="700" fill="#0d7d76">是</text>
+      <text x="688" y="126" font-size="13" font-weight="700" fill="#c0392b">否</text>
+      <rect x="130" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="240" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話報表 · 三個分頁</text>
+      <text x="240" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Current / History / Performance</text>
+      <line x1="240" y1="332" x2="240" y2="356" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <polygon points="240,356 340,404 240,452 140,404" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="240" y="409" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">History 有資料嗎？</text>
+      <line x1="240" y1="452" x2="240" y2="476" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <text x="254" y="468.0" font-size="12" font-weight="700" fill="#0d7d76">是</text>
+      <line x1="340" y1="404" x2="373" y2="404" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <text x="351.5" y="394" font-size="12" font-weight="700" fill="#0d7d76">否</text>
+      <rect x="375" y="385" width="120" height="38" rx="19" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="435" y="409" text-anchor="middle" font-size="13" font-weight="700" fill="#0d7d76">No result found</text>
+      <rect x="130" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="240" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Weekly Roster 排班</text>
+      <text x="240" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">依角色顯示範圍 · 週 / 班別</text>
+      <line x1="240" y1="540" x2="240" y2="580" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <rect x="130" y="580" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="240" y="606" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Daily Assign 每日分派</text>
+      <text x="240" y="626" text-anchor="middle" font-size="12" fill="#6b6b7b">單一 / 批次分派 · 名單進 Current</text>
+      <line x1="240" y1="644" x2="240" y2="684" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <rect x="130" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="240" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">篩選名單並撥打</text>
+      <text x="240" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">Current 分頁 · 點 Call 外撥</text>
+      <line x1="240" y1="748" x2="240" y2="772" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <polygon points="240,772 340,820 240,868 140,820" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="240" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">接通了嗎？</text>
+      <line x1="240" y1="868" x2="240" y2="892" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <text x="254" y="884.0" font-size="12" font-weight="700" fill="#0d7d76">是</text>
+      <line x1="340" y1="820" x2="373" y2="820" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
+      <text x="351.5" y="810" font-size="12" font-weight="700" fill="#0d7d76">否</text>
+      <rect x="375" y="801" width="120" height="38" rx="19" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="435" y="825" text-anchor="middle" font-size="13" font-weight="700" fill="#0d7d76">通話失敗訊息</text>
+      <rect x="130" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <text x="240" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話中 · CRM 紀錄</text>
+      <text x="240" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">查看用戶資訊，點 CRM 儲存</text>
+      <rect x="650" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="760" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話報表 · Current 分頁</text>
+      <text x="760" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">待跟進名單</text>
+      <line x1="760" y1="332" x2="760" y2="372" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <rect x="650" y="372" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="760" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">查看用戶資訊</text>
+      <text x="760" y="418" text-anchor="middle" font-size="12" fill="#6b6b7b">在清單中確認用戶資料</text>
+      <line x1="760" y1="436" x2="760" y2="476" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <rect x="650" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="760" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">點 Call 撥打</text>
+      <text x="760" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">在系統內直接外撥</text>
+      <line x1="760" y1="540" x2="760" y2="564" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <polygon points="760,564 860,612 760,660 660,612" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="760" y="617" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">接通了嗎？</text>
+      <line x1="760" y1="660" x2="760" y2="684" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <text x="774" y="676.0" font-size="12" font-weight="700" fill="#c0392b">是</text>
+      <line x1="860" y1="612" x2="893" y2="612" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <text x="871.5" y="602" font-size="12" font-weight="700" fill="#c0392b">否</text>
+      <rect x="895" y="593" width="120" height="38" rx="19" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="955" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">通話失敗訊息</text>
+      <rect x="650" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="760" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話中查看用戶資訊</text>
+      <text x="760" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">與用戶通話，同時確認資料</text>
+      <line x1="760" y1="748" x2="760" y2="772" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <polygon points="760,772 860,820 760,868 660,820" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="760" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">語言相符嗎？</text>
+      <line x1="760" y1="868" x2="760" y2="892" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <text x="774" y="884.0" font-size="12" font-weight="700" fill="#c0392b">是</text>
+      <line x1="860" y1="820" x2="893" y2="820" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
+      <text x="871.5" y="810" font-size="12" font-weight="700" fill="#c0392b">否</text>
+      <rect x="895" y="792" width="120" height="56" rx="12" fill="#fff" stroke="#e0655a" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="955" y="814" text-anchor="middle" font-size="13" font-weight="700" fill="#1b1b24">轉接其他團隊成員</text>
+      <text x="955" y="834" text-anchor="middle" font-size="12" fill="#6b6b7b">後續流程待定</text>
+      <rect x="650" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <text x="760" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">CRM 紀錄儲存</text>
+      <text x="760" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">點 CRM 按鈕，填寫後儲存</text>
+      </svg>
     </div>
     <div class="flow-note">
       <h3>CRM 紀錄欄位</h3>
       <p>通話後在 CRM 側邊欄紀錄：溝通方式（預設 Phone call）、語言（預設 Undefined）、聯繫狀態（預設 Unreachable）與回應內容。聯繫狀態全部回寫到 History Tab：</p>
       <div class="f-tags"><span>Unreachable 未接通</span><span>Invalid 號碼錯誤</span><span>Answered 已接通</span><span>Hang Up 掛斷電話</span></div>
     </div>
-    <figure class="flow-orig">
-      <a href="../assets/works/saiyan-customer-service/user-flow-deposit-attempt.jpg" target="_blank" rel="noopener"><img src="../assets/works/saiyan-customer-service/user-flow-deposit-attempt.jpg" alt="No Deposit Attempt 使用者流程圖（原始檔案）" loading="lazy"></a>
-      <figcaption>完整流程圖（原始檔案，點擊放大）</figcaption>
-    </figure>
   </section>
   <div class="pager"><a href="saiyan-member.html">← 上一個作品<span>Member Management 會員管理</span></a><a href="saiyan-settlement.html" style="text-align:right">下一個作品 →<span>Settlement 結算</span></a></div>
 </main>
