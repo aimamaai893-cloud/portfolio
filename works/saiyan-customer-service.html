@@ -117,8 +117,9 @@ dialog .b{padding:20px}
 .fc-wrap{max-width:1040px;margin:28px auto 0}.fc-wrap svg{width:100%;height:auto;display:block}
 .legend{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}
 .legend span{border:1.5px solid var(--line);border-radius:99px;padding:5px 14px;font-size:13px;color:var(--mute);background:#fff}
-.legend .lg-t{border-color:#2bb3a3;color:#0d7d76}
-.legend .lg-r{border-color:#e0655a;color:#c0392b}
+.legend .lg-t{border-color:#4a90d9;color:#1e5f9e}
+.legend .lg-r{border-color:#6c5ce7;color:#5748c9}
+.legend .lg-d{border-color:#1b1b24;color:#1b1b24}
 .f-entry{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
 .f-node{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 18px;text-align:center;font-weight:700}
 .f-node small{display:block;color:var(--mute);font-weight:400;font-size:12px}
@@ -180,100 +181,100 @@ dialog .b{padding:20px}
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
     <p class="flow-intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
-    <div class="legend"><span class="lg-t">■ 主管 / 組長 Supervisor / Team Lead</span><span class="lg-r">■ 電銷人員 Telemarketer</span><span>◆ 判斷點</span></div>
+    <div class="legend"><span class="lg-t">■ 主管 / 組長 Supervisor / Team Lead</span><span class="lg-r">■ 電銷人員 Telemarketer</span><span class="lg-d">◆ 判斷點</span></div>
     <div class="fc-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 1000" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service 使用者流程圖：登入後依角色分為主管與電銷兩條線">
       <title>Customer Service 使用者流程圖</title>
       <defs>
-      <marker id="ar-teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2bb3a3"/></marker>
-      <marker id="ar-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#e0655a"/></marker>
+      <marker id="ar-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a90d9"/></marker>
       <marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
+      <marker id="ar-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1b1b24"/></marker>
       </defs>
-      <rect x="20" y="210" width="480" height="770" rx="20" fill="#f4fcfb" stroke="#2bb3a3" stroke-width="1.5"/>
-      <rect x="540" y="210" width="480" height="770" rx="20" fill="#fef6f5" stroke="#e0655a" stroke-width="1.5"/>
-      <text x="36" y="240" font-size="16" font-weight="700" fill="#0d7d76">主管 / 組長</text>
+      <rect x="20" y="210" width="480" height="770" rx="20" fill="#f0f7ff" stroke="#4a90d9" stroke-width="1.5"/>
+      <rect x="540" y="210" width="480" height="770" rx="20" fill="#f5f4fb" stroke="#6c5ce7" stroke-width="1.5"/>
+      <text x="36" y="240" font-size="16" font-weight="700" fill="#1e5f9e">主管 / 組長</text>
       <text x="36" y="260" font-size="12" fill="#6b6b7b">Supervisor / Team Lead</text>
-      <text x="556" y="240" font-size="16" font-weight="700" fill="#c0392b">電銷人員</text>
+      <text x="556" y="240" font-size="16" font-weight="700" fill="#5748c9">電銷人員</text>
       <text x="556" y="260" font-size="12" fill="#6b6b7b">Telemarketer</text>
       <rect x="430" y="13" width="180" height="44" rx="22" fill="#1b1b24" stroke="#1b1b24" stroke-width="1.5"/>
       <text x="520" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">登入後台系統</text>
-      <line x1="520" y1="57" x2="520" y2="80" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <polygon points="520,82 630,137 520,192 410,137" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <line x1="520" y1="57" x2="520" y2="80" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
+      <polygon points="520,82 630,137 520,192 410,137" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
       <text x="520" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">是否為主管</text>
       <text x="520" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">或組長？</text>
-      <polyline points="410,137 240,137 240,264" fill="none" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <polyline points="630,137 760,137 760,264" fill="none" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <text x="318" y="126" font-size="13" font-weight="700" fill="#0d7d76">是</text>
-      <text x="688" y="126" font-size="13" font-weight="700" fill="#c0392b">否</text>
-      <rect x="130" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <polyline points="410,137 240,137 240,264" fill="none" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <polyline points="630,137 760,137 760,264" fill="none" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <text x="318" y="126" font-size="13" font-weight="700" fill="#1e5f9e">是</text>
+      <text x="688" y="126" font-size="13" font-weight="700" fill="#5748c9">否</text>
+      <rect x="130" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
       <text x="240" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話報表 · 三個分頁</text>
       <text x="240" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Current / History / Performance</text>
-      <line x1="240" y1="332" x2="240" y2="356" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <polygon points="240,356 340,404 240,452 140,404" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <line x1="240" y1="332" x2="240" y2="356" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <polygon points="240,356 340,404 240,452 140,404" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
       <text x="240" y="409" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">History 有資料嗎？</text>
-      <line x1="240" y1="452" x2="240" y2="476" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <text x="254" y="468.0" font-size="12" font-weight="700" fill="#0d7d76">是</text>
-      <line x1="340" y1="404" x2="373" y2="404" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <text x="351.5" y="394" font-size="12" font-weight="700" fill="#0d7d76">否</text>
-      <rect x="375" y="385" width="120" height="38" rx="19" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
-      <text x="435" y="409" text-anchor="middle" font-size="13" font-weight="700" fill="#0d7d76">No result found</text>
-      <rect x="130" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <line x1="240" y1="452" x2="240" y2="476" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <text x="254" y="468.0" font-size="12" font-weight="700" fill="#1e5f9e">是</text>
+      <line x1="340" y1="404" x2="373" y2="404" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <text x="351.5" y="394" font-size="12" font-weight="700" fill="#1e5f9e">否</text>
+      <rect x="375" y="385" width="120" height="38" rx="19" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+      <text x="435" y="409" text-anchor="middle" font-size="13" font-weight="700" fill="#1e5f9e">No result found</text>
+      <rect x="130" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
       <text x="240" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Weekly Roster 排班</text>
       <text x="240" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">依角色顯示範圍 · 週 / 班別</text>
-      <line x1="240" y1="540" x2="240" y2="580" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <rect x="130" y="580" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <line x1="240" y1="540" x2="240" y2="580" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <rect x="130" y="580" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
       <text x="240" y="606" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Daily Assign 每日分派</text>
       <text x="240" y="626" text-anchor="middle" font-size="12" fill="#6b6b7b">單一 / 批次分派 · 名單進 Current</text>
-      <line x1="240" y1="644" x2="240" y2="684" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <rect x="130" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <line x1="240" y1="644" x2="240" y2="684" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <rect x="130" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
       <text x="240" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">篩選名單並撥打</text>
       <text x="240" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">Current 分頁 · 點 Call 外撥</text>
-      <line x1="240" y1="748" x2="240" y2="772" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <polygon points="240,772 340,820 240,868 140,820" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <line x1="240" y1="748" x2="240" y2="772" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <polygon points="240,772 340,820 240,868 140,820" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
       <text x="240" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">接通了嗎？</text>
-      <line x1="240" y1="868" x2="240" y2="892" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <text x="254" y="884.0" font-size="12" font-weight="700" fill="#0d7d76">是</text>
-      <line x1="340" y1="820" x2="373" y2="820" stroke="#2bb3a3" stroke-width="2" marker-end="url(#ar-teal)"/>
-      <text x="351.5" y="810" font-size="12" font-weight="700" fill="#0d7d76">否</text>
-      <rect x="375" y="801" width="120" height="38" rx="19" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
-      <text x="435" y="825" text-anchor="middle" font-size="13" font-weight="700" fill="#0d7d76">通話失敗訊息</text>
-      <rect x="130" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#2bb3a3" stroke-width="1.5"/>
+      <line x1="240" y1="868" x2="240" y2="892" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <text x="254" y="884.0" font-size="12" font-weight="700" fill="#1e5f9e">是</text>
+      <line x1="340" y1="820" x2="373" y2="820" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+      <text x="351.5" y="810" font-size="12" font-weight="700" fill="#1e5f9e">否</text>
+      <rect x="375" y="801" width="120" height="38" rx="19" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+      <text x="435" y="825" text-anchor="middle" font-size="13" font-weight="700" fill="#1e5f9e">通話失敗訊息</text>
+      <rect x="130" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
       <text x="240" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話中 · CRM 紀錄</text>
       <text x="240" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">查看用戶資訊，點 CRM 儲存</text>
-      <rect x="650" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <rect x="650" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
       <text x="760" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話報表 · Current 分頁</text>
       <text x="760" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">待跟進名單</text>
-      <line x1="760" y1="332" x2="760" y2="372" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <rect x="650" y="372" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <line x1="760" y1="332" x2="760" y2="372" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <rect x="650" y="372" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
       <text x="760" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">查看用戶資訊</text>
       <text x="760" y="418" text-anchor="middle" font-size="12" fill="#6b6b7b">在清單中確認用戶資料</text>
-      <line x1="760" y1="436" x2="760" y2="476" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <rect x="650" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <line x1="760" y1="436" x2="760" y2="476" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <rect x="650" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
       <text x="760" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">點 Call 撥打</text>
       <text x="760" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">在系統內直接外撥</text>
-      <line x1="760" y1="540" x2="760" y2="564" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <polygon points="760,564 860,612 760,660 660,612" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <line x1="760" y1="540" x2="760" y2="564" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <polygon points="760,564 860,612 760,660 660,612" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
       <text x="760" y="617" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">接通了嗎？</text>
-      <line x1="760" y1="660" x2="760" y2="684" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <text x="774" y="676.0" font-size="12" font-weight="700" fill="#c0392b">是</text>
-      <line x1="860" y1="612" x2="893" y2="612" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <text x="871.5" y="602" font-size="12" font-weight="700" fill="#c0392b">否</text>
-      <rect x="895" y="593" width="120" height="38" rx="19" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
-      <text x="955" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">通話失敗訊息</text>
-      <rect x="650" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <line x1="760" y1="660" x2="760" y2="684" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <text x="774" y="676.0" font-size="12" font-weight="700" fill="#5748c9">是</text>
+      <line x1="860" y1="612" x2="893" y2="612" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <text x="871.5" y="602" font-size="12" font-weight="700" fill="#5748c9">否</text>
+      <rect x="895" y="593" width="120" height="38" rx="19" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+      <text x="955" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#5748c9">通話失敗訊息</text>
+      <rect x="650" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
       <text x="760" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">通話中查看用戶資訊</text>
       <text x="760" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">與用戶通話，同時確認資料</text>
-      <line x1="760" y1="748" x2="760" y2="772" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <polygon points="760,772 860,820 760,868 660,820" fill="#fff" stroke="#6c5ce7" stroke-width="2"/>
+      <line x1="760" y1="748" x2="760" y2="772" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <polygon points="760,772 860,820 760,868 660,820" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
       <text x="760" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">語言相符嗎？</text>
-      <line x1="760" y1="868" x2="760" y2="892" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <text x="774" y="884.0" font-size="12" font-weight="700" fill="#c0392b">是</text>
-      <line x1="860" y1="820" x2="893" y2="820" stroke="#e0655a" stroke-width="2" marker-end="url(#ar-red)"/>
-      <text x="871.5" y="810" font-size="12" font-weight="700" fill="#c0392b">否</text>
-      <rect x="895" y="792" width="120" height="56" rx="12" fill="#fff" stroke="#e0655a" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <line x1="760" y1="868" x2="760" y2="892" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <text x="774" y="884.0" font-size="12" font-weight="700" fill="#5748c9">是</text>
+      <line x1="860" y1="820" x2="893" y2="820" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+      <text x="871.5" y="810" font-size="12" font-weight="700" fill="#5748c9">否</text>
+      <rect x="895" y="792" width="120" height="56" rx="12" fill="#fff" stroke="#6c5ce7" stroke-width="1.5" stroke-dasharray="5 4"/>
       <text x="955" y="814" text-anchor="middle" font-size="13" font-weight="700" fill="#1b1b24">轉接其他團隊成員</text>
       <text x="955" y="834" text-anchor="middle" font-size="12" fill="#6b6b7b">後續流程待定</text>
-      <rect x="650" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#e0655a" stroke-width="1.5"/>
+      <rect x="650" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
       <text x="760" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">CRM 紀錄儲存</text>
       <text x="760" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">點 CRM 按鈕，填寫後儲存</text>
       </svg>
