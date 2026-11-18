@@ -17,13 +17,13 @@
 html{scroll-behavior:smooth}
 body{background:#fff;color:var(--ink);font:16px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
 .dot{color:var(--accent)}
 nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
-.hero{padding:96px 0 72px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
+.hero{padding-top:96px;padding-bottom:72px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
 header.hero{max-width:1320px}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(26px,3.5vw,40px);line-height:1.15;margin:14px 0 18px}
@@ -105,7 +105,7 @@ dialog button{position:absolute;right:10px;top:6px;background:#fff;border:0;bord
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
-.hero{grid-template-columns:1fr;padding:48px 0 56px;gap:24px;text-align:center}
+.hero{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px;gap:24px;text-align:center}
 .slide.on{grid-template-columns:1fr;gap:16px}
 .slide{padding:20px}
 .slide-img img{max-height:300px}
@@ -119,7 +119,7 @@ section{padding:56px 0}
 .stats{gap:20px 40px}
 }
 @media(max-width:560px){
-.wrap{padding:0 20px}
+.wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
@@ -216,7 +216,7 @@ dialog .b{padding:20px}
 <script>
 const P=[
  {c:"ACC 行政系統",t:"Member Management 會員管理",i:"01_Saiyan_Member_Account_D_etail",l:["Account Detail 帳戶詳情","Blocklist 黑名單","Whitelist 白名單"],"page":"works/saiyan-member.html"},
- {c:"CS 客服系統",t:"Customer Service 客服系統",i:"02_Saiyan_Customer_Service",l:["Call report 通話報表","CRM log","Satisfaction Report 滿意度報表","CS Member Mgmt 客服人員管理"],"page":"works/saiyan-customer-service.html"},
+ {c:"CS 客服系統",t:"Customer Service 客服系統",i:"02_Saiyan_Customer_Service",l:["Call report 通話與每月報表"],"page":"works/saiyan-customer-service.html"},
  {c:"ACC 行政系統",t:"Settlement 結算",i:"08_Saiyan_Settlement",l:["Internal Transfer 內部轉帳","List of Accounts 帳戶列表"],"page":"works/saiyan-settlement.html"},
  {c:"Design System",t:"Saiyan Design System",i:"Saiyan__Design_System",l:["Components 元件","Colors / Typography 色彩與字體"],"page":"works/saiyan-design-system.html"},
  {c:"Design System",t:"MTBO Design System",i:"MTBO_Design_system",l:["Components 元件","Styles 樣式"],"page":"works/mtbo-design-system.html"},
