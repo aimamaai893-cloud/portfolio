@@ -23,13 +23,13 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
-.hero{padding-top:96px;padding-bottom:72px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
+.hero{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
 header.hero{max-width:1320px}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(26px,3.5vw,40px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
 /* 互動大頭：底圖 + 固定眼白 + 滑動眼珠 + 固定睫毛（以 aperture 遮罩裁切） */
-.head{position:relative;width:100%;max-width:620px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
+.head{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
 .head-base{position:absolute;inset:0;width:100%;height:100%;display:block}
 .eye{position:absolute;width:25.6%;aspect-ratio:256/186;transform-origin:50% 50%;transition:transform .07s ease-in}
 .eye-l{left:27.6%;top:43.9%}
@@ -105,12 +105,12 @@ dialog button{position:absolute;right:10px;top:6px;background:#fff;border:0;bord
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
-.hero{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px;gap:24px;text-align:center}
+.hero{grid-template-columns:1fr;padding-top:28px;padding-bottom:32px;gap:24px;text-align:center}
 .slide.on{grid-template-columns:1fr;gap:16px}
 .slide{padding:20px}
 .slide-img img{max-height:300px}
 .hero-text{order:2}
-.head{order:1;max-width:380px}
+.head{order:1;max-width:280px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
