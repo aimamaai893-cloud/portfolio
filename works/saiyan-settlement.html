@@ -121,6 +121,24 @@ dialog .b{padding:20px}
 .pager a{border:1.5px solid var(--line);border-radius:99px;padding:10px 22px;font-size:15px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
+.case{padding:56px 0 8px}
+.case>p{max-width:760px}
+.case>p+p{margin-top:12px}
+.ov{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;background:var(--soft);border-radius:20px;padding:28px}
+.ov div small{display:block;color:var(--mute);font-size:12px;letter-spacing:.12em;font-weight:700;margin-bottom:4px}
+.ov div b{font-size:15px}
+.ov div span{display:block;color:var(--mute);font-size:14px;margin-top:2px}
+.dec{margin-top:8px;max-width:760px}
+.dec>div{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.dec>div:last-child{border-bottom:0}
+.dec i{font-style:normal;font-weight:700;color:var(--accent);font-size:20px;line-height:1.4;flex:none}
+.dec b{display:block;font-size:16px}
+.dec span{color:var(--mute);font-size:15px}
+.outcome{margin-top:8px;background:var(--soft);border-radius:20px;padding:32px;text-align:center}
+.outcome b{display:block;font-size:clamp(40px,6vw,56px);font-weight:700;color:var(--accent);line-height:1.1}
+.outcome>span{font-size:15px;color:var(--mute)}
+.outcome p{max-width:640px;margin:16px auto 0;color:var(--mute);font-size:15px}
+@media(max-width:760px){.ov{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
 </head>
@@ -132,14 +150,28 @@ dialog .b{padding:20px}
   <h1>Settlement 結算</h1>
   
   <div class="chips"><span>Internal Transfer 內部轉帳</span><span>List of Accounts 帳戶列表</span></div>
-  <p class="intro">處理平台內部轉帳的結算後台模組，橫跨 Saiyan 與 KingsPay 兩個系統。</p>
+  <p class="intro">處理平台內部轉帳的結算後台模組，橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統。</p>
   
   
   <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <!-- 之後放影片：主視覺影片預留位置 -->
+  <section class="case" id="overview">
+    <div class="hd"><span>OVERVIEW</span><h2>專案概覽<span class="dot">.</span></h2></div>
+    <div class="ov">
+      <div><small>我的角色</small><b>Product Designer</b><span>流程與介面設計</span></div>
+      <div><small>使用者</small><b>ACC 行政人員</b><span>金流 Provider</span></div>
+      <div><small>系統</small><b>Saiyan · MTBO · Leo</b><span>三個系統連動</span></div>
+      <div><small>範圍</small><b>Internal Transfer</b><span>狀態同步 · 對帳</span></div>
+    </div>
+  </section>
+  <section class="case" id="background">
+    <div class="hd"><span>BACKGROUND</span><h2>背景與問題<span class="dot">.</span></h2></div>
+    <p>ACC（用 Saiyan）與金流 Provider（用 MTBO）是合作關係，需要定期比對兩個系統的 Internal Transfer 帳目。在這之前，ACC 在 Leo（Saiyan 的前身舊系統）記帳，Provider 在 MTBO 記帳：Provider 先記帳、匯出給 ACC，ACC 再到 Leo 記帳，兩邊都要重複記帳。</p>
+    <p>技術上 Leo 無法與 MTBO 串接，兩個系統始終連動不起來；而且 ACC 只能知道轉帳銀行、金額與手續費，用戶銀行個資得手動刪除修改後才能轉交。</p>
+  </section>
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
-    <p class="flow-intro">內部轉帳橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統：Saiyan 建立轉帳，MTBO 確認並更新狀態，資訊與狀態同步回 Saiyan 與 Leo。</p>
+    <p class="flow-intro">內部轉帳橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統：Leo 是 Saiyan 的前身舊系統，流程從 Leo 開始，Saiyan 建立轉帳，MTBO 確認並更新狀態，資訊與狀態同步回 Saiyan 與 Leo。</p>
     <div class="legend"><span class="lg-s">■ Saiyan (ACC User)</span><span class="lg-m">■ MTBO (KingsPay User)</span><span class="lg-l">■ Leo</span><span class="lg-d">◆ Decision Point</span></div>
     <div class="fc-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 840" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Settlement internal transfer user flow across Saiyan, MTBO and Leo">
@@ -205,11 +237,29 @@ dialog .b{padding:20px}
       <text x="712" y="230" font-size="12" font-weight="700" fill="#1e5f9e">Yes</text>
       <text x="932" y="200" font-size="12" font-weight="700" fill="#1e5f9e">Submit</text>
       <text x="327" y="485" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">view list</text>
-      <text x="760" y="485" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">Confirm</text>
+      <text x="752" y="485" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">Confirm</text>
       <text x="717" y="628" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">Reject</text>
       <text x="1150" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">Info &amp; Status synced with Saiyan</text>
       <text x="1000" y="812" text-anchor="middle" font-size="12" font-weight="700" fill="#5748c9">Info &amp; Status synced with Leo</text>
       </svg>
+    </div>
+  </section>
+  <section class="case" id="decisions">
+    <div class="hd"><span>KEY DECISIONS</span><h2>關鍵設計決定<span class="dot">.</span></h2></div>
+    <div class="dec">
+      <div><i>01</i><div><b>建立前先檢查</b><span>建立轉帳前先確認是否已建過，避免重複建立。</span></div></div>
+      <div><i>02</i><div><b>狀態更新集中在 MTBO</b><span>確認與更新（Success / Reject）只在 MTBO 做，責任清楚。</span></div></div>
+      <div><i>03</i><div><b>更新後自動同步三邊</b><span>狀態更新後自動同步回 Saiyan 的轉帳列表與 Leo 的報表，三邊狀態一致，不用人工對帳。</span></div></div>
+      <div><i>04</i><div><b>個資不進 ACC 的視野</b><span>Saiyan 可以看到轉帳已成立，但同步的資料只包含轉帳銀行、金額與手續費，用戶銀行個資不會同步過去，不用再手動刪除修改。</span></div></div>
+      <div><i>05</i><div><b>三種轉帳共用一個入口</b><span>Topup / Settlement / InterBank 共用同一個建立彈窗。</span></div></div>
+    </div>
+  </section>
+  <section class="case" id="outcome">
+    <div class="hd"><span>OUTCOME</span><h2>成果<span class="dot">.</span></h2></div>
+    <div class="outcome">
+      <b>52%</b>
+      <span>Provider 的工作時間減少</span>
+      <p>Provider 建立項目、手動匯出的步驟減少；用戶銀行個資也不會再出現在 ACC 看得到的資料裡。</p>
     </div>
   </section>
   <!-- 之後放影片：展示影片預留位置 -->

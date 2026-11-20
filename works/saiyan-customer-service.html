@@ -157,6 +157,23 @@ dialog .b{padding:20px}
 .flow-orig a{display:block;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .flow-orig img{width:100%;display:block}
 .flow-orig figcaption{color:var(--mute);font-size:13px;text-align:center;margin-top:10px}
+.case{padding:56px 0 8px}
+.case>p{max-width:760px}
+.ov{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;background:var(--soft);border-radius:20px;padding:28px}
+.ov div small{display:block;color:var(--mute);font-size:12px;letter-spacing:.12em;font-weight:700;margin-bottom:4px}
+.ov div b{font-size:15px}
+.ov div span{display:block;color:var(--mute);font-size:14px;margin-top:2px}
+.dec{margin-top:8px;max-width:760px}
+.dec>div{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.dec>div:last-child{border-bottom:0}
+.dec i{font-style:normal;font-weight:700;color:var(--accent);font-size:20px;line-height:1.4;flex:none}
+.dec b{display:block;font-size:16px}
+.dec span{color:var(--mute);font-size:15px}
+.outcome{margin-top:8px;background:var(--soft);border-radius:20px;padding:32px;text-align:center}
+.outcome b{display:block;font-size:clamp(40px,6vw,56px);font-weight:700;color:var(--accent);line-height:1.1}
+.outcome>span{font-size:15px;color:var(--mute)}
+.outcome p{max-width:640px;margin:16px auto 0;color:var(--mute);font-size:15px}
+@media(max-width:760px){.ov{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
 </head>
@@ -168,11 +185,24 @@ dialog .b{padding:20px}
   <h1>Customer Service 客服系統</h1>
   
   <div class="chips"><span>Call report 通話與每月報表</span></div>
-  <p class="intro">整合通話報表、CRM 紀錄與滿意度報表，協助客服團隊追蹤服務品質與人員管理的後台。</p>
+  <p class="intro">整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。</p>
   
   
   <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <!-- 之後放影片：主視覺影片預留位置 -->
+  <section class="case" id="overview">
+    <div class="hd"><span>OVERVIEW</span><h2>專案概覽<span class="dot">.</span></h2></div>
+    <div class="ov">
+      <div><small>我的角色</small><b>Product Designer</b><span>流程與介面設計</span></div>
+      <div><small>使用者</small><b>客服主管 / Team Lead</b><span>電銷人員</span></div>
+      <div><small>系統</small><b>Saiyan 客服後台</b><span>Call Report · 排班 · 分派</span></div>
+      <div><small>範圍</small><b>外撥與通話紀錄</b><span>CRM 紀錄 · 轉接流程</span></div>
+    </div>
+  </section>
+  <section class="case" id="background">
+    <div class="hd"><span>BACKGROUND</span><h2>背景與問題<span class="dot">.</span></h2></div>
+    <p>客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。</p>
+  </section>
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
     <p class="flow-intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
@@ -271,6 +301,23 @@ dialog .b{padding:20px}
       <text x="760" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Save CRM Record</text>
       <text x="760" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">Click CRM button, save after call</text>
       </svg>
+    </div>
+  </section>
+  <section class="case" id="decisions">
+    <div class="hd"><span>KEY DECISIONS</span><h2>關鍵設計決定<span class="dot">.</span></h2></div>
+    <div class="dec">
+      <div><i>01</i><div><b>依角色分流</b><span>主管負責排班與分派，電銷專注外撥與紀錄，兩邊看到的流程與權限不同。</span></div></div>
+      <div><i>02</i><div><b>Call Report 三個頁籤</b><span>Current / History / Performance，待跟進、歷史、績效分開看。</span></div></div>
+      <div><i>03</i><div><b>通話紀錄留在系統內</b><span>通話中可看用戶資訊，通話後直接存 CRM 紀錄，不用另外開工具。</span></div></div>
+      <div><i>04</i><div><b>例外流程有去處</b><span>未接通、語言不符都有明確的下一步，名單不會掉在半路。</span></div></div>
+    </div>
+  </section>
+  <section class="case" id="outcome">
+    <div class="hd"><span>OUTCOME</span><h2>成果<span class="dot">.</span></h2></div>
+    <div class="outcome">
+      <b>60%</b>
+      <span>排班與名單分配的工作時間減少</span>
+      <p>上線後，排班與名單分配改由系統自動處理，主管不用再每週手動排班、匯入名單。</p>
     </div>
   </section>
   <div class="pager"><a href="saiyan-member.html">← 上一個作品<span>Member Management 會員管理</span></a><a href="saiyan-settlement.html" style="text-align:right">下一個作品 →<span>Settlement 結算</span></a></div>
