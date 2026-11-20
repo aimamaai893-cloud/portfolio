@@ -40,6 +40,10 @@
   "zh": "套設計系統",
   "en": "design systems"
  },
+ "stat_talks": {
+  "zh": "演講、工作坊",
+  "en": "talks & workshops"
+ },
  "btn_work": {
   "zh": "查看作品",
   "en": "View selected work"
@@ -203,7 +207,7 @@ header.hero{max-width:1320px}
 .hero h1{font-size:clamp(26px,3.5vw,40px);line-height:1.15;margin:14px 0 18px}
 .hero p{color:var(--mute);max-width:520px}
 /* 互動大頭：底圖 + 固定眼白 + 滑動眼珠 + 固定睫毛（以 aperture 遮罩裁切） */
-.head{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
+.head{position:relative;width:100%;max-width:520px;aspect-ratio:1;margin:0 auto;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;will-change:transform}
 .head-base{position:absolute;inset:0;width:100%;height:100%;display:block}
 .eye{position:absolute;width:25.6%;aspect-ratio:256/186;transform-origin:50% 50%;transition:transform .07s ease-in}
 .eye-l{left:27.6%;top:43.9%}
@@ -284,7 +288,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .slide{padding:20px}
 .slide-img img{max-height:300px}
 .hero-text{order:2}
-.head{order:1;max-width:280px}
+.head{order:1;max-width:320px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
@@ -336,7 +340,7 @@ dialog .b{padding:20px}
 </header>
 
 <section class="band"><div class="wrap">
-  <div class="stats"><div><b>6+</b><span data-i18n="stat_years">年設計經驗</span></div><div><b>B2B / B2C</b><span data-i18n="stat_products">產品設計</span></div><div><b>3</b><span data-i18n="stat_ds">套設計系統</span></div></div>
+  <div class="stats"><div><b>6+</b><span data-i18n="stat_years">年設計經驗</span></div><div><b>B2B / B2C</b><span data-i18n="stat_products">產品設計</span></div><div><b>3</b><span data-i18n="stat_ds">套設計系統</span></div><div><b>14+</b><span data-i18n="stat_talks">演講、工作坊</span></div></div>
     <div class="btns"><a class="btn p" href="#work" data-i18n="btn_work">查看作品</a><a class="btn" href="resume.pdf" data-i18n="btn_resume" data-i18n-href="resume_link">下載履歷</a></div>
 </div></section>
 
@@ -413,12 +417,15 @@ const P=[
  {"c": "3D 設計", "t": "海灘涼鞋 3D 渲染｜The Cleaner", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/079124160006847.6403147fd910c-1920w.jpg", "l": ["護攤娛樂海灘涼鞋", "產品 3D 渲染"], "te": "Beach Sandal 3D Render | The Cleaner", "le": ["Beach sandals", "Product 3D rendering"], "page": "works/cleaner-3d.html"}
 ];
 const cats=["全部","後台管理系統","企業內部系統","網站與平台設計","3D 設計","Design System"];let cur="全部";
+/* 全部：固定交錯順序（非隨機），讓各分類穿插出現；各分類頁仍維持原順序 */
+const ALL_ORDER=[1,9,2,5,8,12,13,0,6,3,7,14,4,10,15,11,16];
 const $=id=>document.getElementById(id);
 function langNow(){return window.I18N?window.I18N.getLang():"zh"}
 function draw(){
  var L=langNow();
  $("tabs").innerHTML=cats.map(c=>`<button class="${c==cur?"on":""}" data-c="${c}">${window.I18N.CATS[c][L]}</button>`).join("");
- $("grid").innerHTML=P.map((p,n)=>[p,n]).filter(([p])=>cur=="全部"||p.c==cur).map(([p,n])=>{const t=L==="en"?(p.te||p.t):p.t;const l=L==="en"?(p.le||p.l):p.l;const inner=`<img loading="lazy" referrerpolicy="no-referrer" src="${p.img||"assets/"+p.i+".png"}" alt="${t}"><div><span class="tag">${window.I18N.CATS[p.c][L]}</span><h3>${t}</h3><p>${l.slice(0,2).join("・")}</p></div>`;return p.page?`<a class="card" href="${p.page}">${inner}</a>`:`<button class="card" data-n="${n}">${inner}</button>`}).join("");
+ const list=cur=="全部"?ALL_ORDER.map(n=>[P[n],n]):P.map((p,n)=>[p,n]);
+ $("grid").innerHTML=list.filter(([p])=>cur=="全部"||p.c==cur).map(([p,n])=>{const t=L==="en"?(p.te||p.t):p.t;const l=L==="en"?(p.le||p.l):p.l;const inner=`<img loading="lazy" referrerpolicy="no-referrer" src="${p.img||"assets/"+p.i+".png"}" alt="${t}"><div><span class="tag">${window.I18N.CATS[p.c][L]}</span><h3>${t}</h3><p>${l.slice(0,2).join("・")}</p></div>`;return p.page?`<a class="card" href="${p.page}">${inner}</a>`:`<button class="card" data-n="${n}">${inner}</button>`}).join("");
  if(!$("grid").children.length)$("grid").innerHTML='<p style="color:var(--mute)">'+window.I18N.SHARED.empty[L]+'</p>';
 }
 document.addEventListener("click",e=>{
