@@ -112,6 +112,36 @@ dialog .b{padding:20px}
 .pager a{border:1.5px solid var(--line);border-radius:99px;padding:10px 22px;font-size:15px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
+
+.ds{margin-top:64px}
+.ds h2{font-size:28px;line-height:1.25}
+.ds .sub{color:var(--mute);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.ds .lead{color:var(--mute);max-width:760px;margin-top:10px}
+.shot{margin:28px 0 0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.shot img{width:100%;display:block}
+.shot figcaption{padding:14px 20px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);background:#fff}
+.arch{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.arch .lv{display:flex;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
+.arch .lv:last-child{border-bottom:0}
+.arch .lv b{flex:0 0 130px;font-size:17px}
+.arch .lv b span{display:block;color:var(--mute);font-size:13px;font-weight:400}
+.arch .lv .chips{margin-top:0}
+.swgroup{margin-top:32px}
+.swgroup h3{font-size:17px;margin-bottom:12px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sw i{display:block;height:64px}
+.sw p{padding:8px 10px 10px;font-size:13px;line-height:1.4}
+.sw p span{display:block;color:var(--mute);font-size:12px}
+.rules{margin-top:24px;color:var(--mute);max-width:760px}
+.rules ol{margin:0;padding-left:22px}
+.rules ol ol{margin-top:4px}
+.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+.tbl table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}
+.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--mute);font-weight:400;background:var(--soft)}
+.tbl tr:last-child td{border-bottom:0}
+@media(max-width:760px){.arch .lv{flex-direction:column;gap:8px}.arch .lv b{flex:none}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
 </head>
@@ -122,12 +152,67 @@ dialog .b{padding:20px}
   <div><span class="tag">Design System</span>
   <h1>Nami Design System</h1>
   
-  <div class="chips"><span>Components 元件</span><span>Styles 樣式</span></div>
-  <p class="intro">收錄 Nami 產品的元件與樣式規範，統一跨產品視覺與操作體驗的設計系統。</p>
+  <div class="chips"><span>Components 元件</span><span>Styles 樣式</span><span>Atomic Design 原子設計</span></div>
+  <p class="intro">Nami 產品的設計系統，以 Atomic Design 方法組織：從字體、圖示等基礎元素，到按鈕、輸入框等元件，再組裝成卡片、彈窗與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。</p>
   
   
   <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <div class="hero-img"><img src="../assets/Nami_Design_system.png" alt="Nami Design System"></div>
+
+  <section class="ds" id="architecture">
+    <div class="sub">Architecture</div>
+    <h2>設計系統架構<span class="dot">.</span></h2>
+    <p class="lead">整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。</p>
+    <div class="arch">
+      <div class="lv"><b>Atoms<span>原子 · 基礎元素</span></b><div class="chips"><span>Typography 字體排版</span><span>Icon 圖示</span><span>Grid 網格</span><span>Space 間距</span><span>Elevation 陰影層級</span><span>Balance 餘額顯示</span></div></div>
+      <div class="lv"><b>Molecules<span>分子 · 元件</span></b><div class="chips"><span>Button 按鈕</span><span>Label 標籤</span><span>Text Field 文字輸入框</span><span>Select box 下拉選擇框</span><span>Message 訊息</span><span>Text Title 文字標題</span><span>Progress bar 進度條</span></div></div>
+      <div class="lv"><b>Organisms<span>有機體 · 複合區塊</span></b><div class="chips"><span>Dropdown 下拉選單</span><span>Tab 頁籤</span><span>Banner 橫幅</span></div></div>
+      <div class="lv"><b>Templates<span>模板 · 版面骨架</span></b><div class="chips"><span>Card 卡片</span><span>OTP 一次性密碼</span><span>Popup 彈窗</span><span>Top section 頂部區塊</span><span>Bonus Section 獎勵區塊</span></div></div>
+    </div>
+    <p class="lead" style="margin-top:28px">整個檔案共 21 個規範頁：Atoms 6 頁、Molecules 7 頁、Organisms 3 頁、Templates 5 頁，另有 Cover 與 Library 頁。色彩以 Figma Variables 管理，沒有獨立的 Color 規範頁。</p>
+  </section>
+  <section class="ds" id="color">
+    <div class="sub">Color</div>
+    <h2>色彩<span class="dot">.</span></h2>
+    <p class="lead">主色是 brandColor 深藍色階，brandColor-800（#002E6C）是主要品牌色；灰階負責文字與背景層次；按鈕有六種顏色。色彩以 Figma Variables 管理。</p>
+<div class="swgroup"><h3>brandColor 品牌色</h3><div class="sw"><div><i style="background:#F2F8FF"></i><p style="color:#1b1b24;background:#F2F8FF">100<span style="color:#1b1b24;opacity:.75">#F2F8FF</span></p></div><div><i style="background:#A1BEE6"></i><p style="color:#1b1b24;background:#A1BEE6">300<span style="color:#1b1b24;opacity:.75">#A1BEE6</span></p></div><div><i style="background:#82A8D9"></i><p style="color:#1b1b24;background:#82A8D9">400<span style="color:#1b1b24;opacity:.75">#82A8D9</span></p></div><div><i style="background:#6089BF"></i><p style="color:#fff;background:#6089BF">500<span style="color:#fff;opacity:.75">#6089BF</span></p></div><div><i style="background:#3A69A6"></i><p style="color:#fff;background:#3A69A6">600<span style="color:#fff;opacity:.75">#3A69A6</span></p></div><div><i style="background:#15498C"></i><p style="color:#fff;background:#15498C">700<span style="color:#fff;opacity:.75">#15498C</span></p></div><div><i style="background:#002E6C"></i><p style="color:#fff;background:#002E6C">800 Primary<span style="color:#fff;opacity:.75">#002E6C</span></p></div><div><i style="background:#001E45"></i><p style="color:#fff;background:#001E45">900<span style="color:#fff;opacity:.75">#001E45</span></p></div></div></div><div class="swgroup"><h3>Gray scale 灰階</h3><div class="sw"><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div><div><i style="background:#F6F6F6"></i><p style="color:#1b1b24;background:#F6F6F6">100<span style="color:#1b1b24;opacity:.75">#F6F6F6</span></p></div><div><i style="background:#E9E9E9"></i><p style="color:#1b1b24;background:#E9E9E9">200<span style="color:#1b1b24;opacity:.75">#E9E9E9</span></p></div><div><i style="background:#D6D6D6"></i><p style="color:#1b1b24;background:#D6D6D6">300<span style="color:#1b1b24;opacity:.75">#D6D6D6</span></p></div><div><i style="background:#C8C8C8"></i><p style="color:#1b1b24;background:#C8C8C8">400<span style="color:#1b1b24;opacity:.75">#C8C8C8</span></p></div><div><i style="background:#B3B1B1"></i><p style="color:#1b1b24;background:#B3B1B1">500<span style="color:#1b1b24;opacity:.75">#B3B1B1</span></p></div><div><i style="background:#989898"></i><p style="color:#1b1b24;background:#989898">600<span style="color:#1b1b24;opacity:.75">#989898</span></p></div><div><i style="background:#777777"></i><p style="color:#fff;background:#777777">700<span style="color:#fff;opacity:.75">#777777</span></p></div><div><i style="background:#444444"></i><p style="color:#fff;background:#444444">800<span style="color:#fff;opacity:.75">#444444</span></p></div><div><i style="background:#000000"></i><p style="color:#fff;background:#000000">Black<span style="color:#fff;opacity:.75">#000000</span></p></div></div></div><div class="swgroup"><h3>Button colors 按鈕色</h3><div class="sw"><div><i style="background:#002E6C"></i><p style="color:#fff;background:#002E6C">BrandBlue<span style="color:#fff;opacity:.75">#002E6C</span></p></div><div><i style="background:#FFE13A"></i><p style="color:#1b1b24;background:#FFE13A">Yellow<span style="color:#1b1b24;opacity:.75">#FFE13A</span></p></div><div><i style="background:#5769BF"></i><p style="color:#fff;background:#5769BF">Indigo<span style="color:#fff;opacity:.75">#5769BF</span></p></div><div><i style="background:#E9E9E9"></i><p style="color:#1b1b24;background:#E9E9E9">Gray<span style="color:#1b1b24;opacity:.75">#E9E9E9</span></p></div><div><i style="background:#57C8E7"></i><p style="color:#1b1b24;background:#57C8E7">Cyan<span style="color:#1b1b24;opacity:.75">#57C8E7</span></p></div><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div></div></div>
+    <figure class="shot"><img src="../assets/works/nami-design-system/color.jpg" alt="Nami Design System 色彩規範"><figcaption>Color 色彩規範：brandColor 品牌色階、灰階與按鈕色，附色碼。色彩以 Figma Variables 管理。</figcaption></figure>
+  </section>
+  <section class="ds" id="typography">
+    <div class="sub">Typography</div>
+    <h2>字體排版<span class="dot">.</span></h2>
+    <p class="lead">全系統統一使用 Arial，共十級字階，字距一律 0px。</p>
+    <div class="rules"><ol>
+      <li>可依照 Case 使用對應文字類型，若有新的 Case 情境也可補充於 Case 中</li>
+    </ol></div>
+    <div class="tbl"><table>
+      <tr><th>Type</th><th>Case</th><th>Font family</th><th>Font size</th><th>Font weight</th><th>Line height</th><th>Letter spacing</th></tr>
+      <tr><td><b>Heading 5 Large</b></td><td>中標題</td><td>Arial</td><td>21px</td><td>Bold</td><td>24px</td><td>0px</td></tr>
+      <tr><td><b>Heading 6 Large</b></td><td>小標題</td><td>Arial</td><td>16px</td><td>Bold</td><td>24px</td><td>0px</td></tr>
+      <tr><td><b>Body_Bold</b></td><td>內文標題</td><td>Arial</td><td>14px</td><td>Bold</td><td>16px</td><td>0px</td></tr>
+      <tr><td>Body_Regular</td><td>內文</td><td>Arial</td><td>14px</td><td>Regular</td><td>16px</td><td>0px</td></tr>
+      <tr><td><b>Caption_Bold</b></td><td>說明文字</td><td>Arial</td><td>12px</td><td>Bold</td><td>13.8px</td><td>0px</td></tr>
+      <tr><td>Caption_Regular</td><td>說明文字</td><td>Arial</td><td>12px</td><td>Regular</td><td>13.8px</td><td>0px</td></tr>
+      <tr><td><b>Hyberlink_Bold</b></td><td>超連結</td><td>Arial</td><td>12px</td><td>Bold</td><td>13.8px</td><td>0px</td></tr>
+      <tr><td>Hyberlink_Regular</td><td>超連結</td><td>Arial</td><td>12px</td><td>Regular</td><td>13.8px</td><td>0px</td></tr>
+      <tr><td><b>Small_Bold</b></td><td>卡片說明文字</td><td>Arial</td><td>10px</td><td>Bold</td><td>11.5px</td><td>0px</td></tr>
+      <tr><td>Small_Regular</td><td>卡片說明文字</td><td>Arial</td><td>10px</td><td>Regular</td><td>11.5px</td><td>0px</td></tr>
+    </table></div>
+    <figure class="shot"><img src="../assets/works/nami-design-system/typography.jpg" alt="Nami Design System 字體規範"><figcaption>Typography 字體規範：Arial 字體、十級字階。</figcaption></figure>
+  </section>
+  <section class="ds" id="components">
+    <div class="sub">Components</div>
+    <h2>元件<span class="dot">.</span></h2>
+    <p class="lead">每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。</p>
+    <div class="rules"><ol>
+      <li>尺寸 Default / Small 兩種；寬度 auto / 150 / 210 / 300 / 335 px</li>
+      <li>六種顏色：BrandBlue / Yellow / Indigo / Gray / Cyan / White，每種顏色都有 Fill 與 Outline 版本</li>
+      <li>狀態：Normal / Focus / Disabled / Error / Error-msg</li>
+      <li>另有 Category button；Normal 按鈕寬度 335 px / 210 px</li>
+    </ol></div>
+    <figure class="shot"><img src="../assets/works/nami-design-system/button.jpg" alt="Nami Design System Button 按鈕規範"><figcaption>Button 按鈕：六種顏色 × Default / Small 兩種尺寸，每種顏色都有 Outline 版本。</figcaption></figure>
+    <p class="lead" style="margin-top:28px">其他元件與模板的規格都在 Figma 檔案裡，分子層 7 個、有機體層 3 個、模板層 5 個，詳見上方架構。</p>
+  </section>
   <div class="pager"><a href="mtbo-design-system.html">← 上一個作品<span>MTBO Design System</span></a><a href="twsc-onboarding.html" style="text-align:right">下一個作品 →<span>TWSC 新人入職訓練計畫</span></a></div>
 </main>
 <footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>

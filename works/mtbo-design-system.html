@@ -113,6 +113,37 @@ dialog .b{padding:20px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
+
+/* MTBO DS sections */
+.ds{margin-top:64px}
+.ds h2{font-size:28px;line-height:1.25}
+.ds .sub{color:var(--mute);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.ds .lead{color:var(--mute);max-width:760px;margin-top:10px}
+.shot{margin:28px 0 0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.shot img{width:100%;display:block}
+.shot figcaption{padding:14px 20px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);background:#fff}
+.arch{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.arch .lv{display:flex;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
+.arch .lv:last-child{border-bottom:0}
+.arch .lv b{flex:0 0 130px;font-size:17px}
+.arch .lv b span{display:block;color:var(--mute);font-size:13px;font-weight:400}
+.arch .lv .chips{margin-top:0}
+.swgroup{margin-top:32px}
+.swgroup h3{font-size:17px;margin-bottom:12px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sw i{display:block;height:64px}
+.sw p{padding:8px 10px 10px;font-size:13px;line-height:1.4}
+.sw p span{display:block;color:var(--mute);font-size:12px}
+.rules{margin-top:24px;color:var(--mute);max-width:760px}
+.rules ol{margin:0;padding-left:22px}
+.rules ol ol{margin-top:4px}
+.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+.tbl table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}
+.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--mute);font-weight:400;background:var(--soft)}
+.tbl tr:last-child td{border-bottom:0}
+@media(max-width:760px){.arch .lv{flex-direction:column;gap:8px}.arch .lv b{flex:none}}
 </style>
 </head>
 <body>
@@ -122,12 +153,65 @@ dialog .b{padding:20px}
   <div><span class="tag">Design System</span>
   <h1>MTBO Design System</h1>
   
-  <div class="chips"><span>Components 元件</span><span>Styles 樣式</span></div>
-  <p class="intro">收錄 MTBO 產品的元件與樣式規範，統一跨產品視覺與操作體驗的設計系統。</p>
+  <div class="chips"><span>Components 元件</span><span>Styles 樣式</span><span>Atomic Design 原子設計</span></div>
+  <p class="intro">MTBO 產品的設計系統，以 Atomic Design 方法組織：從色彩、字體等基礎元素，到按鈕、輸入框等元件，再組裝成表格、卡片與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。</p>
   
   
   <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <div class="hero-img"><img src="../assets/MTBO_Design_system.png" alt="MTBO Design System"></div>
+
+  <section class="ds" id="architecture">
+    <div class="sub">Architecture</div>
+    <h2>設計系統架構<span class="dot">.</span></h2>
+    <p class="lead">整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。</p>
+    <div class="arch">
+      <div class="lv"><b>Atoms<span>原子 · 基礎元素</span></b><div class="chips"><span>Color 色彩</span><span>Typography 字體排版</span><span>Icon 圖示</span><span>Date &amp; Time Format 日期時間格式</span><span>Scrollbar 捲軸</span><span>Elevation 陰影層級</span><span>Loading 載入狀態</span></div></div>
+      <div class="lv"><b>Molecules<span>分子 · 元件</span></b><div class="chips"><span>Search 搜尋</span><span>Button 按鈕</span><span>Checkbox 核取方塊</span><span>Input 輸入框</span><span>Message 訊息</span><span>Date Picker 日期選擇器</span></div></div>
+      <div class="lv"><b>Organisms<span>有機體 · 複合區塊</span></b><div class="chips"><span>Card 卡片</span><span>Dropdown 下拉選單</span><span>Table 表格</span><span>Pagination 分頁</span></div></div>
+      <div class="lv"><b>Templates<span>模板 · 版面骨架</span></b><div class="chips"><span>Sidebar 側邊欄</span><span>Header 頁首</span></div></div>
+    </div>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/library.jpg" alt="MTBO Design System 元件庫總覽"><figcaption>Library 總覽：整個設計系統的元件庫，依 Atoms、Molecules、Organisms、Templates 分層收納。</figcaption></figure>
+  </section>
+  <section class="ds" id="color">
+    <div class="sub">Color</div>
+    <h2>色彩<span class="dot">.</span></h2>
+    <p class="lead">灰階負責文字與背景層次，資訊色對應成功、錯誤與提醒三種狀態，主色是藍色系，另有一個深藍輔助色。</p>
+<div class="swgroup"><h3>Gray scale 灰階</h3><div class="sw"><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div><div><i style="background:#000000"></i><p style="color:#fff;background:#000000">Black<span style="color:#fff;opacity:.75">#000000</span></p></div><div><i style="background:#F2F2F2"></i><p style="color:#1b1b24;background:#F2F2F2">Grey 1<span style="color:#1b1b24;opacity:.75">#F2F2F2</span></p></div><div><i style="background:#E7E6E6"></i><p style="color:#1b1b24;background:#E7E6E6">Grey 2<span style="color:#1b1b24;opacity:.75">#E7E6E6</span></p></div><div><i style="background:#DDDDDD"></i><p style="color:#1b1b24;background:#DDDDDD">Grey 3<span style="color:#1b1b24;opacity:.75">#DDDDDD</span></p></div><div><i style="background:#CCCCCC"></i><p style="color:#1b1b24;background:#CCCCCC">Grey 4<span style="color:#1b1b24;opacity:.75">#CCCCCC</span></p></div><div><i style="background:#C3C2C2"></i><p style="color:#1b1b24;background:#C3C2C2">Grey 5<span style="color:#1b1b24;opacity:.75">#C3C2C2</span></p></div><div><i style="background:#BBBBBB"></i><p style="color:#1b1b24;background:#BBBBBB">Grey 6<span style="color:#1b1b24;opacity:.75">#BBBBBB</span></p></div><div><i style="background:#A7A7A7"></i><p style="color:#1b1b24;background:#A7A7A7">Grey 7<span style="color:#1b1b24;opacity:.75">#A7A7A7</span></p></div><div><i style="background:#666666"></i><p style="color:#fff;background:#666666">Grey 8<span style="color:#fff;opacity:.75">#666666</span></p></div><div><i style="background:#444444"></i><p style="color:#fff;background:#444444">Grey 9<span style="color:#fff;opacity:.75">#444444</span></p></div></div></div><div class="swgroup"><h3>Info color 資訊色</h3><div class="sw"><div><i style="background:#E8F5E9"></i><p style="color:#1b1b24;background:#E8F5E9">Light Green<span style="color:#1b1b24;opacity:.75">#E8F5E9</span></p></div><div><i style="background:#5DB55F"></i><p style="color:#fff;background:#5DB55F">Mid Green<span style="color:#fff;opacity:.75">#5DB55F</span></p></div><div><i style="background:#66BB6A"></i><p style="color:#1b1b24;background:#66BB6A">Dark Green<span style="color:#1b1b24;opacity:.75">#66BB6A</span></p></div><div><i style="background:#FFE9E7"></i><p style="color:#1b1b24;background:#FFE9E7">Light Red<span style="color:#1b1b24;opacity:.75">#FFE9E7</span></p></div><div><i style="background:#FF6160"></i><p style="color:#fff;background:#FF6160">Mid Red<span style="color:#fff;opacity:.75">#FF6160</span></p></div><div><i style="background:#F44336"></i><p style="color:#fff;background:#F44336">Dark Red<span style="color:#fff;opacity:.75">#F44336</span></p></div><div><i style="background:#FFF2E6"></i><p style="color:#1b1b24;background:#FFF2E6">Light Orange<span style="color:#1b1b24;opacity:.75">#FFF2E6</span></p></div><div><i style="background:#FB8C00"></i><p style="color:#1b1b24;background:#FB8C00">Dark Orange<span style="color:#1b1b24;opacity:.75">#FB8C00</span></p></div></div></div><div class="swgroup"><h3>Primary color 主色</h3><div class="sw"><div><i style="background:#E3F2FD"></i><p style="color:#1b1b24;background:#E3F2FD">Primary 1<span style="color:#1b1b24;opacity:.75">#E3F2FD</span></p></div><div><i style="background:#2196F3"></i><p style="color:#fff;background:#2196F3">Primary 2<span style="color:#fff;opacity:.75">#2196F3</span></p></div><div><i style="background:#1E88E5"></i><p style="color:#fff;background:#1E88E5">Primary 3<span style="color:#fff;opacity:.75">#1E88E5</span></p></div><div><i style="background:#1976D2"></i><p style="color:#fff;background:#1976D2">Primary 4<span style="color:#fff;opacity:.75">#1976D2</span></p></div></div></div><div class="swgroup"><h3>Blue 藍色</h3><div class="sw"><div><i style="background:#203864"></i><p style="color:#fff;background:#203864">Blue 1<span style="color:#fff;opacity:.75">#203864</span></p></div></div></div>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/color.jpg" alt="MTBO Design System 色彩規範"><figcaption>Color 色彩規範：灰階、資訊色、主色與藍色，附色碼。</figcaption></figure>
+  </section>
+  <section class="ds" id="typography">
+    <div class="sub">Typography</div>
+    <h2>字體排版<span class="dot">.</span></h2>
+    <p class="lead">全系統統一使用 Roboto，字體大小以 1rem = 16px 為基準，共六級字階，行高一律 150%，字距 0px。</p>
+    <div class="rules"><ol>
+      <li>文字請統一用 #000000</li>
+      <li>font size 的 Base 1rem 是 16px</li>
+      <li>Wording 定義：
+        <ol type="a">
+          <li>Title / Label / Table header 一律採用 Title Case</li>
+          <li>其他內文採用 Sentence Case</li>
+          <li>Button 全大寫</li>
+        </ol>
+      </li>
+    </ol></div>
+    <div class="tbl"><table>
+      <tr><th>Type</th><th>Case</th><th>Font family</th><th>Font size</th><th>Font weight</th><th>Line height</th><th>Letter spacing</th></tr>
+      <tr><td><b>Heading_1_bold</b></td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>28px (1.75rem)</td><td>Bold</td><td>42px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Heading_2_medium</b></td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>20px (1.25rem)</td><td>Medium</td><td>30px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Heading_3_medium</b></td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>16px (1rem)</td><td>Medium</td><td>24px (150%)</td><td>0px</td></tr>
+      <tr><td>Heading_3_regular</td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>16px (1rem)</td><td>Regular</td><td>24px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Body_Medium</b></td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>13px (0.8125rem)</td><td>Medium</td><td>21px (150%)</td><td>0px</td></tr>
+      <tr><td>Body_Regular</td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>13px (0.8125rem)</td><td>Regular</td><td>21px (150%)</td><td>0px</td></tr>
+    </table></div>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/typography.jpg" alt="MTBO Design System 字體規範"><figcaption>Typography 字體規範：Roboto 字體、六級字階與用字規則。</figcaption></figure>
+  </section>
+  <section class="ds" id="components">
+    <div class="sub">Components</div>
+    <h2>元件<span class="dot">.</span></h2>
+    <p class="lead">每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。</p>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/button.jpg" alt="MTBO Design System Button 按鈕規範"><figcaption>Button 按鈕：Big / Medium / Small 三種尺寸，Primary / Red / Green / Outline 樣式，含 Default / Hover / Disabled 三種狀態與 Icon button；右側為使用規範。</figcaption></figure>
+    <p class="lead" style="margin-top:28px">其他元件與模板的規格都在 Figma 檔案裡：Search、Checkbox、Input、Message、Date Picker、Card、Dropdown、Table、Pagination、Sidebar、Header。</p>
+  </section>
   <div class="pager"><a href="saiyan-design-system.html">← 上一個作品<span>Saiyan Design System</span></a><a href="nami-design-system.html" style="text-align:right">下一個作品 →<span>Nami Design System</span></a></div>
 </main>
 <footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>

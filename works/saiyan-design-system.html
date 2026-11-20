@@ -112,6 +112,36 @@ dialog .b{padding:20px}
 .pager a{border:1.5px solid var(--line);border-radius:99px;padding:10px 22px;font-size:15px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
+
+.ds{margin-top:64px}
+.ds h2{font-size:28px;line-height:1.25}
+.ds .sub{color:var(--mute);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.ds .lead{color:var(--mute);max-width:760px;margin-top:10px}
+.shot{margin:28px 0 0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.shot img{width:100%;display:block}
+.shot figcaption{padding:14px 20px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);background:#fff}
+.arch{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.arch .lv{display:flex;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
+.arch .lv:last-child{border-bottom:0}
+.arch .lv b{flex:0 0 130px;font-size:17px}
+.arch .lv b span{display:block;color:var(--mute);font-size:13px;font-weight:400}
+.arch .lv .chips{margin-top:0}
+.swgroup{margin-top:32px}
+.swgroup h3{font-size:17px;margin-bottom:12px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
+.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sw i{display:block;height:64px}
+.sw p{padding:8px 10px 10px;font-size:13px;line-height:1.4}
+.sw p span{display:block;color:var(--mute);font-size:12px}
+.rules{margin-top:24px;color:var(--mute);max-width:760px}
+.rules ol{margin:0;padding-left:22px}
+.rules ol ol{margin-top:4px}
+.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+.tbl table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}
+.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--mute);font-weight:400;background:var(--soft)}
+.tbl tr:last-child td{border-bottom:0}
+@media(max-width:760px){.arch .lv{flex-direction:column;gap:8px}.arch .lv b{flex:none}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
 </head>
@@ -122,12 +152,70 @@ dialog .b{padding:20px}
   <div><span class="tag">Design System</span>
   <h1>Saiyan Design System</h1>
   
-  <div class="chips"><span>Components 元件</span><span>Colors / Typography 色彩與字體</span></div>
-  <p class="intro">收錄 Saiyan 產品的元件、色彩與字體規範，統一跨產品視覺與操作體驗的設計系統。</p>
+  <div class="chips"><span>Components 元件</span><span>Colors / Typography 色彩與字體</span><span>Atomic Design 原子設計</span></div>
+  <p class="intro">Saiyan 產品的設計系統，以 Atomic Design 方法組織：從色彩、字體等基礎元素，到按鈕、輸入框等元件，再組裝成表格、對話框與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。</p>
   
   
   <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <div class="hero-img"><img src="../assets/Saiyan__Design_System.png" alt="Saiyan Design System"></div>
+
+  <section class="ds" id="architecture">
+    <div class="sub">Architecture</div>
+    <h2>設計系統架構<span class="dot">.</span></h2>
+    <p class="lead">整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。</p>
+    <div class="arch">
+      <div class="lv"><b>Atoms<span>原子 · 基礎元素</span></b><div class="chips"><span>Color 色彩</span><span>Typography 字體排版</span><span>Space 間距</span><span>Border radius 圓角</span><span>Elevation 陰影層級</span><span>Icon 圖示</span><span>Date &amp; Time Format 日期時間格式</span><span>Currency 貨幣</span><span>Amount 金額</span><span>Grid 網格</span><span>Loading 載入狀態</span><span>Scroll Bar 捲軸</span></div></div>
+      <div class="lv"><b>Molecules<span>分子 · 元件</span></b><div class="chips"><span>Button 按鈕</span><span>Badge 徽章</span><span>Chips 標籤</span><span>Collapse 折疊</span><span>Checkbox 核取方塊</span><span>Pagination 分頁</span><span>Input 輸入框</span><span>Message 訊息</span><span>Radio 單選</span><span>Toggle 開關</span><span>Tooltips 提示</span><span>Text Area 文字區</span><span>Tab 頁籤</span><span>Search 搜尋</span><span>Carousell 輪播</span><span>Progress bar 進度條</span></div></div>
+      <div class="lv"><b>Organisms<span>有機體 · 複合區塊</span></b><div class="chips"><span>Dropdown 下拉選單</span><span>Dialog 對話框</span><span>Date Picker 日期選擇器</span><span>Drawer 抽屜</span><span>Time Picker 時間選擇器</span><span>Table 表格</span></div></div>
+      <div class="lv"><b>Templates<span>模板 · 版面骨架</span></b><div class="chips"><span>Card 卡片</span><span>Header 頁首</span><span>Sidebar 側邊欄</span><span>Action bar 操作列</span><span>Page layout 頁面版面</span></div></div>
+    </div>
+    <p class="lead" style="margin-top:28px">整個檔案共 39 個規範頁：Atoms 12 頁、Molecules 16 頁、Organisms 6 頁、Templates 5 頁，另有 Cover 與 Library 頁。</p>
+  </section>
+  <section class="ds" id="color">
+    <div class="sub">Color</div>
+    <h2>色彩<span class="dot">.</span></h2>
+    <p class="lead">主色是 10 階藍色，Blue-8（#1976D2）是主要品牌色；灰階負責文字與背景層次；資訊色對應錯誤、警告、成功與資訊四種狀態；另有深藍背景色與按鈕、開關專用綠色。色碼大多參考 Quasar。</p>
+<div class="swgroup"><h3>Primary color 主色</h3><div class="sw"><div><i style="background:#E3F2FD"></i><p style="color:#1b1b24;background:#E3F2FD">1 Msg Bg Color<span style="color:#1b1b24;opacity:.75">#E3F2FD</span></p></div><div><i style="background:#BBDEFB"></i><p style="color:#1b1b24;background:#BBDEFB">2<span style="color:#1b1b24;opacity:.75">#BBDEFB</span></p></div><div><i style="background:#90CAF9"></i><p style="color:#1b1b24;background:#90CAF9">3 Disabled Color<span style="color:#1b1b24;opacity:.75">#90CAF9</span></p></div><div><i style="background:#64B5F6"></i><p style="color:#1b1b24;background:#64B5F6">4<span style="color:#1b1b24;opacity:.75">#64B5F6</span></p></div><div><i style="background:#42A5F5"></i><p style="color:#fff;background:#42A5F5">5<span style="color:#fff;opacity:.75">#42A5F5</span></p></div><div><i style="background:#2196F3"></i><p style="color:#fff;background:#2196F3">6 Hover Color<span style="color:#fff;opacity:.75">#2196F3</span></p></div><div><i style="background:#1E88E5"></i><p style="color:#fff;background:#1E88E5">7<span style="color:#fff;opacity:.75">#1E88E5</span></p></div><div><i style="background:#1976D2"></i><p style="color:#fff;background:#1976D2">8 Primary Color<span style="color:#fff;opacity:.75">#1976D2</span></p></div><div><i style="background:#1565C0"></i><p style="color:#fff;background:#1565C0">9<span style="color:#fff;opacity:.75">#1565C0</span></p></div><div><i style="background:#0D47A1"></i><p style="color:#fff;background:#0D47A1">10<span style="color:#fff;opacity:.75">#0D47A1</span></p></div></div></div><div class="swgroup"><h3>Gray scale 灰階</h3><div class="sw"><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div><div><i style="background:#FAFAFA"></i><p style="color:#1b1b24;background:#FAFAFA">1<span style="color:#1b1b24;opacity:.75">#FAFAFA</span></p></div><div><i style="background:#F5F5F5"></i><p style="color:#1b1b24;background:#F5F5F5">2<span style="color:#1b1b24;opacity:.75">#F5F5F5</span></p></div><div><i style="background:#EEEEEE"></i><p style="color:#1b1b24;background:#EEEEEE">3<span style="color:#1b1b24;opacity:.75">#EEEEEE</span></p></div><div><i style="background:#E0E0E0"></i><p style="color:#1b1b24;background:#E0E0E0">4<span style="color:#1b1b24;opacity:.75">#E0E0E0</span></p></div><div><i style="background:#BDBDBD"></i><p style="color:#1b1b24;background:#BDBDBD">5 Border Color<span style="color:#1b1b24;opacity:.75">#BDBDBD</span></p></div><div><i style="background:#9E9E9E"></i><p style="color:#1b1b24;background:#9E9E9E">6 Button disabled Color<span style="color:#1b1b24;opacity:.75">#9E9E9E</span></p></div><div><i style="background:#757575"></i><p style="color:#fff;background:#757575">7<span style="color:#fff;opacity:.75">#757575</span></p></div><div><i style="background:#616161"></i><p style="color:#fff;background:#616161">8<span style="color:#fff;opacity:.75">#616161</span></p></div><div><i style="background:#424242"></i><p style="color:#fff;background:#424242">9<span style="color:#fff;opacity:.75">#424242</span></p></div><div><i style="background:#212121"></i><p style="color:#fff;background:#212121">10<span style="color:#fff;opacity:.75">#212121</span></p></div><div><i style="background:#000000"></i><p style="color:#fff;background:#000000">Black Font Color<span style="color:#fff;opacity:.75">#000000</span></p></div></div></div><div class="swgroup"><h3>Background color 背景色</h3><div class="sw"><div><i style="background:#19437A"></i><p style="color:#fff;background:#19437A">Light DarkBlue<span style="color:#fff;opacity:.75">#19437A</span></p></div><div><i style="background:#0E3A6F"></i><p style="color:#fff;background:#0E3A6F">Main DarkBlue<span style="color:#fff;opacity:.75">#0E3A6F</span></p></div><div><i style="background:#00204B"></i><p style="color:#fff;background:#00204B">Dark DarkBlue<span style="color:#fff;opacity:.75">#00204B</span></p></div></div></div><div class="swgroup"><h3>Info color 資訊色</h3><div class="sw"><div><i style="background:#FFEBEE"></i><p style="color:#1b1b24;background:#FFEBEE">Error-light Red<span style="color:#1b1b24;opacity:.75">#FFEBEE</span></p></div><div><i style="background:#EF5350"></i><p style="color:#fff;background:#EF5350">Error-main Red<span style="color:#fff;opacity:.75">#EF5350</span></p></div><div><i style="background:#B71C1C"></i><p style="color:#fff;background:#B71C1C">Error-dark Red<span style="color:#fff;opacity:.75">#B71C1C</span></p></div><div><i style="background:#FFF3E0"></i><p style="color:#1b1b24;background:#FFF3E0">Warning-light Orange<span style="color:#1b1b24;opacity:.75">#FFF3E0</span></p></div><div><i style="background:#FFA726"></i><p style="color:#1b1b24;background:#FFA726">Warning-main Orange<span style="color:#1b1b24;opacity:.75">#FFA726</span></p></div><div><i style="background:#EF6C00"></i><p style="color:#fff;background:#EF6C00">Warning-dark Orange<span style="color:#fff;opacity:.75">#EF6C00</span></p></div><div><i style="background:#E8F5E9"></i><p style="color:#1b1b24;background:#E8F5E9">Success-light Green<span style="color:#1b1b24;opacity:.75">#E8F5E9</span></p></div><div><i style="background:#66BB6A"></i><p style="color:#1b1b24;background:#66BB6A">Success-main Green<span style="color:#1b1b24;opacity:.75">#66BB6A</span></p></div><div><i style="background:#1B5E20"></i><p style="color:#fff;background:#1B5E20">Success-dark Green<span style="color:#fff;opacity:.75">#1B5E20</span></p></div><div><i style="background:#E0F2F1"></i><p style="color:#1b1b24;background:#E0F2F1">Info-light Teal<span style="color:#1b1b24;opacity:.75">#E0F2F1</span></p></div><div><i style="background:#26A69A"></i><p style="color:#fff;background:#26A69A">Info-main Teal<span style="color:#fff;opacity:.75">#26A69A</span></p></div><div><i style="background:#004D40"></i><p style="color:#fff;background:#004D40">Info-dark Teal<span style="color:#fff;opacity:.75">#004D40</span></p></div></div></div><div class="swgroup"><h3>Button / Toggle color 按鈕與開關色</h3><div class="sw"><div><i style="background:#A5D6A7"></i><p style="color:#1b1b24;background:#A5D6A7">Toggle bc Color Green<span style="color:#1b1b24;opacity:.75">#A5D6A7</span></p></div><div><i style="background:#4CAF50"></i><p style="color:#fff;background:#4CAF50">Hover Color Green<span style="color:#fff;opacity:.75">#4CAF50</span></p></div><div><i style="background:#388E3C"></i><p style="color:#fff;background:#388E3C">Default Color Green<span style="color:#fff;opacity:.75">#388E3C</span></p></div></div></div>
+    <figure class="shot"><img src="../assets/works/saiyan-design-system/color.jpg" alt="Saiyan Design System 色彩規範"><figcaption>Color 色彩規範：主色、灰階、背景色、資訊色與按鈕/開關色，附色碼。</figcaption></figure>
+  </section>
+  <section class="ds" id="typography">
+    <div class="sub">Typography</div>
+    <h2>字體排版<span class="dot">.</span></h2>
+    <p class="lead">全系統統一使用 Roboto，字體大小以 1rem = 16px 為基準，共六級字階，行高一律 150%，字距 0px。</p>
+    <div class="rules"><ol>
+      <li>文字請統一用 #000000</li>
+      <li>font size 的 Base 1rem 是 16px</li>
+      <li>Wording 定義：
+        <ol type="a">
+          <li>Title / Label / Table header 一律採用 Title Case</li>
+          <li>其他採用 Sentence Case</li>
+        </ol>
+      </li>
+    </ol></div>
+    <div class="tbl"><table>
+      <tr><th>Type</th><th>Case</th><th>Font family</th><th>Font size</th><th>Font weight</th><th>Line height</th><th>Letter spacing</th></tr>
+      <tr><td><b>Heading 1 - Medium</b></td><td>大標題</td><td>Roboto</td><td>20px (1.25rem)</td><td>Medium</td><td>30px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Heading 2 - Medium</b></td><td>中標題</td><td>Roboto</td><td>18px (1.125rem)</td><td>Medium</td><td>27px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Heading 3 - Medium</b></td><td>小標題</td><td>Roboto</td><td>16px (1rem)</td><td>Medium</td><td>24px (150%)</td><td>0px</td></tr>
+      <tr><td><b>Body - Medium</b></td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>14px (0.875rem)</td><td>Medium</td><td>21px (150%)</td><td>0px</td></tr>
+      <tr><td>Body - Regular</td><td>Body / 表格 / 按鈕文字</td><td>Roboto</td><td>14px (0.875rem)</td><td>Regular</td><td>21px (150%)</td><td>0px</td></tr>
+      <tr><td>Label</td><td>輸入框 Label</td><td>Roboto</td><td>12px (0.75rem)</td><td>Regular</td><td>18px (150%)</td><td>0px</td></tr>
+    </table></div>
+    <figure class="shot"><img src="../assets/works/saiyan-design-system/typography.jpg" alt="Saiyan Design System 字體規範"><figcaption>Typography 字體規範：Roboto 字體、六級字階與用字規則。</figcaption></figure>
+  </section>
+  <section class="ds" id="components">
+    <div class="sub">Components</div>
+    <h2>元件<span class="dot">.</span></h2>
+    <p class="lead">每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。</p>
+    <div class="rules"><ol>
+      <li>主要 Button 用 Fill，背景色 Blue-8（Primary #1976D2）；次要 Button 用 Outline，邊框 Blue-8；下載 Button 用 Fill，背景色 Green</li>
+      <li>按鈕文字用 Sentence Case，例：Button text</li>
+      <li>按鈕 min width 80px；表單按鈕寬度 335px</li>
+      <li>用於提交、搜尋、清除或下載時：未輸入資料是 Disable 狀態，輸入資料後切換為 Default；點擊後進入 Loading 狀態，提供操作回饋</li>
+    </ol></div>
+    <figure class="shot"><img src="../assets/works/saiyan-design-system/button.jpg" alt="Saiyan Design System Button 按鈕規範"><figcaption>Button 按鈕：Big / Medium / Small 三種尺寸，Fill Primary / Outline Primary / Fill Green 三種樣式。</figcaption></figure>
+    <p class="lead" style="margin-top:28px">其他元件與模板的規格都在 Figma 檔案裡，分子層 16 個、有機體層 6 個、模板層 5 個，詳見上方架構。</p>
+  </section>
   <div class="pager"><a href="saiyan-settlement.html">← 上一個作品<span>Settlement 結算</span></a><a href="mtbo-design-system.html" style="text-align:right">下一個作品 →<span>MTBO Design System</span></a></div>
 </main>
 <footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
