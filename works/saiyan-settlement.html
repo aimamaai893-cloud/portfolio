@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Settlement 結算｜Laly Chang 作品集</title>
-<meta name="description" content="Settlement 結算｜Laly Chang，ACC 行政系統">
+<meta name="description" content="Settlement 結算｜Laly Chang，後台管理系統">
 <meta name="theme-color" content="#6c5ce7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c5ce7'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EL.%3C/text%3E%3C/svg%3E">
 <style>
 /* 品牌色：紫色 #6c5ce7，標誌保留 Laly.Lab */
+html.i18n-pending body{visibility:hidden}
 :root{--accent:#6c5ce7;--ink:#1b1b24;--soft:#f5f4fb;--dark:#14141c;--mute:#6b6b7b;--line:#e6e4f0}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -20,6 +21,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
+.lang-switch{margin-left:26px;font:inherit;font-size:14px;color:var(--mute);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer}.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
 .hero{padding:96px 0 72px;text-align:center}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
@@ -78,6 +80,7 @@ section{padding:56px 0}
 .wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
+.lang-switch{margin-left:0;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
 .hero h1{font-size:28px}
@@ -121,6 +124,7 @@ dialog .b{padding:20px}
 .pager a{border:1.5px solid var(--line);border-radius:99px;padding:10px 22px;font-size:15px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
+.pager a span.pl{display:inline;color:inherit;font-size:inherit}
 .case{padding:56px 0 8px}
 .case>p{max-width:760px}
 .case>p+p{margin-top:12px}
@@ -141,37 +145,185 @@ dialog .b{padding:20px}
 @media(max-width:760px){.ov{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
+<script>document.documentElement.classList.add("i18n-pending")</script>
+<script>window.PAGE_I18N={
+  "__title__": {
+    "zh": "Settlement 結算｜Laly Chang 作品集",
+    "en": "Settlement | Laly Chang Portfolio"
+  },
+  "__desc__": {
+    "zh": "Settlement 結算｜Laly Chang，後台管理系統",
+    "en": "Settlement | Laly Chang, Back-office Systems"
+  },
+  "tag": {
+    "zh": "後台管理系統",
+    "en": "Back-office Systems"
+  },
+  "h1": {
+    "zh": "Settlement 結算",
+    "en": "Settlement"
+  },
+  "chip1": {
+    "zh": "Internal Transfer 內部轉帳",
+    "en": "Internal Transfer"
+  },
+  "chip2": {
+    "zh": "List of Accounts 帳戶列表",
+    "en": "List of Accounts"
+  },
+  "intro": {
+    "zh": "處理平台內部轉帳的結算後台模組，橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統。",
+    "en": "A back-office settlement module for internal platform transfers, spanning three systems: Saiyan, MTBO (KingsPay), and Leo."
+  },
+  "h_overview": {
+    "zh": "專案概覽<span class=\"dot\">.</span>",
+    "en": "Project Overview<span class=\"dot\">.</span>"
+  },
+  "ov_role_l": {
+    "zh": "我的角色",
+    "en": "My Role"
+  },
+  "ov_role_v": {
+    "zh": "流程與介面設計",
+    "en": "Flow & interface design"
+  },
+  "ov_user_l": {
+    "zh": "使用者",
+    "en": "Users"
+  },
+  "ov_user_b": {
+    "zh": "ACC 行政人員",
+    "en": "ACC Admin Staff"
+  },
+  "ov_user_v": {
+    "zh": "金流 Provider",
+    "en": "Payment Provider"
+  },
+  "ov_sys_l": {
+    "zh": "系統",
+    "en": "Systems"
+  },
+  "ov_sys_v": {
+    "zh": "三個系統連動",
+    "en": "Three systems in sync"
+  },
+  "ov_scope_l": {
+    "zh": "範圍",
+    "en": "Scope"
+  },
+  "ov_scope_v": {
+    "zh": "狀態同步 · 對帳",
+    "en": "Status sync · Reconciliation"
+  },
+  "h_bg": {
+    "zh": "背景與問題<span class=\"dot\">.</span>",
+    "en": "Background & Problem<span class=\"dot\">.</span>"
+  },
+  "bg_p1": {
+    "zh": "ACC（用 Saiyan）與金流 Provider（用 MTBO）是合作關係，需要定期比對兩個系統的 Internal Transfer 帳目。在這之前，ACC 在 Leo（Saiyan 的前身舊系統）記帳，Provider 在 MTBO 記帳：Provider 先記帳、匯出給 ACC，ACC 再到 Leo 記帳，兩邊都要重複記帳。",
+    "en": "ACC (on Saiyan) and the payment provider (on MTBO) work as partners and need to regularly reconcile Internal Transfer records across the two systems. Before this, ACC kept its books in Leo (Saiyan's predecessor, the legacy system) while the provider recorded in MTBO: the provider recorded first, exported to ACC, and ACC recorded it again in Leo — double bookkeeping on both sides."
+  },
+  "bg_p2": {
+    "zh": "技術上 Leo 無法與 MTBO 串接，兩個系統始終連動不起來；而且 ACC 只能知道轉帳銀行、金額與手續費，用戶銀行個資得手動刪除修改後才能轉交。",
+    "en": "Technically, Leo could not integrate with MTBO, so the two systems never synced. And ACC only needed the transfer bank, amount, and fees — user bank details had to be manually removed before handover."
+  },
+  "h_flow": {
+    "zh": "使用者流程<span class=\"dot\">.</span>",
+    "en": "User Flow<span class=\"dot\">.</span>"
+  },
+  "flow_intro": {
+    "zh": "內部轉帳橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統：Leo 是 Saiyan 的前身舊系統，流程從 Leo 開始，Saiyan 建立轉帳，MTBO 確認並更新狀態，資訊與狀態同步回 Saiyan 與 Leo。",
+    "en": "Internal transfers span three systems — Saiyan, MTBO (KingsPay), and Leo. Leo is Saiyan's predecessor, the legacy system; the flow starts in Leo, transfers are created in Saiyan, MTBO confirms and updates the status, and information and status sync back to Saiyan and Leo."
+  },
+  "h_dec": {
+    "zh": "關鍵設計決定<span class=\"dot\">.</span>",
+    "en": "Key Design Decisions<span class=\"dot\">.</span>"
+  },
+  "dec1_t": {
+    "zh": "建立前先檢查",
+    "en": "Check before creating"
+  },
+  "dec1_b": {
+    "zh": "建立轉帳前先確認是否已建過，避免重複建立。",
+    "en": "Before creating a transfer, check whether it already exists — no duplicates."
+  },
+  "dec2_t": {
+    "zh": "狀態更新集中在 MTBO",
+    "en": "Status updates live in MTBO"
+  },
+  "dec2_b": {
+    "zh": "確認與更新（Success / Reject）只在 MTBO 做，責任清楚。",
+    "en": "Confirmation and updates (Success / Reject) happen only in MTBO, so ownership is clear."
+  },
+  "dec3_t": {
+    "zh": "更新後自動同步三邊",
+    "en": "Auto-sync across all three systems"
+  },
+  "dec3_b": {
+    "zh": "狀態更新後自動同步回 Saiyan 的轉帳列表與 Leo 的報表，三邊狀態一致，不用人工對帳。",
+    "en": "After an update, the status syncs back automatically to Saiyan's transfer list and Leo's statements — all three stay consistent, with no manual reconciliation."
+  },
+  "dec4_t": {
+    "zh": "個資不進 ACC 的視野",
+    "en": "Personal data stays out of ACC's view"
+  },
+  "dec4_b": {
+    "zh": "Saiyan 可以看到轉帳已成立，但同步的資料只包含轉帳銀行、金額與手續費，用戶銀行個資不會同步過去，不用再手動刪除修改。",
+    "en": "Saiyan can see that a transfer was created, but the synced data only includes the transfer bank, amount, and fees — user bank details are never synced over, so nothing needs to be manually removed."
+  },
+  "dec5_t": {
+    "zh": "三種轉帳共用一個入口",
+    "en": "One entry for three transfer types"
+  },
+  "dec5_b": {
+    "zh": "Topup / Settlement / InterBank 共用同一個建立彈窗。",
+    "en": "Topup / Settlement / InterBank share a single create popup."
+  },
+  "h_outcome": {
+    "zh": "成果<span class=\"dot\">.</span>",
+    "en": "Outcome<span class=\"dot\">.</span>"
+  },
+  "out_cap": {
+    "zh": "Provider 的工作時間減少",
+    "en": "Reduction in provider work time"
+  },
+  "out_p": {
+    "zh": "Provider 建立項目、手動匯出的步驟減少；用戶銀行個資也不會再出現在 ACC 看得到的資料裡。",
+    "en": "The provider's steps for creating items and exporting manually are reduced — and user bank details no longer appear in any data ACC can see."
+  }
+};</script>
+<script src="../assets/i18n.js"></script>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about">關於 Laly</a><a class="l" href="../index.html#work">精選作品</a><a class="l" href="../index.html#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">關於 Laly</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
 <main class="wrap work">
-  <a class="back" href="../index.html#work">← 回到作品列表</a>
-  <div><span class="tag">ACC 行政系統</span>
-  <h1>Settlement 結算</h1>
+  <a class="back" href="../index.html#work" data-i18n="back">← 回到作品列表</a>
+  <div><span class="tag" data-i18n="tag">後台管理系統</span>
+  <h1 data-i18n="h1">Settlement 結算</h1>
   
-  <div class="chips"><span>Internal Transfer 內部轉帳</span><span>List of Accounts 帳戶列表</span></div>
-  <p class="intro">處理平台內部轉帳的結算後台模組，橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統。</p>
+  <div class="chips"><span data-i18n="chip1">Internal Transfer 內部轉帳</span><span data-i18n="chip2">List of Accounts 帳戶列表</span></div>
+  <p class="intro" data-i18n="intro">處理平台內部轉帳的結算後台模組，橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統。</p>
   
   
-  <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
+  <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <!-- 之後放影片：主視覺影片預留位置 -->
   <section class="case" id="overview">
-    <div class="hd"><span>OVERVIEW</span><h2>專案概覽<span class="dot">.</span></h2></div>
+    <div class="hd"><span>OVERVIEW</span><h2 data-i18n-html="h_overview">專案概覽<span class="dot">.</span></h2></div>
     <div class="ov">
-      <div><small>我的角色</small><b>Product Designer</b><span>流程與介面設計</span></div>
-      <div><small>使用者</small><b>ACC 行政人員</b><span>金流 Provider</span></div>
-      <div><small>系統</small><b>Saiyan · MTBO · Leo</b><span>三個系統連動</span></div>
-      <div><small>範圍</small><b>Internal Transfer</b><span>狀態同步 · 對帳</span></div>
+      <div><small data-i18n="ov_role_l">我的角色</small><b>Product Designer</b><span data-i18n="ov_role_v">流程與介面設計</span></div>
+      <div><small data-i18n="ov_user_l">使用者</small><b data-i18n="ov_user_b">ACC 行政人員</b><span data-i18n="ov_user_v">金流 Provider</span></div>
+      <div><small data-i18n="ov_sys_l">系統</small><b>Saiyan · MTBO · Leo</b><span data-i18n="ov_sys_v">三個系統連動</span></div>
+      <div><small data-i18n="ov_scope_l">範圍</small><b>Internal Transfer</b><span data-i18n="ov_scope_v">狀態同步 · 對帳</span></div>
     </div>
   </section>
   <section class="case" id="background">
-    <div class="hd"><span>BACKGROUND</span><h2>背景與問題<span class="dot">.</span></h2></div>
-    <p>ACC（用 Saiyan）與金流 Provider（用 MTBO）是合作關係，需要定期比對兩個系統的 Internal Transfer 帳目。在這之前，ACC 在 Leo（Saiyan 的前身舊系統）記帳，Provider 在 MTBO 記帳：Provider 先記帳、匯出給 ACC，ACC 再到 Leo 記帳，兩邊都要重複記帳。</p>
-    <p>技術上 Leo 無法與 MTBO 串接，兩個系統始終連動不起來；而且 ACC 只能知道轉帳銀行、金額與手續費，用戶銀行個資得手動刪除修改後才能轉交。</p>
+    <div class="hd"><span>BACKGROUND</span><h2 data-i18n-html="h_bg">背景與問題<span class="dot">.</span></h2></div>
+    <p data-i18n="bg_p1">ACC（用 Saiyan）與金流 Provider（用 MTBO）是合作關係，需要定期比對兩個系統的 Internal Transfer 帳目。在這之前，ACC 在 Leo（Saiyan 的前身舊系統）記帳，Provider 在 MTBO 記帳：Provider 先記帳、匯出給 ACC，ACC 再到 Leo 記帳，兩邊都要重複記帳。</p>
+    <p data-i18n="bg_p2">技術上 Leo 無法與 MTBO 串接，兩個系統始終連動不起來；而且 ACC 只能知道轉帳銀行、金額與手續費，用戶銀行個資得手動刪除修改後才能轉交。</p>
   </section>
   <section class="flow" id="user-flow">
-    <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
-    <p class="flow-intro">內部轉帳橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統：Leo 是 Saiyan 的前身舊系統，流程從 Leo 開始，Saiyan 建立轉帳，MTBO 確認並更新狀態，資訊與狀態同步回 Saiyan 與 Leo。</p>
+    <div class="hd"><span>USER FLOW</span><h2 data-i18n-html="h_flow">使用者流程<span class="dot">.</span></h2></div>
+    <p class="flow-intro" data-i18n="flow_intro">內部轉帳橫跨 Saiyan、MTBO（KingsPay）與 Leo 三個系統：Leo 是 Saiyan 的前身舊系統，流程從 Leo 開始，Saiyan 建立轉帳，MTBO 確認並更新狀態，資訊與狀態同步回 Saiyan 與 Leo。</p>
     <div class="legend"><span class="lg-s">■ Saiyan (ACC User)</span><span class="lg-m">■ MTBO (KingsPay User)</span><span class="lg-l">■ Leo</span><span class="lg-d">◆ Decision Point</span></div>
     <div class="fc-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 840" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Settlement internal transfer user flow across Saiyan, MTBO and Leo">
@@ -245,26 +397,26 @@ dialog .b{padding:20px}
     </div>
   </section>
   <section class="case" id="decisions">
-    <div class="hd"><span>KEY DECISIONS</span><h2>關鍵設計決定<span class="dot">.</span></h2></div>
+    <div class="hd"><span>KEY DECISIONS</span><h2 data-i18n-html="h_dec">關鍵設計決定<span class="dot">.</span></h2></div>
     <div class="dec">
-      <div><i>01</i><div><b>建立前先檢查</b><span>建立轉帳前先確認是否已建過，避免重複建立。</span></div></div>
-      <div><i>02</i><div><b>狀態更新集中在 MTBO</b><span>確認與更新（Success / Reject）只在 MTBO 做，責任清楚。</span></div></div>
-      <div><i>03</i><div><b>更新後自動同步三邊</b><span>狀態更新後自動同步回 Saiyan 的轉帳列表與 Leo 的報表，三邊狀態一致，不用人工對帳。</span></div></div>
-      <div><i>04</i><div><b>個資不進 ACC 的視野</b><span>Saiyan 可以看到轉帳已成立，但同步的資料只包含轉帳銀行、金額與手續費，用戶銀行個資不會同步過去，不用再手動刪除修改。</span></div></div>
-      <div><i>05</i><div><b>三種轉帳共用一個入口</b><span>Topup / Settlement / InterBank 共用同一個建立彈窗。</span></div></div>
+      <div><i>01</i><div><b data-i18n="dec1_t">建立前先檢查</b><span data-i18n="dec1_b">建立轉帳前先確認是否已建過，避免重複建立。</span></div></div>
+      <div><i>02</i><div><b data-i18n="dec2_t">狀態更新集中在 MTBO</b><span data-i18n="dec2_b">確認與更新（Success / Reject）只在 MTBO 做，責任清楚。</span></div></div>
+      <div><i>03</i><div><b data-i18n="dec3_t">更新後自動同步三邊</b><span data-i18n="dec3_b">狀態更新後自動同步回 Saiyan 的轉帳列表與 Leo 的報表，三邊狀態一致，不用人工對帳。</span></div></div>
+      <div><i>04</i><div><b data-i18n="dec4_t">個資不進 ACC 的視野</b><span data-i18n="dec4_b">Saiyan 可以看到轉帳已成立，但同步的資料只包含轉帳銀行、金額與手續費，用戶銀行個資不會同步過去，不用再手動刪除修改。</span></div></div>
+      <div><i>05</i><div><b data-i18n="dec5_t">三種轉帳共用一個入口</b><span data-i18n="dec5_b">Topup / Settlement / InterBank 共用同一個建立彈窗。</span></div></div>
     </div>
   </section>
   <section class="case" id="outcome">
-    <div class="hd"><span>OUTCOME</span><h2>成果<span class="dot">.</span></h2></div>
+    <div class="hd"><span>OUTCOME</span><h2 data-i18n-html="h_outcome">成果<span class="dot">.</span></h2></div>
     <div class="outcome">
       <b>52%</b>
-      <span>Provider 的工作時間減少</span>
-      <p>Provider 建立項目、手動匯出的步驟減少；用戶銀行個資也不會再出現在 ACC 看得到的資料裡。</p>
+      <span data-i18n="out_cap">Provider 的工作時間減少</span>
+      <p data-i18n="out_p">Provider 建立項目、手動匯出的步驟減少；用戶銀行個資也不會再出現在 ACC 看得到的資料裡。</p>
     </div>
   </section>
   <!-- 之後放影片：展示影片預留位置 -->
-  <div class="pager"><a href="saiyan-customer-service.html">← 上一個作品<span>Customer Service 客服系統</span></a><a href="saiyan-design-system.html" style="text-align:right">下一個作品 →<span>Saiyan Design System</span></a></div>
+  <div class="pager"><a href="saiyan-customer-service.html"><span class="pl" data-i18n="prev">← 上一個作品</span><span data-i18n-title="saiyan-customer-service">Customer Service 客服系統</span></a><a href="saiyan-design-system.html" style="text-align:right"><span class="pl" data-i18n="next">下一個作品 →</span><span data-i18n-title="saiyan-design-system">Saiyan Design System</span></a></div>
 </main>
-<footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
+<footer><div class="wrap"><h2 data-i18n-html="foot_h">與我聯絡<span class="dot">.</span></h2><p data-i18n="foot_p">歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener" data-i18n="foot_medium">Medium</a><small data-i18n="foot_copy">© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
 </body>
 </html>

@@ -6,8 +6,10 @@
 <title>Tifun 企業活動報名系統｜Laly Chang 作品集</title>
 <meta name="description" content="Tifun 企業活動報名系統｜Laly Chang，企業內部系統">
 <meta name="theme-color" content="#6c5ce7">
+<script>document.documentElement.classList.add("i18n-pending")</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c5ce7'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EL.%3C/text%3E%3C/svg%3E">
 <style>
+html.i18n-pending body{visibility:hidden}
 /* 品牌色：紫色 #6c5ce7，標誌保留 Laly.Lab */
 :root{--accent:#6c5ce7;--ink:#1b1b24;--soft:#f5f4fb;--dark:#14141c;--mute:#6b6b7b;--line:#e6e4f0}
 *{box-sizing:border-box;margin:0}
@@ -20,6 +22,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
+.lang-switch{margin-left:26px;font:inherit;font-size:14px;color:var(--mute);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer}.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
 .hero{padding:96px 0 72px;text-align:center}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
@@ -78,6 +81,7 @@ section{padding:56px 0}
 .wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
+.lang-switch{margin-left:0;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
 .hero h1{font-size:28px}
@@ -114,22 +118,57 @@ dialog .b{padding:20px}
 .pager a span{color:var(--mute);font-size:13px;display:block}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
+<script>window.PAGE_I18N={
+ "__title__": {
+  "zh": "Tifun 企業活動報名系統｜Laly Chang 作品集",
+  "en": "Tifun Corporate Event Registration | Laly Chang Portfolio"
+ },
+ "__desc__": {
+  "zh": "Tifun 企業活動報名系統｜Laly Chang，企業內部系統",
+  "en": "Tifun Corporate Event Registration | Laly Chang, Internal Systems"
+ },
+ "tag": {
+  "zh": "企業內部系統",
+  "en": "Internal Systems"
+ },
+ "title": {
+  "zh": "Tifun 企業活動報名系統",
+  "en": "Tifun Corporate Event Registration"
+ },
+ "chip1": {
+  "zh": "活動報名表單",
+  "en": "Event registration form"
+ },
+ "chip2": {
+  "zh": "報名資訊確認",
+  "en": "Registration review"
+ },
+ "chip3": {
+  "zh": "交通接駁安排",
+  "en": "Shuttle transport arrangement"
+ },
+ "intro": {
+  "zh": "企業內部活動報名系統：員工可報名活動、登記交通接駁與飲食偏好，送出前可再次確認報名資訊。",
+  "en": "An internal corporate event registration system: employees can sign up for events, book shuttle transport, and note dietary preferences — then review all registration details before submitting."
+ }
+}</script>
+<script src="../assets/i18n.js"></script>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about">關於 Laly</a><a class="l" href="../index.html#work">精選作品</a><a class="l" href="../index.html#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">關於 Laly</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
 <main class="wrap work">
-  <a class="back" href="../index.html#work">← 回到作品列表</a>
-  <div><span class="tag">企業內部系統</span>
-  <h1>Tifun 企業活動報名系統</h1>
+  <a class="back" href="../index.html#work" data-i18n="back">← 回到作品列表</a>
+  <div><span class="tag" data-i18n="tag">企業內部系統</span>
+  <h1 data-i18n="title">Tifun 企業活動報名系統</h1>
   
-  <div class="chips"><span>活動報名表單</span><span>報名資訊確認</span><span>交通接駁安排</span></div>
-  <p class="intro">企業內部活動報名系統：員工可報名活動、登記交通接駁與飲食偏好，送出前可再次確認報名資訊。</p>
+  <div class="chips"><span data-i18n="chip1">活動報名表單</span><span data-i18n="chip2">報名資訊確認</span><span data-i18n="chip3">交通接駁安排</span></div>
+  <p class="intro" data-i18n="intro">企業內部活動報名系統：員工可報名活動、登記交通接駁與飲食偏好，送出前可再次確認報名資訊。</p>
   
   
-  <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
-  <div class="hero-img"><img src="../assets/Tifun_Event_Registration.png" alt="Tifun 企業活動報名系統"></div>
-  <div class="pager"><a href="twsc-onboarding.html">← 上一個作品<span>TWSC 新人入職訓練計畫</span></a><a href="transfer.html" style="text-align:right">下一個作品 →<span>TRANSFER 數位化交易平台</span></a></div>
+  <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
+  <div class="hero-img"><img src="../assets/Tifun_Event_Registration.png" alt="Tifun 企業活動報名系統" data-i18n-attr="alt:title"></div>
+  <div class="pager"><a href="twsc-onboarding.html"><span data-i18n="prev" style="display:inline;font-size:inherit;color:inherit">← 上一個作品</span><span data-i18n-title="twsc-onboarding">TWSC 新人入職訓練計畫</span></a><a href="transfer.html" style="text-align:right"><span data-i18n="next" style="display:inline;font-size:inherit;color:inherit">下一個作品 →</span><span data-i18n-title="transfer">TRANSFER 數位化交易平台</span></a></div>
 </main>
-<footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
+<footer><div class="wrap"><h2 data-i18n-html="foot_h">與我聯絡<span class="dot">.</span></h2><p data-i18n="foot_p">歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener" data-i18n="foot_medium">Medium</a><small data-i18n="foot_copy">© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
 </body>
 </html>

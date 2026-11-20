@@ -6,8 +6,10 @@
 <title>TWSC 新人入職訓練計畫｜Laly Chang 作品集</title>
 <meta name="description" content="TWSC 新人入職訓練計畫｜Laly Chang，企業內部系統">
 <meta name="theme-color" content="#6c5ce7">
+<script>document.documentElement.classList.add("i18n-pending")</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c5ce7'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EL.%3C/text%3E%3C/svg%3E">
 <style>
+html.i18n-pending body{visibility:hidden}
 /* 品牌色：紫色 #6c5ce7，標誌保留 Laly.Lab */
 :root{--accent:#6c5ce7;--ink:#1b1b24;--soft:#f5f4fb;--dark:#14141c;--mute:#6b6b7b;--line:#e6e4f0}
 *{box-sizing:border-box;margin:0}
@@ -20,6 +22,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
+.lang-switch{margin-left:26px;font:inherit;font-size:14px;color:var(--mute);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer}.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
 .hero{padding:96px 0 72px;text-align:center}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
@@ -78,6 +81,7 @@ section{padding:56px 0}
 .wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
+.lang-switch{margin-left:0;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
 .hero h1{font-size:28px}
@@ -153,50 +157,149 @@ dialog .b{padding:20px}
 .mark-show{padding:32px 16px}
 }
 </style>
+<script>window.PAGE_I18N={
+ "__title__": {
+  "zh": "TWSC 新人入職訓練計畫｜Laly Chang 作品集",
+  "en": "TWSC New-Hire Onboarding Program | Laly Chang Portfolio"
+ },
+ "__desc__": {
+  "zh": "TWSC 新人入職訓練計畫｜Laly Chang，企業內部系統",
+  "en": "TWSC New-Hire Onboarding Program | Laly Chang, Internal Systems"
+ },
+ "tag": {
+  "zh": "企業內部系統",
+  "en": "Internal Systems"
+ },
+ "title": {
+  "zh": "TWSC 新人入職訓練計畫",
+  "en": "TWSC New-Hire Onboarding Program"
+ },
+ "chip1": {
+  "zh": "新人入職網站設計",
+  "en": "New-hire onboarding website design"
+ },
+ "chip2": {
+  "zh": "12 週學習航線規劃",
+  "en": "12-week learning route planning"
+ },
+ "chip3": {
+  "zh": "團隊文化與 Scrum 介紹",
+  "en": "Team culture & Scrum introduction"
+ },
+ "chip4": {
+  "zh": "部門品牌識別",
+  "en": "Department brand identity"
+ },
+ "intro": {
+  "zh": "為 TWSC 新進同仁打造的入職指南網站，以航海旅程為主題，串起團隊介紹、12 週學習航線與船隊文化，協助新人快速融入團隊。",
+  "en": "An onboarding guide website for new TWSC members, themed around an ocean voyage — connecting team introductions, a 12-week learning route, and fleet culture to help newcomers settle in quickly."
+ },
+ "ia_h": {
+  "zh": "網站 IA 架構<span class=\"dot\">.</span>",
+  "en": "Site IA<span class=\"dot\">.</span>"
+ },
+ "ia_lead": {
+  "zh": "整個入職網站只有四個主頁面，照導覽順序走就能快速上手：先在首頁了解這趟旅程，再認識團隊、跟著 12 週學習航線前進，最後了解船隊文化怎麼運作。點任何一個頁面可以直接開啟。",
+  "en": "The whole onboarding site has just four main pages — follow the nav order to get oriented fast: start on Home to see the journey ahead, meet the team, follow the 12-week learning route, then learn how fleet culture works. Click any page to open it."
+ },
+ "ia_root": {
+  "zh": "TWSC 新人入職訓練計畫<small>入職指南網站 · 探索東藍</small>",
+  "en": "TWSC New-Hire Onboarding Program<small>Onboarding guide · Explore the East Blue Fleet</small>"
+ },
+ "ia_num1": {
+  "zh": "起點 · HOME",
+  "en": "START · HOME"
+ },
+ "ia_p1": {
+  "zh": "首頁",
+  "en": "Home"
+ },
+ "ia_d1": {
+  "zh": "歡迎登船，新夥伴！",
+  "en": "Welcome aboard, new crew member!"
+ },
+ "ia_p2": {
+  "zh": "團隊成員",
+  "en": "Team Members"
+ },
+ "ia_d2": {
+  "zh": "認識每一位船員夥伴",
+  "en": "Meet every crew member"
+ },
+ "ia_p3": {
+  "zh": "學習航線",
+  "en": "Learning Route"
+ },
+ "ia_d3": {
+  "zh": "12 週訓練時程與課程",
+  "en": "12-week training schedule and courses"
+ },
+ "ia_p4": {
+  "zh": "船隊文化",
+  "en": "Fleet Culture"
+ },
+ "ia_d4": {
+  "zh": "工作規範與航行默契",
+  "en": "Working norms and how we sail together"
+ },
+ "mark_h": {
+  "zh": "標誌設計<span class=\"dot\">.</span>",
+  "en": "Logo Design<span class=\"dot\">.</span>"
+ },
+ "mark_lead": {
+  "zh": "按照高雄部門海洋主視覺風格，並搭配各小組名稱代表 Seal、Otter、Molamola、Manta、Garden eel 組成",
+  "en": "Designed in the Kaohsiung department's ocean visual style, built around the team names Seal, Otter, Molamola, Manta, and Garden eel."
+ },
+ "mark_alt": {
+  "zh": "TWSC 新人入職訓練計畫標誌",
+  "en": "TWSC New-Hire Onboarding Program logo"
+ }
+}</script>
+<script src="../assets/i18n.js"></script>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about">關於 Laly</a><a class="l" href="../index.html#work">精選作品</a><a class="l" href="../index.html#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">關於 Laly</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
 <main class="wrap work">
-  <a class="back" href="../index.html#work">← 回到作品列表</a>
-  <div><span class="tag">企業內部系統</span>
-  <h1>TWSC 新人入職訓練計畫</h1>
+  <a class="back" href="../index.html#work" data-i18n="back">← 回到作品列表</a>
+  <div><span class="tag" data-i18n="tag">企業內部系統</span>
+  <h1 data-i18n="title">TWSC 新人入職訓練計畫</h1>
   
-  <div class="chips"><span>新人入職網站設計</span><span>12 週學習航線規劃</span><span>團隊文化與 Scrum 介紹</span><span>部門品牌識別</span></div>
-  <p class="intro">為 TWSC 新進同仁打造的入職指南網站，以航海旅程為主題，串起團隊介紹、12 週學習航線與船隊文化，協助新人快速融入團隊。</p>
-  <div class="btns" style="justify-content:flex-start"><a class="btn p" href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener">前往網站 ↗</a></div>
+  <div class="chips"><span data-i18n="chip1">新人入職網站設計</span><span data-i18n="chip2">12 週學習航線規劃</span><span data-i18n="chip3">團隊文化與 Scrum 介紹</span><span data-i18n="chip4">部門品牌識別</span></div>
+  <p class="intro" data-i18n="intro">為 TWSC 新進同仁打造的入職指南網站，以航海旅程為主題，串起團隊介紹、12 週學習航線與船隊文化，協助新人快速融入團隊。</p>
+  <div class="btns" style="justify-content:flex-start"><a class="btn p" href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener" data-i18n="visit">前往網站 ↗</a></div>
   
   
-  <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
+  <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <!-- 之後放 GIF：網站展示動圖預留位置 -->
   <section class="ia" id="ia">
-    <h2>網站 IA 架構<span class="dot">.</span></h2>
-    <p class="lead">整個入職網站只有四個主頁面，照導覽順序走就能快速上手：先在首頁了解這趟旅程，再認識團隊、跟著 12 週學習航線前進，最後了解船隊文化怎麼運作。點任何一個頁面可以直接開啟。</p>
+    <h2 data-i18n-html="ia_h">網站 IA 架構<span class="dot">.</span></h2>
+    <p class="lead" data-i18n="ia_lead">整個入職網站只有四個主頁面，照導覽順序走就能快速上手：先在首頁了解這趟旅程，再認識團隊、跟著 12 週學習航線前進，最後了解船隊文化怎麼運作。點任何一個頁面可以直接開啟。</p>
     <div class="ia-tree">
-      <div class="ia-root"><a href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener">TWSC 新人入職訓練計畫<small>入職指南網站 · 探索東藍</small></a></div>
+      <div class="ia-root"><a href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener" data-i18n-html="ia_root">TWSC 新人入職訓練計畫<small>入職指南網站 · 探索東藍</small></a></div>
       <div class="ia-stem" aria-hidden="true"></div>
       <div class="ia-cols">
         <div class="ia-col">
-          <a class="ia-page" href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener"><span class="num">起點 · HOME</span><b>首頁</b><small>歡迎登船，新夥伴！</small></a>
+          <a class="ia-page" href="../twsc-onboarding/welcome.html" target="_blank" rel="noopener"><span class="num" data-i18n="ia_num1">起點 · HOME</span><b data-i18n="ia_p1">首頁</b><small data-i18n="ia_d1">歡迎登船，新夥伴！</small></a>
         </div>
         <div class="ia-col">
-          <a class="ia-page" href="../twsc-onboarding/team.html" target="_blank" rel="noopener"><span class="num">01 · TEAM</span><b>團隊成員</b><small>認識每一位船員夥伴</small></a>
+          <a class="ia-page" href="../twsc-onboarding/team.html" target="_blank" rel="noopener"><span class="num">01 · TEAM</span><b data-i18n="ia_p2">團隊成員</b><small data-i18n="ia_d2">認識每一位船員夥伴</small></a>
         </div>
         <div class="ia-col">
-          <a class="ia-page" href="../twsc-onboarding/learning.html" target="_blank" rel="noopener"><span class="num">02 · LEARNING</span><b>學習航線</b><small>12 週訓練時程與課程</small></a>
+          <a class="ia-page" href="../twsc-onboarding/learning.html" target="_blank" rel="noopener"><span class="num">02 · LEARNING</span><b data-i18n="ia_p3">學習航線</b><small data-i18n="ia_d3">12 週訓練時程與課程</small></a>
         </div>
         <div class="ia-col">
-          <a class="ia-page" href="../twsc-onboarding/culture.html" target="_blank" rel="noopener"><span class="num">03 · CULTURE</span><b>船隊文化</b><small>工作規範與航行默契</small></a>
+          <a class="ia-page" href="../twsc-onboarding/culture.html" target="_blank" rel="noopener"><span class="num">03 · CULTURE</span><b data-i18n="ia_p4">船隊文化</b><small data-i18n="ia_d4">工作規範與航行默契</small></a>
         </div>
       </div>
     </div>
   </section>
   <section class="mark" id="logo">
-    <h2>標誌設計<span class="dot">.</span></h2>
-    <p class="lead">按照高雄部門海洋主視覺風格，並搭配各小組名稱代表 Seal、Otter、Molamola、Manta、Garden eel 組成</p>
-    <div class="mark-show"><img src="../assets/twsc-logo.svg" alt="TWSC 新人入職訓練計畫標誌"></div>
+    <h2 data-i18n-html="mark_h">標誌設計<span class="dot">.</span></h2>
+    <p class="lead" data-i18n="mark_lead">按照高雄部門海洋主視覺風格，並搭配各小組名稱代表 Seal、Otter、Molamola、Manta、Garden eel 組成</p>
+    <div class="mark-show"><img src="../assets/twsc-logo.svg" alt="TWSC 新人入職訓練計畫標誌" data-i18n-attr="alt:mark_alt"></div>
   </section>
-  <div class="pager"><a href="nami-design-system.html">← 上一個作品<span>Nami Design System</span></a><a href="tifun.html" style="text-align:right">下一個作品 →<span>Tifun 企業活動報名系統</span></a></div>
+  <div class="pager"><a href="nami-design-system.html"><span data-i18n="prev" style="display:inline;font-size:inherit;color:inherit">← 上一個作品</span><span data-i18n-title="nami-design-system">Nami Design System</span></a><a href="tifun.html" style="text-align:right"><span data-i18n="next" style="display:inline;font-size:inherit;color:inherit">下一個作品 →</span><span data-i18n-title="tifun">Tifun 企業活動報名系統</span></a></div>
 </main>
-<footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
+<footer><div class="wrap"><h2 data-i18n-html="foot_h">與我聯絡<span class="dot">.</span></h2><p data-i18n="foot_p">歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener" data-i18n="foot_medium">Medium</a><small data-i18n="foot_copy">© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
 </body>
 </html>

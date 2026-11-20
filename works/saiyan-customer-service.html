@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Customer Service 客服系統｜Laly Chang 作品集</title>
-<meta name="description" content="Customer Service 客服系統｜Laly Chang，CS 客服系統">
+<meta name="description" content="Customer Service 客服系統｜Laly Chang，後台管理系統">
 <meta name="theme-color" content="#6c5ce7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c5ce7'/%3E%3Ctext x='32' y='44' font-size='36' font-weight='700' text-anchor='middle' fill='white' font-family='sans-serif'%3EL.%3C/text%3E%3C/svg%3E">
 <style>
 /* 品牌色：紫色 #6c5ce7，標誌保留 Laly.Lab */
+html.i18n-pending body{visibility:hidden}
 :root{--accent:#6c5ce7;--ink:#1b1b24;--soft:#f5f4fb;--dark:#14141c;--mute:#6b6b7b;--line:#e6e4f0}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -20,6 +21,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
+.lang-switch{margin-left:26px;font:inherit;font-size:14px;color:var(--mute);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer}.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
 .hero{padding:96px 0 72px;text-align:center}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(28px,3.9vw,44px);line-height:1.15;margin:14px 0 18px}
@@ -78,6 +80,7 @@ section{padding:56px 0}
 .wrap{padding-left:20px;padding-right:20px}
 nav .wrap{height:auto;min-height:68px;flex-wrap:wrap;row-gap:2px;padding-top:10px;padding-bottom:10px}
 nav a.l{margin-left:0;margin-right:18px;font-size:13px}
+.lang-switch{margin-left:0;font-size:13px}
 .logo img{height:38px}.logo span{font-size:10px}
 .hero small{font-size:11px;letter-spacing:.12em;line-height:1.8}
 .hero h1{font-size:28px}
@@ -112,6 +115,7 @@ dialog .b{padding:20px}
 .pager a{border:1.5px solid var(--line);border-radius:99px;padding:10px 22px;font-size:15px}
 .pager a:hover{border-color:var(--accent);color:var(--accent)}
 .pager a span{color:var(--mute);font-size:13px;display:block}
+.pager a span.pl{display:inline;color:inherit;font-size:inherit}
 .flow{padding:56px 0 8px}
 .flow-intro{color:var(--mute);max-width:760px;margin-top:12px}
 .fc-wrap{max-width:1040px;margin:28px auto 0}.fc-wrap svg{width:100%;height:auto;display:block}
@@ -176,36 +180,176 @@ dialog .b{padding:20px}
 @media(max-width:760px){.ov{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
+<script>document.documentElement.classList.add("i18n-pending")</script>
+<script>window.PAGE_I18N={
+  "__title__": {
+    "zh": "Customer Service 客服系統｜Laly Chang 作品集",
+    "en": "Customer Service | Laly Chang Portfolio"
+  },
+  "__desc__": {
+    "zh": "Customer Service 客服系統｜Laly Chang，後台管理系統",
+    "en": "Customer Service | Laly Chang, Back-office Systems"
+  },
+  "tag": {
+    "zh": "後台管理系統",
+    "en": "Back-office Systems"
+  },
+  "h1": {
+    "zh": "Customer Service 客服系統",
+    "en": "Customer Service"
+  },
+  "chip1": {
+    "zh": "Call report 通話與每月報表",
+    "en": "Call Report · Calls & Monthly Reports"
+  },
+  "intro": {
+    "zh": "整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。",
+    "en": "A back office that brings calls and monthly reports together, helping the customer service team follow up on pending contact lists."
+  },
+  "h_overview": {
+    "zh": "專案概覽<span class=\"dot\">.</span>",
+    "en": "Project Overview<span class=\"dot\">.</span>"
+  },
+  "ov_role_l": {
+    "zh": "我的角色",
+    "en": "My Role"
+  },
+  "ov_role_v": {
+    "zh": "流程與介面設計",
+    "en": "Flow & interface design"
+  },
+  "ov_user_l": {
+    "zh": "使用者",
+    "en": "Users"
+  },
+  "ov_user_b": {
+    "zh": "客服主管 / Team Lead",
+    "en": "CS Supervisors / Team Leads"
+  },
+  "ov_user_v": {
+    "zh": "電銷人員",
+    "en": "Telemarketers"
+  },
+  "ov_sys_l": {
+    "zh": "系統",
+    "en": "Systems"
+  },
+  "ov_sys_b": {
+    "zh": "Saiyan 客服後台",
+    "en": "Saiyan Customer Service Back Office"
+  },
+  "ov_sys_v": {
+    "zh": "Call Report · 排班 · 分派",
+    "en": "Call Report · Rostering · Assignment"
+  },
+  "ov_scope_l": {
+    "zh": "範圍",
+    "en": "Scope"
+  },
+  "ov_scope_b": {
+    "zh": "外撥與通話紀錄",
+    "en": "Outbound Calls & Call Records"
+  },
+  "ov_scope_v": {
+    "zh": "CRM 紀錄 · 轉接流程",
+    "en": "CRM Records · Call Transfers"
+  },
+  "h_bg": {
+    "zh": "背景與問題<span class=\"dot\">.</span>",
+    "en": "Background & Problem<span class=\"dot\">.</span>"
+  },
+  "bg_p": {
+    "zh": "客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。",
+    "en": "Every week, supervisors built the roster by hand and manually imported the contact lists. The whole process was manual — last-minute leave couldn't be confirmed in real time, and rosters and lists were often out of sync."
+  },
+  "h_flow": {
+    "zh": "使用者流程<span class=\"dot\">.</span>",
+    "en": "User Flow<span class=\"dot\">.</span>"
+  },
+  "flow_intro": {
+    "zh": "針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。",
+    "en": "The full journey for follow-up lists: from supervisor rostering and list assignment to telemarketers dialing out and logging calls. After login, the flow splits into two lanes by role."
+  },
+  "h_dec": {
+    "zh": "關鍵設計決定<span class=\"dot\">.</span>",
+    "en": "Key Design Decisions<span class=\"dot\">.</span>"
+  },
+  "dec1_t": {
+    "zh": "依角色分流",
+    "en": "Role-based lanes"
+  },
+  "dec1_b": {
+    "zh": "主管負責排班與分派，電銷專注外撥與紀錄，兩邊看到的流程與權限不同。",
+    "en": "Supervisors handle rostering and assignment; telemarketers focus on dialing and logging. Each side sees a different flow and permissions."
+  },
+  "dec2_t": {
+    "zh": "Call Report 三個頁籤",
+    "en": "Three Call Report tabs"
+  },
+  "dec2_b": {
+    "zh": "Current / History / Performance，待跟進、歷史、績效分開看。",
+    "en": "Current / History / Performance — follow-ups, history, and performance each get their own view."
+  },
+  "dec3_t": {
+    "zh": "通話紀錄留在系統內",
+    "en": "Call records stay in the system"
+  },
+  "dec3_b": {
+    "zh": "通話中可看用戶資訊，通話後直接存 CRM 紀錄，不用另外開工具。",
+    "en": "User info is visible during the call, and the CRM record is saved right after — no need to open another tool."
+  },
+  "dec4_t": {
+    "zh": "例外流程有去處",
+    "en": "Exceptions have somewhere to go"
+  },
+  "dec4_b": {
+    "zh": "未接通、語言不符都有明確的下一步，名單不會掉在半路。",
+    "en": "Unanswered calls and language mismatches each have a clear next step, so no contact falls through the cracks."
+  },
+  "h_outcome": {
+    "zh": "成果<span class=\"dot\">.</span>",
+    "en": "Outcome<span class=\"dot\">.</span>"
+  },
+  "out_cap": {
+    "zh": "排班與名單分配的工作時間減少",
+    "en": "Reduction in time spent on rostering and list assignment"
+  },
+  "out_p": {
+    "zh": "上線後，排班與名單分配改由系統自動處理，主管不用再每週手動排班、匯入名單。",
+    "en": "After launch, rostering and list assignment are handled automatically — supervisors no longer roster by hand or import lists every week."
+  }
+};</script>
+<script src="../assets/i18n.js"></script>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about">關於 Laly</a><a class="l" href="../index.html#work">精選作品</a><a class="l" href="../index.html#skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">關於 Laly</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
 <main class="wrap work">
-  <a class="back" href="../index.html#work">← 回到作品列表</a>
-  <div><span class="tag">CS 客服系統</span>
-  <h1>Customer Service 客服系統</h1>
+  <a class="back" href="../index.html#work" data-i18n="back">← 回到作品列表</a>
+  <div><span class="tag" data-i18n="tag">後台管理系統</span>
+  <h1 data-i18n="h1">Customer Service 客服系統</h1>
   
-  <div class="chips"><span>Call report 通話與每月報表</span></div>
-  <p class="intro">整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。</p>
+  <div class="chips"><span data-i18n="chip1">Call report 通話與每月報表</span></div>
+  <p class="intro" data-i18n="intro">整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。</p>
   
   
-  <p class="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
+  <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <!-- 之後放影片：主視覺影片預留位置 -->
   <section class="case" id="overview">
-    <div class="hd"><span>OVERVIEW</span><h2>專案概覽<span class="dot">.</span></h2></div>
+    <div class="hd"><span>OVERVIEW</span><h2 data-i18n-html="h_overview">專案概覽<span class="dot">.</span></h2></div>
     <div class="ov">
-      <div><small>我的角色</small><b>Product Designer</b><span>流程與介面設計</span></div>
-      <div><small>使用者</small><b>客服主管 / Team Lead</b><span>電銷人員</span></div>
-      <div><small>系統</small><b>Saiyan 客服後台</b><span>Call Report · 排班 · 分派</span></div>
-      <div><small>範圍</small><b>外撥與通話紀錄</b><span>CRM 紀錄 · 轉接流程</span></div>
+      <div><small data-i18n="ov_role_l">我的角色</small><b>Product Designer</b><span data-i18n="ov_role_v">流程與介面設計</span></div>
+      <div><small data-i18n="ov_user_l">使用者</small><b data-i18n="ov_user_b">客服主管 / Team Lead</b><span data-i18n="ov_user_v">電銷人員</span></div>
+      <div><small data-i18n="ov_sys_l">系統</small><b data-i18n="ov_sys_b">Saiyan 客服後台</b><span data-i18n="ov_sys_v">Call Report · 排班 · 分派</span></div>
+      <div><small data-i18n="ov_scope_l">範圍</small><b data-i18n="ov_scope_b">外撥與通話紀錄</b><span data-i18n="ov_scope_v">CRM 紀錄 · 轉接流程</span></div>
     </div>
   </section>
   <section class="case" id="background">
-    <div class="hd"><span>BACKGROUND</span><h2>背景與問題<span class="dot">.</span></h2></div>
-    <p>客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。</p>
+    <div class="hd"><span>BACKGROUND</span><h2 data-i18n-html="h_bg">背景與問題<span class="dot">.</span></h2></div>
+    <p data-i18n="bg_p">客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。</p>
   </section>
   <section class="flow" id="user-flow">
-    <div class="hd"><span>USER FLOW</span><h2>使用者流程<span class="dot">.</span></h2></div>
-    <p class="flow-intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
+    <div class="hd"><span>USER FLOW</span><h2 data-i18n-html="h_flow">使用者流程<span class="dot">.</span></h2></div>
+    <p class="flow-intro" data-i18n="flow_intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
     <div class="legend"><span class="lg-t">■ Supervisor / Team Lead</span><span class="lg-r">■ Telemarketer</span><span class="lg-d">◆ Decision Point</span></div>
     <div class="fc-wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 1000" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service user flow: after login, the flow splits into supervisor and telemarketer lanes">
@@ -304,24 +448,24 @@ dialog .b{padding:20px}
     </div>
   </section>
   <section class="case" id="decisions">
-    <div class="hd"><span>KEY DECISIONS</span><h2>關鍵設計決定<span class="dot">.</span></h2></div>
+    <div class="hd"><span>KEY DECISIONS</span><h2 data-i18n-html="h_dec">關鍵設計決定<span class="dot">.</span></h2></div>
     <div class="dec">
-      <div><i>01</i><div><b>依角色分流</b><span>主管負責排班與分派，電銷專注外撥與紀錄，兩邊看到的流程與權限不同。</span></div></div>
-      <div><i>02</i><div><b>Call Report 三個頁籤</b><span>Current / History / Performance，待跟進、歷史、績效分開看。</span></div></div>
-      <div><i>03</i><div><b>通話紀錄留在系統內</b><span>通話中可看用戶資訊，通話後直接存 CRM 紀錄，不用另外開工具。</span></div></div>
-      <div><i>04</i><div><b>例外流程有去處</b><span>未接通、語言不符都有明確的下一步，名單不會掉在半路。</span></div></div>
+      <div><i>01</i><div><b data-i18n="dec1_t">依角色分流</b><span data-i18n="dec1_b">主管負責排班與分派，電銷專注外撥與紀錄，兩邊看到的流程與權限不同。</span></div></div>
+      <div><i>02</i><div><b data-i18n="dec2_t">Call Report 三個頁籤</b><span data-i18n="dec2_b">Current / History / Performance，待跟進、歷史、績效分開看。</span></div></div>
+      <div><i>03</i><div><b data-i18n="dec3_t">通話紀錄留在系統內</b><span data-i18n="dec3_b">通話中可看用戶資訊，通話後直接存 CRM 紀錄，不用另外開工具。</span></div></div>
+      <div><i>04</i><div><b data-i18n="dec4_t">例外流程有去處</b><span data-i18n="dec4_b">未接通、語言不符都有明確的下一步，名單不會掉在半路。</span></div></div>
     </div>
   </section>
   <section class="case" id="outcome">
-    <div class="hd"><span>OUTCOME</span><h2>成果<span class="dot">.</span></h2></div>
+    <div class="hd"><span>OUTCOME</span><h2 data-i18n-html="h_outcome">成果<span class="dot">.</span></h2></div>
     <div class="outcome">
       <b>60%</b>
-      <span>排班與名單分配的工作時間減少</span>
-      <p>上線後，排班與名單分配改由系統自動處理，主管不用再每週手動排班、匯入名單。</p>
+      <span data-i18n="out_cap">排班與名單分配的工作時間減少</span>
+      <p data-i18n="out_p">上線後，排班與名單分配改由系統自動處理，主管不用再每週手動排班、匯入名單。</p>
     </div>
   </section>
-  <div class="pager"><a href="saiyan-member.html">← 上一個作品<span>Member Management 會員管理</span></a><a href="saiyan-settlement.html" style="text-align:right">下一個作品 →<span>Settlement 結算</span></a></div>
+  <div class="pager"><a href="saiyan-member.html"><span class="pl" data-i18n="prev">← 上一個作品</span><span data-i18n-title="saiyan-member">Member Management 會員管理</span></a><a href="saiyan-settlement.html" style="text-align:right"><span class="pl" data-i18n="next">下一個作品 →</span><span data-i18n-title="saiyan-settlement">Settlement 結算</span></a></div>
 </main>
-<footer><div class="wrap"><h2>與我聯絡<span class="dot">.</span></h2><p>歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Medium</a><small>© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
+<footer><div class="wrap"><h2 data-i18n-html="foot_h">與我聯絡<span class="dot">.</span></h2><p data-i18n="foot_p">歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener" data-i18n="foot_medium">Medium</a><small data-i18n="foot_copy">© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
 </body>
 </html>
