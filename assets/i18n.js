@@ -8,7 +8,7 @@
    Language persists in localStorage "laly-lang"; ?lang=en|zh overrides. */
 (function () {
   var SHARED = {
-    nav_about: { zh: "關於 Laly", en: "About Laly" },
+    nav_about: { zh: "ABOUT", en: "ABOUT" },
     nav_work: { zh: "精選作品", en: "Selected Work" },
     nav_skills: { zh: "我的技能樹", en: "How I Work" },
     foot_h: { zh: "與我聯絡<span class=\"dot\">.</span>", en: "Get in touch<span class=\"dot\">.</span>" },
