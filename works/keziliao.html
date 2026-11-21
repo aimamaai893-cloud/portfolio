@@ -105,7 +105,11 @@ dialog .b{padding:20px}
 .work h1{font-size:clamp(26px,3.6vw,40px);line-height:1.25;margin:10px 0 12px}
 .work .client{color:var(--mute);font-size:17px}
 .work .intro{color:var(--mute);max-width:760px;margin-top:18px;white-space:pre-line}
-.work .note{color:var(--mute);font-size:14px;max-width:760px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.work .note{color:var(--mute);max-width:760px;margin-top:18px}
+html[lang="en"] .hd>span{display:none}
+.ia-sec{margin-top:64px;padding:0}
+.ia-diagram{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 28px;overflow-x:auto}
+.ia-diagram svg{display:block;min-width:720px}
 .hero-img{margin-top:36px;border-radius:20px;overflow:hidden}
 .hero-img img{width:100%;display:block}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
@@ -136,38 +140,90 @@ dialog .b{padding:20px}
   "en": "Anxin Chi Yu (Keziliao) | Kaohsiung Keziliao Seafood Selection"
  },
  "chip1": {
-  "zh": "電商網站設計",
-  "en": "E-commerce website design"
+  "zh": "電商網站架設",
+  "en": "E-commerce website setup"
  },
  "chip2": {
-  "zh": "UI Guideline 設計規範",
-  "en": "UI Guideline design standards"
+  "zh": "Design System",
+  "en": "Design System"
  },
- "chip3": {
-  "zh": "Wireframe 線框規劃",
-  "en": "Wireframe planning"
- },
- "intro": {
-  "zh": "高雄蚵仔寮海鮮選物品牌「安心呷魚」的電商網站：海鮮商品依分類呈現，搭配海鮮知識與購物指南，讓消費者安心選購。",
-  "en": "An e-commerce website for “Anxin Chi Yu,” a Kaohsiung Keziliao seafood selection brand: seafood products are organized by category, paired with seafood knowledge and shopping guides so customers can buy with confidence."
+ "h_ia": {
+  "zh": "網站與內容架構<span class=\"dot\">.</span>",
+  "en": "Site Architecture<span class=\"dot\">.</span>"
  }
 }</script>
 <script src="../assets/i18n.js"></script>
 </head>
 <body>
-<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">ABOUT</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
+<nav><div class="wrap"><div class="logo"><a href="../index.html"><img src="../assets/laly-lab-logo.png" alt="Laly.Lab 品牌實驗室 · 專注設計 + AI"></a></div><div><a class="l" href="../index.html#about" data-i18n="nav_about">關於 Laly</a><a class="l" href="../index.html#work" data-i18n="nav_work">精選作品</a><a class="l" href="../index.html#skills" data-i18n="nav_skills">我的技能樹</a><a class="l" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener">Blog ↗</a><select id="lang-switch" class="lang-switch" aria-label="Language 語言"><option value="zh">中文</option><option value="en">English</option></select></div></div></nav>
 <main class="wrap work">
   <a class="back" href="../index.html#work" data-i18n="back">← 回到作品列表</a>
   <div><span class="tag" data-i18n="tag">網站與平台設計</span>
   <h1 data-i18n="title">安心呷魚｜高雄蚵仔寮海鮮選物網站</h1>
-  <p class="intro" data-i18n="intro">高雄蚵仔寮海鮮選物品牌「安心呷魚」的電商網站：海鮮商品依分類呈現，搭配海鮮知識與購物指南，讓消費者安心選購。</p>
   
-  <div class="chips"><span data-i18n="chip1">電商網站設計</span><span data-i18n="chip2">UI Guideline 設計規範</span><span data-i18n="chip3">Wireframe 線框規劃</span></div>
+  <div class="chips"><span data-i18n="chip1">電商網站架設</span><span data-i18n="chip2">Design System</span></div>
   
   
   <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p></div>
   <div class="hero-img"><img src="../assets/Keziliao_Seafood.png" alt="安心呷魚｜高雄蚵仔寮海鮮選物網站" data-i18n-attr="alt:title"></div>
-  <div class="gallery"><figure><img loading="lazy" src="../assets/works/keziliao/mockup.jpg" alt="安心呷魚網站桌機與手機版展示"></figure><figure><img loading="lazy" src="../assets/works/keziliao/moodboard.jpg" alt="安心呷魚網站定調 mood board"></figure><figure><img loading="lazy" src="../assets/works/keziliao/ia.jpg" alt="安心呷魚網站與內容架構"></figure><figure><img loading="lazy" src="../assets/works/keziliao/guideline.jpg" alt="安心呷魚 UI Guideline 與 Wireframe"></figure></div>
+  <div class="gallery"><figure><img loading="lazy" src="../assets/works/keziliao/moodboard.jpg" alt="安心呷魚網站定調 mood board"></figure><figure><img loading="lazy" src="../assets/works/keziliao/guideline.jpg" alt="安心呷魚 UI Guideline 與 Wireframe"></figure></div>
+  <section class="ia-sec">
+    <div class="hd"><span>SITE ARCHITECTURE</span><h2 data-i18n-html="h_ia">網站與內容架構<span class="dot">.</span></h2></div>
+    <div class="ia-diagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 512" width="100%" font-family="Noto Sans CJK TC, Noto Sans TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif">
+      <line x1="540" y1="108" x2="540" y2="166" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="100" y1="166" x2="980" y2="166" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="100" y1="166" x2="100" y2="182" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="320" y1="166" x2="320" y2="182" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="540" y1="166" x2="540" y2="182" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="760" y1="166" x2="760" y2="182" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="980" y1="166" x2="980" y2="182" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="0" y1="238" x2="0" y2="333" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="220" y1="238" x2="220" y2="389" stroke="#317FC7" stroke-width="1.5"/>
+      <line x1="440" y1="238" x2="440" y2="405" stroke="#317FC7" stroke-width="1.5"/>
+      <rect x="440" y="52" width="200" height="56" fill="#317FC7"/>
+      <text x="540" y="86.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">0.0 首頁</text>
+      <rect x="664" y="10" width="228" height="40" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="676" y="35.4" font-size="15" fill="#317FC7">照片/活動Banner</text>
+      <rect x="664" y="60" width="228" height="40" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="676" y="85.4" font-size="15" fill="#317FC7">理念、緣起</text>
+      <rect x="664" y="110" width="228" height="40" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="676" y="135.4" font-size="15" fill="#317FC7">活動商品套組or促銷</text>
+      <rect x="0" y="182" width="200" height="56" fill="#317FC7"/>
+      <text x="100" y="216.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">1.0 關於我們</text>
+      <rect x="220" y="182" width="200" height="56" fill="#317FC7"/>
+      <text x="320" y="216.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">2.0 商品系列</text>
+      <rect x="440" y="182" width="200" height="56" fill="#317FC7"/>
+      <text x="540" y="216.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">3.0 購物商城</text>
+      <rect x="660" y="182" width="200" height="56" fill="#317FC7"/>
+      <text x="760" y="216.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">4.0 購物指南</text>
+      <rect x="880" y="182" width="200" height="56" fill="#317FC7"/>
+      <text x="980" y="216.48" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">5.0 聯絡我們</text>
+      <rect x="0" y="254" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="12" y="282.4" font-size="15" fill="#317FC7">商家介紹(圖/文)</text>
+      <rect x="0" y="310" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="12" y="338.4" font-size="15" fill="#317FC7">CTA:聯絡我們</text>
+      <rect x="220" y="254" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="232" y="282.4" font-size="15" fill="#317FC7">商品種類介紹 A</text>
+      <rect x="220" y="310" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="232" y="338.4" font-size="15" fill="#317FC7">商品種類介紹 B</text>
+      <rect x="220" y="366" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="232" y="394.4" font-size="15" fill="#317FC7">商品種類介紹 C</text>
+      <text x="220" y="436" font-size="13" fill="#6b6b7b">(以分類方式介紹商品種類)</text>
+      <text x="440" y="256" font-size="13" fill="#6b6b7b">(直接進入EC電商功能)</text>
+      <rect x="440" y="270" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="452" y="298.4" font-size="15" fill="#317FC7">商品品項A</text>
+      <rect x="440" y="326" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="452" y="354.4" font-size="15" fill="#317FC7">商品品項B</text>
+      <rect x="440" y="382" width="200" height="46" fill="#fff" stroke="#317FC7" stroke-width="1.5"/>
+      <text x="452" y="410.4" font-size="15" fill="#317FC7">商品品項C</text>
+      <text x="440" y="452" font-size="13" fill="#6b6b7b">(以格子狀顯示所有商品)</text>
+      <text x="880" y="270" font-size="13" fill="#6b6b7b">(提供可聯絡的方式，</text>
+      <text x="880" y="292" font-size="13" fill="#6b6b7b">看是否要設立表單)</text>
+      <text x="540" y="494" text-anchor="middle" font-size="15" fill="#317FC7">Footer置底：聯絡我們/臉書/LINE</text>
+      </svg>
+    </div>
+  </section>
   <div class="pager"><a href="joinit.html"><span data-i18n="prev" style="display:inline;font-size:inherit;color:inherit">← 上一個作品</span><span data-i18n-title="joinit">Join It ! 線上票券與行銷平台</span></a><a href="kaching.html" style="text-align:right"><span data-i18n="next" style="display:inline;font-size:inherit;color:inherit">下一個作品 →</span><span data-i18n-title="kaching">KaChing 卡鏘｜FB 直播留言自動成單</span></a></div>
 </main>
 <footer><div class="wrap"><h2 data-i18n-html="foot_h">與我聯絡<span class="dot">.</span></h2><p data-i18n="foot_p">歡迎透過以下方式與我聯絡。</p><a class="btn" href="mailto:lalydesignwork2023@gmail.com">lalydesignwork2023@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/laly-chang-350393335" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://medium.com/@lalydesignwork2023" target="_blank" rel="noopener" data-i18n="foot_medium">Medium</a><small data-i18n="foot_copy">© 2026 Laly Chang · Laly.Lab 品牌實驗室</small></div></footer>
