@@ -8,7 +8,7 @@
    Language persists in localStorage "laly-lang"; ?lang=en|zh overrides. */
 (function () {
   var SHARED = {
-    nav_about: { zh: "ABOUT", en: "ABOUT" },
+    nav_about: { zh: "關於 Laly", en: "ABOUT" },
     nav_work: { zh: "精選作品", en: "Selected Work" },
     nav_skills: { zh: "我的技能樹", en: "How I Work" },
     foot_h: { zh: "與我聯絡<span class=\"dot\">.</span>", en: "Get in touch<span class=\"dot\">.</span>" },
@@ -41,14 +41,14 @@
     "twsc-onboarding": { zh: "TWSC 新人入職訓練計畫", en: "TWSC New-Hire Onboarding Program" },
     "tifun": { zh: "Tifun 企業活動報名系統", en: "Tifun Corporate Event Registration" },
     "transfer": { zh: "TRANSFER 數位化交易平台", en: "TRANSFER Digital Trading Platform" },
-    "multidim": { zh: "多維度國家空間資訊服務平臺｜內政部國土測繪中心", en: "Multidimensional National Spatial Information Platform | National Land Surveying and Mapping Center" },
+    "multidim": { zh: "多維度國家空間資訊服務平臺", en: "Multidimensional National Spatial Information Platform" },
     "joinit": { zh: "Join It ! 線上票券與行銷平台", en: "Join It! Online Ticketing & Marketing Platform" },
     "keziliao": { zh: "安心呷魚｜高雄蚵仔寮海鮮選物網站", en: "Anxin Chi Yu (Keziliao) | Kaohsiung Keziliao Seafood Selection" },
     "kaching": { zh: "KaChing 卡鏘｜FB 直播留言自動成單", en: "KaChing | FB Livestream Comment-to-Order" },
     "heiwei-3d": { zh: "美容 3D 模擬立體圖｜Heiwei", en: "Beauty 3D Simulation Render | Heiwei" },
     "titansoft-3d": { zh: "企業 3D 客製化公仔｜Titansoft", en: "Custom 3D Corporate Mascot | Titansoft" },
     "lowpoly-3d": { zh: "低面數 3D 模型｜農業部鳳山熱帶園區試驗所", en: "Low-Poly 3D Models | Fengshan Tropical Horticultural Experiment Branch" },
-    "cleaner-3d": { zh: "海灘涼鞋 3D 渲染｜The Cleaner", en: "Beach Sandal 3D Render | The Cleaner" }
+    "cleaner-3d": { zh: "The Cleaner 護攤娛樂海灘涼鞋", en: "The Cleaner Beach Sandals" }
   };
 
   function getLang() {
