@@ -173,8 +173,21 @@ dialog .b{padding:20px}
 .out-item .stat{color:var(--accent);font-weight:700;font-size:24px}
 .out-item p{margin:8px 0 0;color:var(--mute);font-size:15px;text-align:left}
 .out-item+.out-item{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
-.persona{margin-top:8px}
-.persona img{width:100%;height:auto;display:block;border-radius:20px;border:1px solid var(--line)}
+.per-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.per-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.per-card img{width:100%;height:300px;object-fit:cover;object-position:top;display:block}
+.per-body{padding:24px}
+.per-body h3{font-size:20px;margin:0 0 8px}
+.per-body h3 .pill{margin-right:8px;vertical-align:middle}
+.per-body>p{margin:0 0 20px;color:var(--mute);font-size:15px}
+.per-sub{font-size:15px;font-weight:700;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.per-sub .ic{width:10px;height:10px;border-radius:50%;flex:none}
+.per-sub.goals .ic{background:#4a90d9}
+.per-sub.pains .ic{background:#f2994a}
+.per-sub.needs .ic{background:#6c5ce7}
+.per-card ul{margin:0 0 20px;padding-left:20px;color:var(--ink);font-size:15px;line-height:1.7}
+.per-card ul:last-child{margin-bottom:0}
+@media(max-width:760px){.per-grid{grid-template-columns:1fr}}
 .hd+.bg-role{margin-top:8px}
 .bg-role{margin-top:28px}
 .bg-role h3{font-size:20px;margin:0 0 10px}
@@ -268,9 +281,105 @@ dialog .b{padding:20px}
     "zh": "使用者角色<span class=\"dot\">.</span>",
     "en": "User Personas<span class=\"dot\">.</span>"
   },
-  "persona_alt": {
-    "zh": "Team Lead 客服團隊主管與 Telemarketer 電話行銷的 Persona：目標、痛點與需求",
-    "en": "Personas for the Team Lead (customer service team supervisor) and Telemarketer: goals, pain points, and needs"
+  "per_tl_d": {
+    "zh": "負責管理團隊日常營運，包含排班、名單分配與績效追蹤。",
+    "en": "Manages the team's daily operations — rostering, list assignment, and performance tracking."
+  },
+  "per_tl_g1": {
+    "zh": "快速完成每週排班與人力配置",
+    "en": "Finish weekly rostering and staffing quickly"
+  },
+  "per_tl_g2": {
+    "zh": "確保聯絡名單與人員對應正確",
+    "en": "Make sure contact lists match the right people"
+  },
+  "per_tl_g3": {
+    "zh": "即時掌握團隊績效",
+    "en": "Track team performance in real time"
+  },
+  "per_tl_p1": {
+    "zh": "每週需人工安排班表、匯入名單",
+    "en": "Rosters must be arranged and lists imported by hand every week"
+  },
+  "per_tl_p2": {
+    "zh": "臨時請假難以快速調整人力",
+    "en": "Last-minute leave is hard to cover quickly"
+  },
+  "per_tl_p3": {
+    "zh": "報表需人工整理與檢視",
+    "en": "Reports must be compiled and reviewed by hand"
+  },
+  "per_tl_n1": {
+    "zh": "自動化排班與名單分配",
+    "en": "Automated rostering and list assignment"
+  },
+  "per_tl_n2": {
+    "zh": "集中管理團隊績效",
+    "en": "Team performance managed in one place"
+  },
+  "per_tl_n3": {
+    "zh": "降低行政作業負擔",
+    "en": "Less admin workload"
+  },
+  "per_tm_d": {
+    "zh": "依照名單執行外撥任務，聯繫客戶並記錄通話結果。",
+    "en": "Works through assigned lists making outbound calls, contacting customers and logging call outcomes."
+  },
+  "per_tm_g1": {
+    "zh": "快速取得當日待聯絡名單",
+    "en": "Get the day's contact list quickly"
+  },
+  "per_tm_g2": {
+    "zh": "有效率地完成外撥任務",
+    "en": "Complete outbound tasks efficiently"
+  },
+  "per_tm_g3": {
+    "zh": "清楚掌握個人工作進度",
+    "en": "See personal progress clearly"
+  },
+  "per_tm_p1": {
+    "zh": "需手動查找及複製號碼",
+    "en": "Must look up and copy numbers by hand"
+  },
+  "per_tm_p2": {
+    "zh": "撥號時需切換不同介面",
+    "en": "Must switch between interfaces to dial"
+  },
+  "per_tm_p3": {
+    "zh": "重複操作影響工作效率",
+    "en": "Repetitive steps slow the work down"
+  },
+  "per_tm_n1": {
+    "zh": "一鍵撥號，簡化操作步驟",
+    "en": "One-click dialing to simplify the steps"
+  },
+  "per_tm_n2": {
+    "zh": "集中查看通話紀錄",
+    "en": "Call records in one place"
+  },
+  "per_tm_n3": {
+    "zh": "簡單直覺的系統介面",
+    "en": "A simple, intuitive interface"
+  },
+  "per_goals": {
+    "zh": "Goals 目標",
+    "en": "Goals"
+  },
+  "per_pains": {
+    "zh": "Pain Points 痛點",
+    "en": "Pain Points"
+  },
+  "per_needs": {
+    "zh": "Needs 需求",
+    "en": "Needs"
+  },
+  "per_tl_alt": {
+    "zh": "Team Lead 客服團隊主管插圖",
+    "en": "Illustration of the Team Lead, customer service team supervisor"
+  },
+  "per_tm_alt": {
+    "zh": "Telemarketer 電訪人員插圖",
+    "en": "Illustration of the Telemarketer"
   },
   "h_flow": {
     "zh": "使用者流程<span class=\"dot\">.</span>",
@@ -339,7 +448,58 @@ dialog .b{padding:20px}
   </section>
   <section class="case" id="persona">
     <div class="hd"><span>PERSONA</span><h2 data-i18n-html="h_persona">使用者角色<span class="dot">.</span></h2></div>
-    <figure class="persona"><img src="../assets/cs-persona.jpg" alt="Team Lead 客服團隊主管與 Telemarketer 電話行銷的 Persona：目標、痛點與需求" data-i18n-attr="alt:persona_alt"></figure>
+    <div class="per-grid">
+      <article class="per-card">
+        <img src="../assets/persona-team-lead.png" alt="Team Lead 客服團隊主管插圖" data-i18n-attr="alt:per_tl_alt">
+        <div class="per-body">
+          <h3><span class="pill pill-tl">Team Lead</span> <span data-i18n="bg_tl_t">客服團隊主管</span></h3>
+          <p data-i18n="per_tl_d">負責管理團隊日常營運，包含排班、名單分配與績效追蹤。</p>
+          <h4 class="per-sub goals"><span class="ic"></span><span data-i18n="per_goals">Goals 目標</span></h4>
+          <ul>
+            <li data-i18n="per_tl_g1">快速完成每週排班與人力配置</li>
+            <li data-i18n="per_tl_g2">確保聯絡名單與人員對應正確</li>
+            <li data-i18n="per_tl_g3">即時掌握團隊績效</li>
+          </ul>
+          <h4 class="per-sub pains"><span class="ic"></span><span data-i18n="per_pains">Pain Points 痛點</span></h4>
+          <ul>
+            <li data-i18n="per_tl_p1">每週需人工安排班表、匯入名單</li>
+            <li data-i18n="per_tl_p2">臨時請假難以快速調整人力</li>
+            <li data-i18n="per_tl_p3">報表需人工整理與檢視</li>
+          </ul>
+          <h4 class="per-sub needs"><span class="ic"></span><span data-i18n="per_needs">Needs 需求</span></h4>
+          <ul>
+            <li data-i18n="per_tl_n1">自動化排班與名單分配</li>
+            <li data-i18n="per_tl_n2">集中管理團隊績效</li>
+            <li data-i18n="per_tl_n3">降低行政作業負擔</li>
+          </ul>
+        </div>
+      </article>
+      <article class="per-card">
+        <img src="../assets/persona-telemarketer.png" alt="Telemarketer 電訪人員插圖" data-i18n-attr="alt:per_tm_alt">
+        <div class="per-body">
+          <h3><span class="pill pill-tm">Telemarketer</span> <span data-i18n="bg_tm_t">電話行銷 / 電訪人員</span></h3>
+          <p data-i18n="per_tm_d">依照名單執行外撥任務，聯繫客戶並記錄通話結果。</p>
+          <h4 class="per-sub goals"><span class="ic"></span><span data-i18n="per_goals">Goals 目標</span></h4>
+          <ul>
+            <li data-i18n="per_tm_g1">快速取得當日待聯絡名單</li>
+            <li data-i18n="per_tm_g2">有效率地完成外撥任務</li>
+            <li data-i18n="per_tm_g3">清楚掌握個人工作進度</li>
+          </ul>
+          <h4 class="per-sub pains"><span class="ic"></span><span data-i18n="per_pains">Pain Points 痛點</span></h4>
+          <ul>
+            <li data-i18n="per_tm_p1">需手動查找及複製號碼</li>
+            <li data-i18n="per_tm_p2">撥號時需切換不同介面</li>
+            <li data-i18n="per_tm_p3">重複操作影響工作效率</li>
+          </ul>
+          <h4 class="per-sub needs"><span class="ic"></span><span data-i18n="per_needs">Needs 需求</span></h4>
+          <ul>
+            <li data-i18n="per_tm_n1">一鍵撥號，簡化操作步驟</li>
+            <li data-i18n="per_tm_n2">集中查看通話紀錄</li>
+            <li data-i18n="per_tm_n3">簡單直覺的系統介面</li>
+          </ul>
+        </div>
+      </article>
+    </div>
   </section>
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2 data-i18n-html="h_flow">使用者流程<span class="dot">.</span></h2></div>
