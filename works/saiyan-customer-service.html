@@ -125,6 +125,7 @@ dialog .b{padding:20px}
 .legend .lg-t{border-color:#4a90d9;color:#1e5f9e}
 .legend .lg-r{border-color:#6c5ce7;color:#5748c9}
 .legend .lg-d{border-color:#1b1b24;color:#1b1b24}
+.flow-sub{font-size:20px;margin:36px 0 0}
 .f-entry{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
 .f-node{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 18px;text-align:center;font-weight:700}
 .f-node small{display:block;color:var(--mute);font-weight:400;font-size:12px}
@@ -203,10 +204,6 @@ dialog .b{padding:20px}
     "zh": "Call report 通話與每月報表",
     "en": "Call Report · Calls & Monthly Reports"
   },
-  "intro": {
-    "zh": "整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。",
-    "en": "A back office that brings calls and monthly reports together, helping the customer service team follow up on pending contact lists."
-  },
   "h_overview": {
     "zh": "專案概覽<span class=\"dot\">.</span>",
     "en": "Project Overview<span class=\"dot\">.</span>"
@@ -215,61 +212,53 @@ dialog .b{padding:20px}
     "zh": "我的角色",
     "en": "My Role"
   },
-  "ov_role_v": {
-    "zh": "流程與介面設計",
-    "en": "Flow & interface design"
-  },
   "ov_user_l": {
     "zh": "使用者",
     "en": "Users"
   },
   "ov_user_b": {
-    "zh": "客服主管 / Team Lead",
-    "en": "CS Supervisors / Team Leads"
-  },
-  "ov_user_v": {
-    "zh": "電銷人員",
-    "en": "Telemarketers"
+    "zh": "客服主管 Team Lead",
+    "en": "CS Supervisor Team Lead"
   },
   "ov_sys_l": {
     "zh": "系統",
     "en": "Systems"
   },
   "ov_sys_b": {
-    "zh": "Saiyan 客服後台",
-    "en": "Saiyan Customer Service Back Office"
-  },
-  "ov_sys_v": {
-    "zh": "Call Report · 排班 · 分派",
-    "en": "Call Report · Rostering · Assignment"
+    "zh": "Saiyan 客服管理後台",
+    "en": "Saiyan Customer Service Management Back Office"
   },
   "ov_scope_l": {
     "zh": "範圍",
     "en": "Scope"
   },
   "ov_scope_b": {
-    "zh": "外撥與通話紀錄",
-    "en": "Outbound Calls & Call Records"
-  },
-  "ov_scope_v": {
-    "zh": "CRM 紀錄 · 轉接流程",
-    "en": "CRM Records · Call Transfers"
+    "zh": "通話紀錄 · 排班管理 · 任務分派",
+    "en": "Call Records · Schedule Management · Task Assignment"
   },
   "h_bg": {
     "zh": "背景與問題<span class=\"dot\">.</span>",
     "en": "Background & Problem<span class=\"dot\">.</span>"
   },
   "bg_p": {
-    "zh": "客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。",
-    "en": "Every week, supervisors built the roster by hand and manually imported the contact lists. The whole process was manual — last-minute leave couldn't be confirmed in real time, and rosters and lists were often out of sync."
+    "zh": "客服團隊每週皆由主管人工安排班表，並手動匯入待聯絡名單，整體流程仰賴人工作業。若遇到臨時請假，也難以及時調整人力配置，導致排班與聯絡名單無法即時同步，增加管理負擔與作業錯誤的風險。",
+    "en": "Every week, supervisors manually arrange the roster and import the contact lists by hand, so the whole process depends on manual work. When someone takes last-minute leave, staffing is hard to adjust in time, leaving rosters and contact lists out of sync and adding management burden and risk of errors."
   },
   "h_flow": {
     "zh": "使用者流程<span class=\"dot\">.</span>",
     "en": "User Flow<span class=\"dot\">.</span>"
   },
-  "flow_intro": {
-    "zh": "針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。",
-    "en": "The full journey for follow-up lists: from supervisor rostering and list assignment to telemarketers dialing out and logging calls. After login, the flow splits into two lanes by role."
+  "h_flow_current": {
+    "zh": "Current · 待跟進名單",
+    "en": "Current · Follow-up List"
+  },
+  "h_flow_history": {
+    "zh": "History · 歷史紀錄",
+    "en": "History · Call History"
+  },
+  "h_flow_performance": {
+    "zh": "Performance · 績效",
+    "en": "Performance · Results"
   },
   "h_dec": {
     "zh": "關鍵設計決定<span class=\"dot\">.</span>",
@@ -331,7 +320,7 @@ dialog .b{padding:20px}
   
   <div class="chips"><span data-i18n="chip1">Call report 通話與每月報表</span></div>
   <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p>
-  <p class="intro" data-i18n="intro">整合通話與每月報表，協助客服團隊追蹤待跟進名單的後台。</p>
+
   
   
   </div>
@@ -339,114 +328,149 @@ dialog .b{padding:20px}
   <section class="case" id="overview">
     <div class="hd"><span>OVERVIEW</span><h2 data-i18n-html="h_overview">專案概覽<span class="dot">.</span></h2></div>
     <div class="ov">
-      <div><small data-i18n="ov_role_l">我的角色</small><b>Product Designer</b><span data-i18n="ov_role_v">流程與介面設計</span></div>
-      <div><small data-i18n="ov_user_l">使用者</small><b data-i18n="ov_user_b">客服主管 / Team Lead</b><span data-i18n="ov_user_v">電銷人員</span></div>
-      <div><small data-i18n="ov_sys_l">系統</small><b data-i18n="ov_sys_b">Saiyan 客服後台</b><span data-i18n="ov_sys_v">Call Report · 排班 · 分派</span></div>
-      <div><small data-i18n="ov_scope_l">範圍</small><b data-i18n="ov_scope_b">外撥與通話紀錄</b><span data-i18n="ov_scope_v">CRM 紀錄 · 轉接流程</span></div>
+      <div><small data-i18n="ov_role_l">我的角色</small><b>Product Designer</b></div>
+      <div><small data-i18n="ov_user_l">使用者</small><b data-i18n="ov_user_b">客服主管 Team Lead</b></div>
+      <div><small data-i18n="ov_sys_l">系統</small><b data-i18n="ov_sys_b">Saiyan 客服管理後台</b></div>
+      <div><small data-i18n="ov_scope_l">範圍</small><b data-i18n="ov_scope_b">通話紀錄 · 排班管理 · 任務分派</b></div>
     </div>
   </section>
   <section class="case" id="background">
     <div class="hd"><span>BACKGROUND</span><h2 data-i18n-html="h_bg">背景與問題<span class="dot">.</span></h2></div>
-    <p data-i18n="bg_p">客服團隊每週由主管人工排班，再手動匯入要聯絡的名單。整個過程全靠人工，臨時有人請假也無法即時確認，排班與名單常常對不上。</p>
+    <p data-i18n="bg_p">客服團隊每週皆由主管人工安排班表，並手動匯入待聯絡名單，整體流程仰賴人工作業。若遇到臨時請假，也難以及時調整人力配置，導致排班與聯絡名單無法即時同步，增加管理負擔與作業錯誤的風險。</p>
   </section>
   <section class="flow" id="user-flow">
     <div class="hd"><span>USER FLOW</span><h2 data-i18n-html="h_flow">使用者流程<span class="dot">.</span></h2></div>
-    <p class="flow-intro" data-i18n="flow_intro">針對待跟進名單，從主管排班、分派名單，到電銷人員外撥與通話紀錄的完整路徑。登入後依角色分成兩條線。</p>
-    <div class="legend"><span class="lg-t">■ Supervisor / Team Lead</span><span class="lg-r">■ Telemarketer</span><span class="lg-d">◆ Decision Point</span></div>
+    <div class="legend"><span class="lg-t">■ Team Lead</span><span class="lg-r">■ Telemarketer</span><span class="lg-d">◆ Decision Point</span></div>
+    <h3 class="flow-sub" data-i18n="h_flow_current">Current · 待跟進名單</h3>
     <div class="fc-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 1000" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service user flow: after login, the flow splits into supervisor and telemarketer lanes">
-      <title>Customer Service User Flow</title>
-      <defs>
-      <marker id="ar-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a90d9"/></marker>
-      <marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
-      <marker id="ar-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1b1b24"/></marker>
-      </defs>
-      <rect x="20" y="210" width="480" height="770" rx="20" fill="#f0f7ff" stroke="#4a90d9" stroke-width="1.5"/>
-      <rect x="540" y="210" width="480" height="770" rx="20" fill="#f5f4fb" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="36" y="240" font-size="16" font-weight="700" fill="#1e5f9e">Supervisor / Team Lead</text>
-      <text x="556" y="240" font-size="16" font-weight="700" fill="#5748c9">Telemarketer</text>
-      <rect x="430" y="13" width="180" height="44" rx="22" fill="#1b1b24" stroke="#1b1b24" stroke-width="1.5"/>
-      <text x="520" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Log In to Back Office</text>
-      <line x1="520" y1="57" x2="520" y2="80" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
-      <polygon points="520,82 630,137 520,192 410,137" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
-      <text x="520" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Supervisor</text>
-      <text x="520" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">/ Team Lead?</text>
-      <polyline points="410,137 240,137 240,264" fill="none" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <polyline points="630,137 760,137 760,264" fill="none" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <text x="318" y="126" font-size="13" font-weight="700" fill="#1e5f9e">Yes</text>
-      <text x="688" y="126" font-size="13" font-weight="700" fill="#5748c9">No</text>
-      <rect x="130" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="240" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Call Report · Three Tabs</text>
-      <text x="240" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Current / History / Performance</text>
-      <line x1="240" y1="332" x2="240" y2="356" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <polygon points="240,356 340,404 240,452 140,404" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
-      <text x="240" y="409" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Any Data in History?</text>
-      <line x1="240" y1="452" x2="240" y2="476" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <text x="254" y="468.0" font-size="12" font-weight="700" fill="#1e5f9e">Yes</text>
-      <line x1="340" y1="404" x2="373" y2="404" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <text x="351.5" y="394" font-size="12" font-weight="700" fill="#1e5f9e">No</text>
-      <rect x="375" y="385" width="120" height="38" rx="19" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="435" y="409" text-anchor="middle" font-size="13" font-weight="700" fill="#1e5f9e">No result found</text>
-      <rect x="130" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="240" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Weekly Roster</text>
-      <text x="240" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">Scope by role · Week / Shift</text>
-      <line x1="240" y1="540" x2="240" y2="580" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <rect x="130" y="580" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="240" y="606" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Daily Assign</text>
-      <text x="240" y="626" text-anchor="middle" font-size="12" fill="#6b6b7b">Single / batch assign · to Current</text>
-      <line x1="240" y1="644" x2="240" y2="684" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <rect x="130" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="240" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Filter List and Call</text>
-      <text x="240" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">Current tab · Click Call to dial</text>
-      <line x1="240" y1="748" x2="240" y2="772" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <polygon points="240,772 340,820 240,868 140,820" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
-      <text x="240" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Connected?</text>
-      <line x1="240" y1="868" x2="240" y2="892" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <text x="254" y="884.0" font-size="12" font-weight="700" fill="#1e5f9e">Yes</text>
-      <line x1="340" y1="820" x2="373" y2="820" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
-      <text x="351.5" y="810" font-size="12" font-weight="700" fill="#1e5f9e">No</text>
-      <rect x="375" y="801" width="120" height="38" rx="19" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="435" y="825" text-anchor="middle" font-size="13" font-weight="700" fill="#1e5f9e">Call Failed</text>
-      <rect x="130" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
-      <text x="240" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">In Call · CRM Record</text>
-      <text x="240" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">View user info, save in CRM</text>
-      <rect x="650" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="760" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Call Report · Current Tab</text>
-      <text x="760" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Follow-up list</text>
-      <line x1="760" y1="332" x2="760" y2="372" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <rect x="650" y="372" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="760" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">View User Info</text>
-      <text x="760" y="418" text-anchor="middle" font-size="12" fill="#6b6b7b">Confirm info in the list</text>
-      <line x1="760" y1="436" x2="760" y2="476" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <rect x="650" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="760" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Click Call to Dial</text>
-      <text x="760" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">Dial out within the system</text>
-      <line x1="760" y1="540" x2="760" y2="564" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <polygon points="760,564 860,612 760,660 660,612" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
-      <text x="760" y="617" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Connected?</text>
-      <line x1="760" y1="660" x2="760" y2="684" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <text x="774" y="676.0" font-size="12" font-weight="700" fill="#5748c9">Yes</text>
-      <line x1="860" y1="612" x2="893" y2="612" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <text x="871.5" y="602" font-size="12" font-weight="700" fill="#5748c9">No</text>
-      <rect x="895" y="593" width="120" height="38" rx="19" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="955" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#5748c9">Call Failed</text>
-      <rect x="650" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="760" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Check User Info in Call</text>
-      <text x="760" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">Confirm info while talking</text>
-      <line x1="760" y1="748" x2="760" y2="772" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <polygon points="760,772 860,820 760,868 660,820" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
-      <text x="760" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Language Match?</text>
-      <line x1="760" y1="868" x2="760" y2="892" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <text x="774" y="884.0" font-size="12" font-weight="700" fill="#5748c9">Yes</text>
-      <line x1="860" y1="820" x2="893" y2="820" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
-      <text x="871.5" y="810" font-size="12" font-weight="700" fill="#5748c9">No</text>
-      <rect x="895" y="792" width="120" height="56" rx="12" fill="#fff" stroke="#6c5ce7" stroke-width="1.5" stroke-dasharray="5 4"/>
-      <text x="955" y="814" text-anchor="middle" font-size="13" font-weight="700" fill="#1b1b24">Transfer</text>
-      <text x="955" y="834" text-anchor="middle" font-size="12" fill="#6b6b7b">Follow-up TBD</text>
-      <rect x="650" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
-      <text x="760" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Save CRM Record</text>
-      <text x="760" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">Click CRM button, save after call</text>
-      </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 1000" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service user flow, Current tab: after login, the flow splits into team lead and telemarketer lanes">
+<title>Customer Service User Flow — Current</title>
+<defs>
+<marker id="ar-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a90d9"/></marker>
+<marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
+<marker id="ar-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1b1b24"/></marker>
+</defs>
+<rect x="20" y="210" width="480" height="770" rx="20" fill="#f0f7ff" stroke="#4a90d9" stroke-width="1.5"/>
+<rect x="540" y="210" width="480" height="770" rx="20" fill="#f5f4fb" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="36" y="240" font-size="16" font-weight="700" fill="#1e5f9e">Team Lead</text>
+<text x="556" y="240" font-size="16" font-weight="700" fill="#5748c9">Telemarketer</text>
+<rect x="430" y="13" width="180" height="44" rx="22" fill="#1b1b24" stroke="#1b1b24" stroke-width="1.5"/>
+<text x="520" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Log In to Back Office</text>
+<line x1="520" y1="57" x2="520" y2="80" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
+<polygon points="520,82 630,137 520,192 410,137" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
+<text x="520" y="142" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Team Lead?</text>
+<polyline points="410,137 240,137 240,264" fill="none" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<polyline points="630,137 760,137 760,264" fill="none" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<text x="318" y="126" font-size="13" font-weight="700" fill="#1e5f9e">Yes</text>
+<text x="688" y="126" font-size="13" font-weight="700" fill="#5748c9">No</text>
+<rect x="130" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="240" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Weekly Roster</text>
+<text x="240" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Scope by role · Week / Shift</text>
+<line x1="240" y1="332" x2="240" y2="424" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<rect x="130" y="424" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="240" y="450" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Daily Assign</text>
+<text x="240" y="470" text-anchor="middle" font-size="12" fill="#6b6b7b">Single / batch assign · to Current</text>
+<line x1="240" y1="488" x2="240" y2="580" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<rect x="130" y="580" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="240" y="606" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Filter List and Call</text>
+<text x="240" y="626" text-anchor="middle" font-size="12" fill="#6b6b7b">Current tab · Click Call to dial</text>
+<line x1="240" y1="644" x2="240" y2="720" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<polygon points="240,720 340,768 240,816 140,768" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
+<text x="240" y="773" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Connected?</text>
+<line x1="240" y1="816" x2="240" y2="892" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<text x="254" y="858.0" font-size="12" font-weight="700" fill="#1e5f9e">Yes</text>
+<line x1="340" y1="768" x2="373" y2="768" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<text x="351.5" y="758" font-size="12" font-weight="700" fill="#1e5f9e">No</text>
+<rect x="375" y="749" width="120" height="38" rx="19" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="435" y="773" text-anchor="middle" font-size="13" font-weight="700" fill="#1e5f9e">Call Failed</text>
+<rect x="130" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="240" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">In Call · CRM Record</text>
+<text x="240" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">View user info, save in CRM</text>
+<rect x="650" y="268" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="760" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Call Report · Current Tab</text>
+<text x="760" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Follow-up list</text>
+<line x1="760" y1="332" x2="760" y2="372" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<rect x="650" y="372" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="760" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">View User Info</text>
+<text x="760" y="418" text-anchor="middle" font-size="12" fill="#6b6b7b">Confirm info in the list</text>
+<line x1="760" y1="436" x2="760" y2="476" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<rect x="650" y="476" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="760" y="502" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Click Call to Dial</text>
+<text x="760" y="522" text-anchor="middle" font-size="12" fill="#6b6b7b">Dial out within the system</text>
+<line x1="760" y1="540" x2="760" y2="564" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<polygon points="760,564 860,612 760,660 660,612" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
+<text x="760" y="617" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Connected?</text>
+<line x1="760" y1="660" x2="760" y2="684" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<text x="774" y="676.0" font-size="12" font-weight="700" fill="#5748c9">Yes</text>
+<line x1="860" y1="612" x2="893" y2="612" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<text x="871.5" y="602" font-size="12" font-weight="700" fill="#5748c9">No</text>
+<rect x="895" y="593" width="120" height="38" rx="19" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="955" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#5748c9">Call Failed</text>
+<rect x="650" y="684" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="760" y="710" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Check User Info in Call</text>
+<text x="760" y="730" text-anchor="middle" font-size="12" fill="#6b6b7b">Confirm info while talking</text>
+<line x1="760" y1="748" x2="760" y2="772" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<polygon points="760,772 860,820 760,868 660,820" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
+<text x="760" y="825" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Language Match?</text>
+<line x1="760" y1="868" x2="760" y2="892" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<text x="774" y="884.0" font-size="12" font-weight="700" fill="#5748c9">Yes</text>
+<line x1="860" y1="820" x2="893" y2="820" stroke="#6c5ce7" stroke-width="2" marker-end="url(#ar-purple)"/>
+<text x="871.5" y="810" font-size="12" font-weight="700" fill="#5748c9">No</text>
+<rect x="895" y="792" width="120" height="56" rx="12" fill="#fff" stroke="#6c5ce7" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="955" y="814" text-anchor="middle" font-size="13" font-weight="700" fill="#1b1b24">Transfer</text>
+<text x="955" y="834" text-anchor="middle" font-size="12" fill="#6b6b7b">Follow-up TBD</text>
+<rect x="650" y="892" width="220" height="64" rx="14" fill="#fff" stroke="#6c5ce7" stroke-width="1.5"/>
+<text x="760" y="918" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Save CRM Record</text>
+<text x="760" y="938" text-anchor="middle" font-size="12" fill="#6b6b7b">Click CRM button, save after call</text>
+</svg>
+    </div>
+    <h3 class="flow-sub" data-i18n="h_flow_history">History · 歷史紀錄</h3>
+    <div class="fc-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 380" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service user flow, History tab: view past CRM records">
+<title>Customer Service User Flow — History</title>
+<defs>
+<marker id="ar-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a90d9"/></marker>
+<marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
+<marker id="ar-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1b1b24"/></marker>
+</defs>
+<rect x="410" y="48" width="220" height="64" rx="14" fill="#fff" stroke="#1b1b24" stroke-width="1.5"/>
+<text x="520" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Call Report · History Tab</text>
+<text x="520" y="94" text-anchor="middle" font-size="12" fill="#6b6b7b">Past CRM records</text>
+<line x1="520" y1="112" x2="520" y2="152" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
+<polygon points="520,152 620,200 520,248 420,200" fill="#fff" stroke="#1b1b24" stroke-width="2"/>
+<text x="520" y="205" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1b24">Any Data in History?</text>
+<line x1="520" y1="248" x2="520" y2="288" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
+<text x="534" y="272" font-size="12" font-weight="700" fill="#1b1b24">Yes</text>
+<rect x="410" y="288" width="220" height="64" rx="14" fill="#fff" stroke="#1b1b24" stroke-width="1.5"/>
+<text x="520" y="314" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">View CRM Record</text>
+<text x="520" y="334" text-anchor="middle" font-size="12" fill="#6b6b7b">Review past calls</text>
+<line x1="620" y1="200" x2="738" y2="200" stroke="#1b1b24" stroke-width="2" marker-end="url(#ar-ink)"/>
+<text x="665" y="190" font-size="12" font-weight="700" fill="#1b1b24">No</text>
+<rect x="740" y="181" width="120" height="38" rx="19" fill="#fff" stroke="#1b1b24" stroke-width="1.5"/>
+<text x="800" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="#1b1b24">No result found</text>
+</svg>
+    </div>
+    <h3 class="flow-sub" data-i18n="h_flow_performance">Performance · 績效</h3>
+    <div class="fc-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 360" width="100%" font-family="Noto Sans TC, Noto Sans CJK TC, PingFang TC, Microsoft JhengHei, system-ui, sans-serif" role="img" aria-label="Customer Service user flow, Performance tab: team lead reviews monthly call performance">
+<title>Customer Service User Flow — Performance</title>
+<defs>
+<marker id="ar-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a90d9"/></marker>
+<marker id="ar-purple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6c5ce7"/></marker>
+<marker id="ar-ink" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1b1b24"/></marker>
+</defs>
+<rect x="390" y="48" width="260" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="520" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Call Report · Performance Tab</text>
+<text x="520" y="94" text-anchor="middle" font-size="12" fill="#6b6b7b">Monthly results</text>
+<line x1="520" y1="112" x2="520" y2="148" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<rect x="390" y="158" width="260" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="520" y="184" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Monthly Team Performance</text>
+<text x="520" y="204" text-anchor="middle" font-size="12" fill="#6b6b7b">Team dialing results</text>
+<line x1="520" y1="222" x2="520" y2="258" stroke="#4a90d9" stroke-width="2" marker-end="url(#ar-blue)"/>
+<rect x="390" y="268" width="260" height="64" rx="14" fill="#fff" stroke="#4a90d9" stroke-width="1.5"/>
+<text x="520" y="294" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b24">Per-Telemarketer Performance</text>
+<text x="520" y="314" text-anchor="middle" font-size="12" fill="#6b6b7b">Results by telemarketer</text>
+</svg>
     </div>
   </section>
   <section class="case" id="decisions">
