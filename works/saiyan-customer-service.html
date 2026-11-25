@@ -169,11 +169,24 @@ dialog .b{padding:20px}
 .ov div span{display:block;color:var(--mute);font-size:14px;margin-top:2px}
 .outcome{margin-top:8px;background:var(--soft);border-radius:20px;padding:32px;text-align:left}
 .out-item b{display:block;font-size:17px;line-height:1.5}
+.out-item .pill{margin-bottom:10px}
 .out-item .stat{color:var(--accent);font-weight:700;font-size:24px}
 .out-item p{margin:8px 0 0;color:var(--mute);font-size:15px;text-align:left}
 .out-item+.out-item{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
 .persona{margin-top:8px}
 .persona img{width:100%;height:auto;display:block;border-radius:20px;border:1px solid var(--line)}
+.hd+.bg-role{margin-top:8px}
+.bg-role{margin-top:28px}
+.bg-role h3{font-size:20px;margin:0 0 10px}
+.bg-role p{margin:0}
+.pill{display:inline-block;padding:4px 14px;border-radius:99px;color:#fff;font-size:15px;font-weight:700;vertical-align:middle}
+.pill-tl{background:#4a90d9}
+.pill-tm{background:#6c5ce7}
+.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.show-item{margin:0}
+.show-item video{width:100%;height:auto;display:block;border-radius:20px;border:1px solid var(--line);background:#000}
+.show-item figcaption{margin-top:12px;font-size:15px;font-weight:700;text-align:center}
+@media(max-width:760px){.show-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.ov{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
@@ -236,12 +249,20 @@ dialog .b{padding:20px}
     "en": "Background & Problem<span class=\"dot\">.</span>"
   },
   "bg_p": {
-    "zh": "客服團隊每週皆由主管人工安排班表，並手動匯入待聯絡名單，整體流程仰賴人工作業。若遇到臨時請假，也難以及時調整人力配置，導致排班與聯絡名單無法即時同步，增加管理負擔與作業錯誤的風險。",
-    "en": "Every week, supervisors manually arrange the roster and import the contact lists by hand, so the whole process depends on manual work. When someone takes last-minute leave, staffing is hard to adjust in time, leaving rosters and contact lists out of sync and adding management burden and risk of errors."
+    "zh": "每週需人工安排客服班表及匯入待聯絡名單，整體作業仰賴人工處理。遇到臨時請假時，也難以即時調整人力與名單分配，容易造成資訊不同步，增加管理負擔與作業錯誤風險。",
+    "en": "Each week, the roster and contact lists must be arranged and imported by hand, so the whole process depends on manual work. When someone takes last-minute leave, staffing and list assignment are hard to adjust in time, leaving information out of sync and adding management burden and risk of errors."
   },
   "bg_p2": {
-    "zh": "Telemarketer 每天需依照分配的聯絡名單逐一撥打電話，過程中需要手動查找及輸入客戶電話號碼，並在不同系統介面間切換以完成聯繫與通話紀錄。重複性的操作不僅耗費時間，也容易中斷工作流程，影響每日外撥效率與客戶聯繫進度。",
-    "en": "Each day, telemarketers work through their assigned contact lists one call at a time, manually looking up and entering each customer's phone number and switching between different system interfaces to complete the call and log the record. The repetitive work not only eats time but also breaks the flow of work, hurting daily outbound efficiency and customer contact progress."
+    "zh": "每天需依照分配的聯絡名單逐一進行外撥，過程中需手動查找、輸入電話號碼，並頻繁切換不同系統完成撥號與通話紀錄。繁瑣的重複操作不僅耗費時間，也降低每日外撥效率。",
+    "en": "Each day, telemarketers call through their assigned contact lists one by one, manually looking up and entering phone numbers and frequently switching between different systems to complete the call and log the record. The tedious, repetitive work not only eats time but also lowers daily outbound efficiency."
+  },
+  "bg_tl_t": {
+    "zh": "客服團隊主管",
+    "en": "Customer Service Team Supervisor"
+  },
+  "bg_tm_t": {
+    "zh": "電話行銷 / 電訪人員",
+    "en": "Telemarketing / Telemarketer"
   },
   "h_persona": {
     "zh": "使用者角色<span class=\"dot\">.</span>",
@@ -254,6 +275,10 @@ dialog .b{padding:20px}
   "h_flow": {
     "zh": "使用者流程<span class=\"dot\">.</span>",
     "en": "User Flow<span class=\"dot\">.</span>"
+  },
+  "h_showcase": {
+    "zh": "產品展示<span class=\"dot\">.</span>",
+    "en": "Product Showcase<span class=\"dot\">.</span>"
   },
   "h_outcome": {
     "zh": "產品成效<span class=\"dot\">.</span>",
@@ -303,8 +328,14 @@ dialog .b{padding:20px}
   </section>
   <section class="case" id="background">
     <div class="hd"><span>BACKGROUND</span><h2 data-i18n-html="h_bg">背景與問題<span class="dot">.</span></h2></div>
-    <p data-i18n="bg_p">客服團隊每週皆由主管人工安排班表，並手動匯入待聯絡名單，整體流程仰賴人工作業。若遇到臨時請假，也難以及時調整人力配置，導致排班與聯絡名單無法即時同步，增加管理負擔與作業錯誤的風險。</p>
-    <p data-i18n="bg_p2">Telemarketer 每天需依照分配的聯絡名單逐一撥打電話，過程中需要手動查找及輸入客戶電話號碼，並在不同系統介面間切換以完成聯繫與通話紀錄。重複性的操作不僅耗費時間，也容易中斷工作流程，影響每日外撥效率與客戶聯繫進度。</p>
+    <div class="bg-role">
+      <h3><span class="pill pill-tl">Team Lead</span> <span data-i18n="bg_tl_t">客服團隊主管</span></h3>
+      <p data-i18n="bg_p">每週需人工安排客服班表及匯入待聯絡名單，整體作業仰賴人工處理。遇到臨時請假時，也難以即時調整人力與名單分配，容易造成資訊不同步，增加管理負擔與作業錯誤風險。</p>
+    </div>
+    <div class="bg-role">
+      <h3><span class="pill pill-tm">Telemarketer</span> <span data-i18n="bg_tm_t">電話行銷 / 電訪人員</span></h3>
+      <p data-i18n="bg_p2">每天需依照分配的聯絡名單逐一進行外撥，過程中需手動查找、輸入電話號碼，並頻繁切換不同系統完成撥號與通話紀錄。繁瑣的重複操作不僅耗費時間，也降低每日外撥效率。</p>
+    </div>
   </section>
   <section class="case" id="persona">
     <div class="hd"><span>PERSONA</span><h2 data-i18n-html="h_persona">使用者角色<span class="dot">.</span></h2></div>
@@ -428,14 +459,29 @@ dialog .b{padding:20px}
 </svg>
     </div>
   </section>
+  <section class="case" id="showcase">
+    <div class="hd"><span>PRODUCT SHOWCASE</span><h2 data-i18n-html="h_showcase">產品展示<span class="dot">.</span></h2></div>
+    <div class="show-grid">
+      <figure class="show-item">
+        <video controls preload="metadata" poster="../assets/cs-weekly-assign-poster.jpg" src="../assets/cs-weekly-assign.mp4"></video>
+        <figcaption>Weekly Assign</figcaption>
+      </figure>
+      <figure class="show-item">
+        <video controls preload="metadata" poster="../assets/cs-performance-report-poster.jpg" src="../assets/cs-performance-report.mp4"></video>
+        <figcaption>Performance Report</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="case" id="outcome">
     <div class="hd"><span>PRODUCT IMPACT</span><h2 data-i18n-html="h_outcome">產品成效<span class="dot">.</span></h2></div>
     <div class="outcome">
       <div class="out-item">
+        <span class="pill pill-tl">Team Lead</span>
         <b data-i18n-html="out1_t">排班與名單分配作業時間減少 <span class="stat">60%</span></b>
         <p data-i18n="out1_p">透過 Weekly Roster 自動排班、名單自動分配及 Performance Report 自動產出，減少 Team Lead 每週手動排班、確認請假與協調代班，以及 CS 人員整理報表的作業負擔，提升團隊整體營運效率。</p>
       </div>
       <div class="out-item">
+        <span class="pill pill-tm">Telemarketer</span>
         <b data-i18n-html="out2_t">Click to Dial 撥號操作步驟減少 <span class="stat">75%</span></b>
         <p data-i18n="out2_p">整合一鍵撥號功能，將原先 4 個手動操作步驟（查找、複製、切換介面、輸入號碼）簡化為 1 次點擊，減少重複操作，提升客服聯繫效率。</p>
       </div>
