@@ -241,7 +241,7 @@ section{padding:72px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
 .card{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:.25s;text-align:left;color:inherit;font:inherit;padding:0;display:flex;flex-direction:column;justify-content:flex-start}
 .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(108,92,231,.15)}
- .card .stat-badge{position:absolute;top:12px;left:12px;z-index:1;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:99px;box-shadow:0 4px 12px rgba(108,92,231,.35)}
+.card .stat-badge{position:absolute;top:0;left:0;z-index:1;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:0 0 12px 0}
 .card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;flex:none}
 .card div{padding:16px 20px 22px}.tag{font-size:12px;color:var(--accent);font-weight:700}
 .card h3{font-size:18px;margin:2px 0 4px}.card p{color:var(--mute);font-size:14px}
@@ -401,10 +401,10 @@ dialog .b{padding:20px}
 const P=[
  {c:"後台管理系統",t:"Member Management 會員管理",i:"01_Saiyan_Member_Account_D_etail",l:["Account Detail 帳戶詳情","Blocklist 黑名單","Whitelist 白名單"],"te":"Member Management","le":["Account Detail", "Blocklist", "Whitelist"],"page":"works/saiyan-member.html"},
  {c:"後台管理系統",t:"Customer Service 客服系統",i:"02_Saiyan_Customer_Service",l:["Call report 通話與每月報表"],"te":"Customer Service","le":["Call Report — Calls & Monthly Reports"],"s":"客服作業時間 −60%","se":"CS work time −60%","page":"works/saiyan-customer-service.html"},
- {c:"後台管理系統",t:"Settlement 結算",i:"08_Saiyan_Settlement",l:["Internal Transfer 內部轉帳","List of Accounts 帳戶列表"],"te":"Settlement","le":["Internal Transfer", "List of Accounts"],"page":"works/saiyan-settlement.html"},
- {c:"Design System",t:"Saiyan Design System",i:"Saiyan__Design_System",l:["Components 元件","Colors / Typography 色彩與字體"],"te":"Saiyan Design System","le":["Components", "Colors / Typography"],"page":"works/saiyan-design-system.html"},
- {c:"Design System",t:"MTBO Design System",i:"MTBO_Design_system",l:["Components 元件","Styles 樣式"],"te":"MTBO Design System","le":["Components", "Styles"],"page":"works/mtbo-design-system.html"},
- {c:"Design System",t:"Nami Design System",i:"Nami_Design_system",l:["Components 元件","Styles 樣式"],"te":"Nami Design System","le":["Components", "Styles"],"page":"works/nami-design-system.html"},
+ {c:"後台管理系統",t:"Internal Transfer 內部轉帳",i:"08_Saiyan_Settlement",l:["行政內部對帳系統"],"te":"Internal Transfer","le":["Internal Reconciliation System"],"page":"works/saiyan-settlement.html"},
+ {c:"Design System",t:"Saiyan Design System",i:"Saiyan__Design_System",l:["Colors / Typography 色彩與字體","Atomic Design 原子設計"],"te":"Saiyan Design System","le":["Colors / Typography", "Atomic Design"],"page":"works/saiyan-design-system.html"},
+ {c:"Design System",t:"MTBO Design System",i:"MTBO_Design_system",l:["Atomic Design 原子設計"],"te":"MTBO Design System","le":["Atomic Design"],"page":"works/mtbo-design-system.html"},
+ {c:"Design System",t:"Nami Design System",i:"Nami_Design_system",l:["Atomic Design 原子設計"],"te":"Nami Design System","le":["Atomic Design"],"page":"works/nami-design-system.html"},
  {c:"企業內部系統",t:"TWSC 新人入職訓練計畫",i:"TWSC_Onboarding_Welcome",l:["新人入職網站設計","12 週學習航線規劃","團隊文化與 Scrum 介紹","部門品牌識別"],"te":"TWSC New-Hire Onboarding Program","le":["New-hire onboarding website design", "12-week learning journey planning", "Team culture & Scrum introduction", "Department brand identity"],"page":"works/twsc-onboarding.html"},
 {c:"企業內部系統",t:"Tifun 企業活動報名系統",i:"Tifun_Event_Registration",l:["活動報名表單","報名資訊確認","交通接駁安排"],"te":"Tifun Corporate Event Registration","le":["Event registration form", "Registration confirmation", "Transport & shuttle arrangements"],"page":"works/tifun.html"},
  {"c": "網站與平台設計", "t": "TRANSFER 數位化交易平台", "img": "https://irp.cdn-website.com/4d17563d/dms3rep/multi/opt/89d572160006847.64002efdc28a7-1920w.jpg", "l": ["網站設計"], "te": "TRANSFER Digital Trading Platform", "le": ["Website design"], "page": "works/transfer.html"},
