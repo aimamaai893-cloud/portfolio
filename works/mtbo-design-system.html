@@ -134,19 +134,6 @@ dialog .b{padding:20px}
 .arch .lv .chips{margin-top:0}
 .swgroup{margin-top:32px}
 .swgroup h3{font-size:17px;margin-bottom:12px}
-.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
-.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.sw i{display:block;height:64px}
-.sw p{padding:8px 10px 10px;font-size:13px;line-height:1.4}
-.sw p span{display:block;color:var(--mute);font-size:12px}
-.rules{margin-top:24px;color:var(--mute);}
-.rules ol{margin:0;padding-left:22px}
-.rules ol ol{margin-top:4px}
-.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
-.tbl table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}
-.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-.tbl th{color:var(--mute);font-weight:400;background:var(--soft)}
-.tbl tr:last-child td{border-bottom:0}
 @media(max-width:760px){.arch .lv{flex-direction:column;gap:8px}.arch .lv b{flex:none}}
 </style>
 <script>document.documentElement.classList.add("i18n-pending")</script>
@@ -168,20 +155,8 @@ dialog .b{padding:20px}
     "en": "MTBO Design System"
   },
   "chip1": {
-    "zh": "Components 元件",
-    "en": "Components"
-  },
-  "chip2": {
-    "zh": "Styles 樣式",
-    "en": "Styles"
-  },
-  "chip3": {
     "zh": "Atomic Design 原子設計",
     "en": "Atomic Design"
-  },
-  "intro": {
-    "zh": "MTBO 產品的設計系統，以 Atomic Design 方法組織：從色彩、字體等基礎元素，到按鈕、輸入框等元件，再組裝成表格、卡片與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。",
-    "en": "The design system for the MTBO product line, organized with Atomic Design: from foundational colors and type, to components like buttons and inputs, assembled into tables, cards, and full-page templates — keeping visuals and interactions consistent across products. Still being built (In Progress)."
   },
   "h_arch": {
     "zh": "設計系統架構<span class=\"dot\">.</span>",
@@ -200,24 +175,24 @@ dialog .b{padding:20px}
     "en": "Components<span class=\"dot\">.</span>"
   },
   "arch_lead": {
-    "zh": "整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。",
-    "en": "The system is organized into four Atomic Design layers: Atoms are the most basic colors and type, Molecules are standalone components, Organisms are composite blocks built from components, and Templates are full-page layout frames."
+    "zh": "MTBO 是一個金流系統平台，採用 Atomic Design 方法建構設計系統，統一跨產品的視覺規範與操作體驗，提升整體設計的一致性與可擴展性。",
+    "en": "MTBO is a payment system platform. Its design system is built with Atomic Design, unifying visual standards and interaction experience across products and improving overall design consistency and scalability."
   },
   "lv_atoms": {
     "zh": "原子 · 基礎元素",
-    "en": "Atoms · Foundations"
+    "en": "Foundations"
   },
   "lv_molecules": {
     "zh": "分子 · 元件",
-    "en": "Molecules · Components"
+    "en": "Components"
   },
   "lv_organisms": {
     "zh": "有機體 · 複合區塊",
-    "en": "Organisms · Composite Blocks"
+    "en": "Composite Blocks"
   },
   "lv_templates": {
     "zh": "模板 · 版面骨架",
-    "en": "Templates · Layout Frames"
+    "en": "Layout Frames"
   },
   "alt_library": {
     "zh": "MTBO Design System 元件庫總覽",
@@ -227,97 +202,17 @@ dialog .b{padding:20px}
     "zh": "Library 總覽：整個設計系統的元件庫，依 Atoms、Molecules、Organisms、Templates 分層收納。",
     "en": "Library overview: the design system's full component library, organized by Atoms, Molecules, Organisms, and Templates."
   },
-  "color_lead": {
-    "zh": "灰階負責文字與背景層次，資訊色對應成功、錯誤與提醒三種狀態，主色是藍色系，另有一個深藍輔助色。",
-    "en": "The gray scale handles text and background layers, info colors map to success, error, and alert states, the primary is a blue family, and there is one dark-blue accent."
-  },
-  "sw_gray": {
-    "zh": "Gray scale 灰階",
-    "en": "Gray scale"
-  },
-  "sw_info": {
-    "zh": "Info color 資訊色",
-    "en": "Info color"
-  },
-  "sw_primary": {
-    "zh": "Primary color 主色",
-    "en": "Primary color"
-  },
-  "sw_blue": {
-    "zh": "Blue 藍色",
-    "en": "Blue"
-  },
   "alt_color": {
     "zh": "MTBO Design System 色彩規範",
     "en": "MTBO Design System color spec"
-  },
-  "cap_color": {
-    "zh": "Color 色彩規範：灰階、資訊色、主色與藍色，附色碼。",
-    "en": "Color spec: gray scale, info colors, primary, and blue, with hex codes."
-  },
-  "typo_lead": {
-    "zh": "全系統統一使用 Roboto，字體大小以 1rem = 16px 為基準，共六級字階，行高一律 150%，字距 0px。",
-    "en": "The whole system uses Roboto, sized from a 1rem = 16px baseline, in six type levels with a fixed 150% line height and 0px letter spacing."
-  },
-  "rule1": {
-    "zh": "文字請統一用 #000000",
-    "en": "All text uses #000000"
-  },
-  "rule2": {
-    "zh": "font size 的 Base 1rem 是 16px",
-    "en": "Base font size: 1rem = 16px"
-  },
-  "rule3": {
-    "zh": "Wording 定義：<ol type=\"a\"><li>Title / Label / Table header 一律採用 Title Case</li><li>其他內文採用 Sentence Case</li><li>Button 全大寫</li></ol>",
-    "en": "Wording rules:<ol type=\"a\"><li>Titles, labels, and table headers always use Title Case</li><li>Other body text uses Sentence Case</li><li>Buttons are ALL CAPS</li></ol>"
-  },
-  "case_h1": {
-    "zh": "頁面主標題",
-    "en": "Page title"
-  },
-  "case_h2": {
-    "zh": "區塊標題",
-    "en": "Section title"
-  },
-  "case_h3m": {
-    "zh": "小標題",
-    "en": "Subtitle"
-  },
-  "case_h3r": {
-    "zh": "內文標題",
-    "en": "Body heading"
-  },
-  "case_bodym": {
-    "zh": "內文強調 / 按鈕文字",
-    "en": "Body emphasis / Button text"
-  },
-  "case_bodyr": {
-    "zh": "內文 / 表格文字",
-    "en": "Body / Table text"
   },
   "alt_typo": {
     "zh": "MTBO Design System 字體規範",
     "en": "MTBO Design System typography spec"
   },
-  "cap_typo": {
-    "zh": "Typography 字體規範：Roboto 字體、六級字階與用字規則。",
-    "en": "Typography spec: Roboto, six type levels, and wording rules."
-  },
-  "comp_lead": {
-    "zh": "每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。",
-    "en": "Every component has a SPEC and USAGE guide — sizes, styles, states, and usage scenarios are all spelled out, so design and development work from the same spec."
-  },
   "alt_button": {
     "zh": "MTBO Design System Button 按鈕規範",
     "en": "MTBO Design System button spec"
-  },
-  "cap_button": {
-    "zh": "Button 按鈕：Big / Medium / Small 三種尺寸，Primary / Red / Green / Outline 樣式，含 Default / Hover / Disabled 三種狀態與 Icon button；右側為使用規範。",
-    "en": "Buttons: Big / Medium / Small sizes in Primary / Red / Green / Outline styles, with Default / Hover / Disabled states and icon buttons; usage rules on the right."
-  },
-  "comp_close": {
-    "zh": "其他元件與模板的規格都在 Figma 檔案裡：Search、Checkbox、Input、Message、Date Picker、Card、Dropdown、Table、Pagination、Sidebar、Header。",
-    "en": "Specs for the other components and templates are in the Figma file: Search, Checkbox, Input, Message, Date Picker, Card, Dropdown, Table, Pagination, Sidebar, Header."
   },
   "a_color": {
     "zh": "Color 色彩",
@@ -405,9 +300,8 @@ dialog .b{padding:20px}
   <div><span class="tag" data-i18n="tag">Design System</span>
   <h1 data-i18n="h1">MTBO Design System</h1>
   
-  <div class="chips"><span data-i18n="chip1">Components 元件</span><span data-i18n="chip2">Styles 樣式</span><span data-i18n="chip3">Atomic Design 原子設計</span></div>
+  <div class="chips"><span data-i18n="chip1">Atomic Design 原子設計</span></div>
   <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p>
-  <p class="intro" data-i18n="intro">MTBO 產品的設計系統，以 Atomic Design 方法組織：從色彩、字體等基礎元素，到按鈕、輸入框等元件，再組裝成表格、卡片與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。</p>
   
   
   </div>
@@ -416,7 +310,7 @@ dialog .b{padding:20px}
   <section class="ds" id="architecture">
     <div class="sub">Architecture</div>
     <h2 data-i18n-html="h_arch">設計系統架構<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="arch_lead">整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。</p>
+    <p class="lead" data-i18n="arch_lead">MTBO 是一個金流系統平台，採用 Atomic Design 方法建構設計系統，統一跨產品的視覺規範與操作體驗，提升整體設計的一致性與可擴展性。</p>
     <div class="arch">
       <div class="lv"><b>Atoms<span data-i18n="lv_atoms">原子 · 基礎元素</span></b><div class="chips"><span data-i18n="a_color">Color 色彩</span><span data-i18n="a_typography">Typography 字體排版</span><span data-i18n="a_icon">Icon 圖示</span><span data-i18n="a_date_time_format">Date &amp; Time Format 日期時間格式</span><span data-i18n="a_scrollbar">Scrollbar 捲軸</span><span data-i18n="a_elevation">Elevation 陰影層級</span><span data-i18n="a_loading">Loading 載入狀態</span></div></div>
       <div class="lv"><b>Molecules<span data-i18n="lv_molecules">分子 · 元件</span></b><div class="chips"><span data-i18n="a_search">Search 搜尋</span><span data-i18n="a_button">Button 按鈕</span><span data-i18n="a_checkbox">Checkbox 核取方塊</span><span data-i18n="a_input">Input 輸入框</span><span data-i18n="a_message">Message 訊息</span><span data-i18n="a_date_picker">Date Picker 日期選擇器</span></div></div>
@@ -428,42 +322,17 @@ dialog .b{padding:20px}
   <section class="ds" id="color">
     <div class="sub">Color</div>
     <h2 data-i18n-html="h_color">色彩<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="color_lead">灰階負責文字與背景層次，資訊色對應成功、錯誤與提醒三種狀態，主色是藍色系，另有一個深藍輔助色。</p>
-<div class="swgroup"><h3 data-i18n="sw_gray">Gray scale 灰階</h3><div class="sw"><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div><div><i style="background:#000000"></i><p style="color:#fff;background:#000000">Black<span style="color:#fff;opacity:.75">#000000</span></p></div><div><i style="background:#F2F2F2"></i><p style="color:#1b1b24;background:#F2F2F2">Grey 1<span style="color:#1b1b24;opacity:.75">#F2F2F2</span></p></div><div><i style="background:#E7E6E6"></i><p style="color:#1b1b24;background:#E7E6E6">Grey 2<span style="color:#1b1b24;opacity:.75">#E7E6E6</span></p></div><div><i style="background:#DDDDDD"></i><p style="color:#1b1b24;background:#DDDDDD">Grey 3<span style="color:#1b1b24;opacity:.75">#DDDDDD</span></p></div><div><i style="background:#CCCCCC"></i><p style="color:#1b1b24;background:#CCCCCC">Grey 4<span style="color:#1b1b24;opacity:.75">#CCCCCC</span></p></div><div><i style="background:#C3C2C2"></i><p style="color:#1b1b24;background:#C3C2C2">Grey 5<span style="color:#1b1b24;opacity:.75">#C3C2C2</span></p></div><div><i style="background:#BBBBBB"></i><p style="color:#1b1b24;background:#BBBBBB">Grey 6<span style="color:#1b1b24;opacity:.75">#BBBBBB</span></p></div><div><i style="background:#A7A7A7"></i><p style="color:#1b1b24;background:#A7A7A7">Grey 7<span style="color:#1b1b24;opacity:.75">#A7A7A7</span></p></div><div><i style="background:#666666"></i><p style="color:#fff;background:#666666">Grey 8<span style="color:#fff;opacity:.75">#666666</span></p></div><div><i style="background:#444444"></i><p style="color:#fff;background:#444444">Grey 9<span style="color:#fff;opacity:.75">#444444</span></p></div></div></div><div class="swgroup"><h3 data-i18n="sw_info">Info color 資訊色</h3><div class="sw"><div><i style="background:#E8F5E9"></i><p style="color:#1b1b24;background:#E8F5E9">Light Green<span style="color:#1b1b24;opacity:.75">#E8F5E9</span></p></div><div><i style="background:#5DB55F"></i><p style="color:#fff;background:#5DB55F">Dark Green<span style="color:#fff;opacity:.75">#5DB55F</span></p></div><div><i style="background:#66BB6A"></i><p style="color:#1b1b24;background:#66BB6A">Mid Green<span style="color:#1b1b24;opacity:.75">#66BB6A</span></p></div><div><i style="background:#FFE9E7"></i><p style="color:#1b1b24;background:#FFE9E7">Light Red<span style="color:#1b1b24;opacity:.75">#FFE9E7</span></p></div><div><i style="background:#FF6160"></i><p style="color:#fff;background:#FF6160">Mid Red<span style="color:#fff;opacity:.75">#FF6160</span></p></div><div><i style="background:#F44336"></i><p style="color:#fff;background:#F44336">Dark Red<span style="color:#fff;opacity:.75">#F44336</span></p></div><div><i style="background:#FFF2E6"></i><p style="color:#1b1b24;background:#FFF2E6">Light Orange<span style="color:#1b1b24;opacity:.75">#FFF2E6</span></p></div><div><i style="background:#FB8C00"></i><p style="color:#1b1b24;background:#FB8C00">Dark Orange<span style="color:#1b1b24;opacity:.75">#FB8C00</span></p></div></div></div><div class="swgroup"><h3 data-i18n="sw_primary">Primary color 主色</h3><div class="sw"><div><i style="background:#E3F2FD"></i><p style="color:#1b1b24;background:#E3F2FD">Primary 1<span style="color:#1b1b24;opacity:.75">#E3F2FD</span></p></div><div><i style="background:#2196F3"></i><p style="color:#fff;background:#2196F3">Primary 2<span style="color:#fff;opacity:.75">#2196F3</span></p></div><div><i style="background:#1E88E5"></i><p style="color:#fff;background:#1E88E5">Primary 3<span style="color:#fff;opacity:.75">#1E88E5</span></p></div><div><i style="background:#1976D2"></i><p style="color:#fff;background:#1976D2">Primary 4<span style="color:#fff;opacity:.75">#1976D2</span></p></div></div></div><div class="swgroup"><h3 data-i18n="sw_blue">Blue 藍色</h3><div class="sw"><div><i style="background:#203864"></i><p style="color:#fff;background:#203864">Blue 1<span style="color:#fff;opacity:.75">#203864</span></p></div></div></div>
-    <figure class="shot"><img src="../assets/works/mtbo-design-system/color.jpg" alt="MTBO Design System 色彩規範" data-i18n-attr="alt:alt_color"><figcaption data-i18n="cap_color">Color 色彩規範：灰階、資訊色、主色與藍色，附色碼。</figcaption></figure>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/color.jpg" alt="MTBO Design System 色彩規範" data-i18n-attr="alt:alt_color"></figure>
   </section>
   <section class="ds" id="typography">
     <div class="sub">Typography</div>
     <h2 data-i18n-html="h_typo">字體排版<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="typo_lead">全系統統一使用 Roboto，字體大小以 1rem = 16px 為基準，共六級字階，行高一律 150%，字距 0px。</p>
-    <div class="rules"><ol>
-      <li data-i18n="rule1">文字請統一用 #000000</li>
-      <li data-i18n="rule2">font size 的 Base 1rem 是 16px</li>
-      <li data-i18n-html="rule3">Wording 定義：
-        <ol type="a">
-          <li>Title / Label / Table header 一律採用 Title Case</li>
-          <li>其他內文採用 Sentence Case</li>
-          <li>Button 全大寫</li>
-        </ol>
-      </li>
-    </ol></div>
-    <div class="tbl"><table>
-      <tr><th>Type</th><th>Case</th><th>Font family</th><th>Font size</th><th>Font weight</th><th>Line height</th><th>Letter spacing</th></tr>
-      <tr><td><b>Heading_1_bold</b></td><td data-i18n="case_h1">頁面主標題</td><td>Roboto</td><td>28px (1.75rem)</td><td>Bold</td><td>42px (150%)</td><td>0px</td></tr>
-      <tr><td><b>Heading_2_medium</b></td><td data-i18n="case_h2">區塊標題</td><td>Roboto</td><td>20px (1.25rem)</td><td>Medium</td><td>30px (150%)</td><td>0px</td></tr>
-      <tr><td><b>Heading_3_medium</b></td><td data-i18n="case_h3m">小標題</td><td>Roboto</td><td>16px (1rem)</td><td>Medium</td><td>24px (150%)</td><td>0px</td></tr>
-      <tr><td>Heading_3_regular</td><td data-i18n="case_h3r">內文標題</td><td>Roboto</td><td>16px (1rem)</td><td>Regular</td><td>24px (150%)</td><td>0px</td></tr>
-      <tr><td><b>Body_Medium</b></td><td data-i18n="case_bodym">內文強調 / 按鈕文字</td><td>Roboto</td><td>13px (0.8125rem)</td><td>Medium</td><td>21px (150%)</td><td>0px</td></tr>
-      <tr><td>Body_Regular</td><td data-i18n="case_bodyr">內文 / 表格文字</td><td>Roboto</td><td>13px (0.8125rem)</td><td>Regular</td><td>21px (150%)</td><td>0px</td></tr>
-    </table></div>
-    <figure class="shot"><img src="../assets/works/mtbo-design-system/typography.jpg" alt="MTBO Design System 字體規範" data-i18n-attr="alt:alt_typo"><figcaption data-i18n="cap_typo">Typography 字體規範：Roboto 字體、六級字階與用字規則。</figcaption></figure>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/typography.jpg" alt="MTBO Design System 字體規範" data-i18n-attr="alt:alt_typo"></figure>
   </section>
   <section class="ds" id="components">
     <div class="sub">Components</div>
     <h2 data-i18n-html="h_comp">元件<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="comp_lead">每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。</p>
-    <figure class="shot"><img src="../assets/works/mtbo-design-system/button.jpg" alt="MTBO Design System Button 按鈕規範" data-i18n-attr="alt:alt_button"><figcaption data-i18n="cap_button">Button 按鈕：Big / Medium / Small 三種尺寸，Primary / Red / Green / Outline 樣式，含 Default / Hover / Disabled 三種狀態與 Icon button；右側為使用規範。</figcaption></figure>
-    <p class="lead" style="margin-top:28px" data-i18n="comp_close">其他元件與模板的規格都在 Figma 檔案裡：Search、Checkbox、Input、Message、Date Picker、Card、Dropdown、Table、Pagination、Sidebar、Header。</p>
+    <figure class="shot"><img src="../assets/works/mtbo-design-system/button.jpg" alt="MTBO Design System Button 按鈕規範" data-i18n-attr="alt:alt_button"></figure>
   </section>
   <div class="pager"><a href="saiyan-design-system.html"><span class="pl" data-i18n="prev">← 上一個作品</span><span data-i18n-title="saiyan-design-system">Saiyan Design System</span></a><a href="nami-design-system.html" style="text-align:right"><span class="pl" data-i18n="next">下一個作品 →</span><span data-i18n-title="nami-design-system">Nami Design System</span></a></div>
 </main>

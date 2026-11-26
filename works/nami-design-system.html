@@ -123,28 +123,12 @@ dialog .b{padding:20px}
 .ds .lead{color:var(--mute);margin-top:10px}
 .shot{margin:28px 0 0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .shot img{width:100%;display:block}
-.shot figcaption{padding:14px 20px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);background:#fff}
 .arch{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .arch .lv{display:flex;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
 .arch .lv:last-child{border-bottom:0}
 .arch .lv b{flex:0 0 130px;font-size:17px}
 .arch .lv b span{display:block;color:var(--mute);font-size:13px;font-weight:400}
 .arch .lv .chips{margin-top:0}
-.swgroup{margin-top:32px}
-.swgroup h3{font-size:17px;margin-bottom:12px}
-.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:12px}
-.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.sw i{display:block;height:64px}
-.sw p{padding:8px 10px 10px;font-size:13px;line-height:1.4}
-.sw p span{display:block;color:var(--mute);font-size:12px}
-.rules{margin-top:24px;color:var(--mute);}
-.rules ol{margin:0;padding-left:22px}
-.rules ol ol{margin-top:4px}
-.tbl{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
-.tbl table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}
-.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-.tbl th{color:var(--mute);font-weight:400;background:var(--soft)}
-.tbl tr:last-child td{border-bottom:0}
 @media(max-width:760px){.arch .lv{flex-direction:column;gap:8px}.arch .lv b{flex:none}}
 @media(max-width:760px){.gallery{grid-template-columns:1fr}}
 </style>
@@ -167,20 +151,8 @@ dialog .b{padding:20px}
     "en": "Nami Design System"
   },
   "chip1": {
-    "zh": "Components 元件",
-    "en": "Components"
-  },
-  "chip2": {
-    "zh": "Styles 樣式",
-    "en": "Styles"
-  },
-  "chip3": {
     "zh": "Atomic Design 原子設計",
     "en": "Atomic Design"
-  },
-  "intro": {
-    "zh": "Nami 產品的設計系統，以 Atomic Design 方法組織：從字體、圖示等基礎元素，到按鈕、輸入框等元件，再組裝成卡片、彈窗與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。",
-    "en": "The design system for the Nami product line, organized with Atomic Design: from foundational type and icons, to components like buttons and inputs, assembled into cards, popups, and full-page templates — keeping visuals and interactions consistent across products. Still being built (In Progress)."
   },
   "h_arch": {
     "zh": "設計系統架構<span class=\"dot\">.</span>",
@@ -199,128 +171,40 @@ dialog .b{padding:20px}
     "en": "Components<span class=\"dot\">.</span>"
   },
   "arch_lead": {
-    "zh": "整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。",
-    "en": "The system is organized into four Atomic Design layers: Atoms are the most basic colors and type, Molecules are standalone components, Organisms are composite blocks built from components, and Templates are full-page layout frames."
+    "zh": "Nami 是一個國際支付系統平台，採用 Atomic Design 方法建構設計系統，統一跨產品的視覺規範與操作體驗，提升整體設計的一致性與可擴展性。",
+    "en": "Nami is an international payment system platform. Its design system is built with Atomic Design, unifying visual standards and interaction experience across products and improving overall design consistency and scalability."
   },
   "lv_atoms": {
     "zh": "原子 · 基礎元素",
-    "en": "Atoms · Foundations"
+    "en": "Foundations"
   },
   "lv_molecules": {
     "zh": "分子 · 元件",
-    "en": "Molecules · Components"
+    "en": "Components"
   },
   "lv_organisms": {
     "zh": "有機體 · 複合區塊",
-    "en": "Organisms · Composite Blocks"
+    "en": "Composite Blocks"
   },
   "lv_templates": {
     "zh": "模板 · 版面骨架",
-    "en": "Templates · Layout Frames"
+    "en": "Layout Frames"
   },
   "arch_count": {
-    "zh": "整個檔案共 21 個規範頁：Atoms 6 頁、Molecules 7 頁、Organisms 3 頁、Templates 5 頁，另有 Cover 與 Library 頁。色彩以 Figma Variables 管理，沒有獨立的 Color 規範頁。",
-    "en": "The file holds 21 spec pages in total: 6 Atoms, 7 Molecules, 3 Organisms, and 5 Templates, plus a Cover and a Library page. Colors are managed as Figma Variables — there is no standalone Color spec page."
-  },
-  "color_lead": {
-    "zh": "主色是 brandColor 深藍色階，brandColor-800（#002E6C）是主要品牌色；灰階負責文字與背景層次；按鈕有六種顏色。色彩以 Figma Variables 管理。",
-    "en": "The primary is the brandColor dark-blue scale, with brandColor-800 (#002E6C) as the main brand color; the gray scale handles text and background layers; buttons come in six colors. Colors are managed as Figma Variables."
-  },
-  "sw_brand": {
-    "zh": "brandColor 品牌色",
-    "en": "brandColor"
-  },
-  "sw_gray": {
-    "zh": "Gray scale 灰階",
-    "en": "Gray scale"
-  },
-  "sw_btn": {
-    "zh": "Button colors 按鈕色",
-    "en": "Button colors"
+    "zh": "共 21 個規範頁：Atoms 6 頁、Molecules 7 頁、Organisms 3 頁、Templates 5 頁，另有 Library 總覽頁。",
+    "en": "21 spec pages in total: 6 Atoms, 7 Molecules, 3 Organisms, and 5 Templates, plus a Library overview page."
   },
   "alt_color": {
     "zh": "Nami Design System 色彩規範",
     "en": "Nami Design System color spec"
   },
-  "cap_color": {
-    "zh": "Color 色彩規範：brandColor 品牌色階、灰階與按鈕色，附色碼。色彩以 Figma Variables 管理。",
-    "en": "Color spec: the brandColor scale, gray scale, and button colors, with hex codes. Colors are managed as Figma Variables."
-  },
-  "typo_lead": {
-    "zh": "全系統統一使用 Arial，共十級字階，字距一律 0px。",
-    "en": "The whole system uses Arial, in ten type levels with a fixed 0px letter spacing."
-  },
-  "rule1": {
-    "zh": "可依照 Case 使用對應文字類型，若有新的 Case 情境也可補充於 Case 中",
-    "en": "Use the type style that matches each case; new case scenarios can be added to the Case column as they arise"
-  },
-  "case_mid": {
-    "zh": "中標題",
-    "en": "Subheading"
-  },
-  "case_small": {
-    "zh": "小標題",
-    "en": "Section heading"
-  },
-  "case_body_h": {
-    "zh": "內文標題",
-    "en": "Body heading"
-  },
-  "case_body": {
-    "zh": "內文",
-    "en": "Body text"
-  },
-  "case_cap": {
-    "zh": "說明文字",
-    "en": "Captions"
-  },
-  "case_link": {
-    "zh": "超連結",
-    "en": "Hyperlinks"
-  },
-  "case_card": {
-    "zh": "卡片說明文字",
-    "en": "Card descriptions"
-  },
   "alt_typo": {
     "zh": "Nami Design System 字體規範",
     "en": "Nami Design System typography spec"
   },
-  "cap_typo": {
-    "zh": "Typography 字體規範：Arial 字體、十級字階。",
-    "en": "Typography spec: Arial, ten type levels."
-  },
-  "comp_lead": {
-    "zh": "每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。",
-    "en": "Every component has a SPEC and USAGE guide — sizes, styles, states, and usage scenarios are all spelled out, so design and development work from the same spec."
-  },
-  "btn_rule1": {
-    "zh": "尺寸 Default / Small 兩種；寬度 auto / 150 / 210 / 300 / 335 px",
-    "en": "Two sizes — Default / Small; widths auto / 150 / 210 / 300 / 335 px"
-  },
-  "btn_rule2": {
-    "zh": "六種顏色：BrandBlue / Yellow / Indigo / Gray / Cyan / White，每種顏色都有 Fill 與 Outline 版本",
-    "en": "Six colors — BrandBlue / Yellow / Indigo / Gray / Cyan / White — each with Fill and Outline versions"
-  },
-  "btn_rule3": {
-    "zh": "狀態：Normal / Focus / Disabled / Error / Error-msg",
-    "en": "States: Normal / Focus / Disabled / Error / Error-msg"
-  },
-  "btn_rule4": {
-    "zh": "另有 Category button；Normal 按鈕寬度 335 px / 210 px",
-    "en": "There is also a Category button; Normal buttons are 335 px / 210 px wide"
-  },
   "alt_button": {
     "zh": "Nami Design System Button 按鈕規範",
     "en": "Nami Design System button spec"
-  },
-  "cap_button": {
-    "zh": "Button 按鈕：六種顏色 × Default / Small 兩種尺寸，每種顏色都有 Outline 版本。",
-    "en": "Buttons: six colors × Default / Small sizes, each color with an Outline version."
-  },
-  "comp_close": {
-    "zh": "其他元件與模板的規格都在 Figma 檔案裡，分子層 7 個、有機體層 3 個、模板層 5 個，詳見上方架構。",
-    "en": "Specs for the other components and templates are in the Figma file — 7 Molecules, 3 Organisms, and 5 Templates, as shown in the architecture above."
   },
   "a_typography": {
     "zh": "Typography 字體排版",
@@ -416,9 +300,8 @@ dialog .b{padding:20px}
   <div><span class="tag" data-i18n="tag">Design System</span>
   <h1 data-i18n="h1">Nami Design System</h1>
   
-  <div class="chips"><span data-i18n="chip1">Components 元件</span><span data-i18n="chip2">Styles 樣式</span><span data-i18n="chip3">Atomic Design 原子設計</span></div>
+  <div class="chips"><span data-i18n="chip1">Atomic Design 原子設計</span></div>
   <p class="note" data-i18n="note">為保護客戶/作品原始設計檔案，本頁面展示的設計作品均經過降畫質處理。</p>
-  <p class="intro" data-i18n="intro">Nami 產品的設計系統，以 Atomic Design 方法組織：從字體、圖示等基礎元素，到按鈕、輸入框等元件，再組裝成卡片、彈窗與整頁模板，統一跨產品的視覺與操作體驗。系統持續建置中（In Progress）。</p>
   
   
   </div>
@@ -427,56 +310,29 @@ dialog .b{padding:20px}
   <section class="ds" id="architecture">
     <div class="sub">Architecture</div>
     <h2 data-i18n-html="h_arch">設計系統架構<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="arch_lead">整個系統以 Atomic Design 分成四層：原子是最基本的色彩與字體，分子是可獨立使用的元件，有機體是元件組成的複合區塊，模板則是整頁的版面骨架。</p>
+    <p class="lead" data-i18n="arch_lead">Nami 是一個國際支付系統平台，採用 Atomic Design 方法建構設計系統，統一跨產品的視覺規範與操作體驗，提升整體設計的一致性與可擴展性。</p>
     <div class="arch">
       <div class="lv"><b>Atoms<span data-i18n="lv_atoms">原子 · 基礎元素</span></b><div class="chips"><span data-i18n="a_typography">Typography 字體排版</span><span data-i18n="a_icon">Icon 圖示</span><span data-i18n="a_grid">Grid 網格</span><span data-i18n="a_space">Space 間距</span><span data-i18n="a_elevation">Elevation 陰影層級</span><span data-i18n="a_balance">Balance 餘額顯示</span></div></div>
       <div class="lv"><b>Molecules<span data-i18n="lv_molecules">分子 · 元件</span></b><div class="chips"><span data-i18n="a_button">Button 按鈕</span><span data-i18n="a_label">Label 標籤</span><span data-i18n="a_text_field">Text Field 文字輸入框</span><span data-i18n="a_select_box">Select box 下拉選擇框</span><span data-i18n="a_message">Message 訊息</span><span data-i18n="a_text_title">Text Title 文字標題</span><span data-i18n="a_progress_bar">Progress bar 進度條</span></div></div>
       <div class="lv"><b>Organisms<span data-i18n="lv_organisms">有機體 · 複合區塊</span></b><div class="chips"><span data-i18n="a_dropdown">Dropdown 下拉選單</span><span data-i18n="a_tab">Tab 頁籤</span><span data-i18n="a_banner">Banner 橫幅</span></div></div>
       <div class="lv"><b>Templates<span data-i18n="lv_templates">模板 · 版面骨架</span></b><div class="chips"><span data-i18n="a_card">Card 卡片</span><span data-i18n="a_otp">OTP 一次性密碼</span><span data-i18n="a_popup">Popup 彈窗</span><span data-i18n="a_top_section">Top section 頂部區塊</span><span data-i18n="a_bonus_section">Bonus Section 獎勵區塊</span></div></div>
     </div>
-    <p class="lead" style="margin-top:28px" data-i18n="arch_count">整個檔案共 21 個規範頁：Atoms 6 頁、Molecules 7 頁、Organisms 3 頁、Templates 5 頁，另有 Cover 與 Library 頁。色彩以 Figma Variables 管理，沒有獨立的 Color 規範頁。</p>
+    <p class="lead" style="margin-top:28px" data-i18n="arch_count">共 21 個規範頁：Atoms 6 頁、Molecules 7 頁、Organisms 3 頁、Templates 5 頁，另有 Library 總覽頁。</p>
   </section>
   <section class="ds" id="color">
     <div class="sub">Color</div>
     <h2 data-i18n-html="h_color">色彩<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="color_lead">主色是 brandColor 深藍色階，brandColor-800（#002E6C）是主要品牌色；灰階負責文字與背景層次；按鈕有六種顏色。色彩以 Figma Variables 管理。</p>
-<div class="swgroup"><h3 data-i18n="sw_brand">brandColor 品牌色</h3><div class="sw"><div><i style="background:#F2F8FF"></i><p style="color:#1b1b24;background:#F2F8FF">100<span style="color:#1b1b24;opacity:.75">#F2F8FF</span></p></div><div><i style="background:#A1BEE6"></i><p style="color:#1b1b24;background:#A1BEE6">300<span style="color:#1b1b24;opacity:.75">#A1BEE6</span></p></div><div><i style="background:#82A8D9"></i><p style="color:#1b1b24;background:#82A8D9">400<span style="color:#1b1b24;opacity:.75">#82A8D9</span></p></div><div><i style="background:#6089BF"></i><p style="color:#fff;background:#6089BF">500<span style="color:#fff;opacity:.75">#6089BF</span></p></div><div><i style="background:#3A69A6"></i><p style="color:#fff;background:#3A69A6">600<span style="color:#fff;opacity:.75">#3A69A6</span></p></div><div><i style="background:#15498C"></i><p style="color:#fff;background:#15498C">700<span style="color:#fff;opacity:.75">#15498C</span></p></div><div><i style="background:#002E6C"></i><p style="color:#fff;background:#002E6C">800 Primary<span style="color:#fff;opacity:.75">#002E6C</span></p></div><div><i style="background:#001E45"></i><p style="color:#fff;background:#001E45">900<span style="color:#fff;opacity:.75">#001E45</span></p></div></div></div><div class="swgroup"><h3 data-i18n="sw_gray">Gray scale 灰階</h3><div class="sw"><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div><div><i style="background:#F6F6F6"></i><p style="color:#1b1b24;background:#F6F6F6">100<span style="color:#1b1b24;opacity:.75">#F6F6F6</span></p></div><div><i style="background:#E9E9E9"></i><p style="color:#1b1b24;background:#E9E9E9">200<span style="color:#1b1b24;opacity:.75">#E9E9E9</span></p></div><div><i style="background:#D6D6D6"></i><p style="color:#1b1b24;background:#D6D6D6">300<span style="color:#1b1b24;opacity:.75">#D6D6D6</span></p></div><div><i style="background:#C8C8C8"></i><p style="color:#1b1b24;background:#C8C8C8">400<span style="color:#1b1b24;opacity:.75">#C8C8C8</span></p></div><div><i style="background:#B3B1B1"></i><p style="color:#1b1b24;background:#B3B1B1">500<span style="color:#1b1b24;opacity:.75">#B3B1B1</span></p></div><div><i style="background:#989898"></i><p style="color:#1b1b24;background:#989898">600<span style="color:#1b1b24;opacity:.75">#989898</span></p></div><div><i style="background:#777777"></i><p style="color:#fff;background:#777777">700<span style="color:#fff;opacity:.75">#777777</span></p></div><div><i style="background:#444444"></i><p style="color:#fff;background:#444444">800<span style="color:#fff;opacity:.75">#444444</span></p></div><div><i style="background:#000000"></i><p style="color:#fff;background:#000000">Black<span style="color:#fff;opacity:.75">#000000</span></p></div></div></div><div class="swgroup"><h3 data-i18n="sw_btn">Button colors 按鈕色</h3><div class="sw"><div><i style="background:#002E6C"></i><p style="color:#fff;background:#002E6C">BrandBlue<span style="color:#fff;opacity:.75">#002E6C</span></p></div><div><i style="background:#FFE13A"></i><p style="color:#1b1b24;background:#FFE13A">Yellow<span style="color:#1b1b24;opacity:.75">#FFE13A</span></p></div><div><i style="background:#5769BF"></i><p style="color:#fff;background:#5769BF">Indigo<span style="color:#fff;opacity:.75">#5769BF</span></p></div><div><i style="background:#E9E9E9"></i><p style="color:#1b1b24;background:#E9E9E9">Gray<span style="color:#1b1b24;opacity:.75">#E9E9E9</span></p></div><div><i style="background:#57C8E7"></i><p style="color:#1b1b24;background:#57C8E7">Cyan<span style="color:#1b1b24;opacity:.75">#57C8E7</span></p></div><div><i style="background:#FFFFFF"></i><p style="color:#1b1b24;background:#FFFFFF">White<span style="color:#1b1b24;opacity:.75">#FFFFFF</span></p></div></div></div>
-    <figure class="shot"><img src="../assets/works/nami-design-system/color.jpg" alt="Nami Design System 色彩規範" data-i18n-attr="alt:alt_color"><figcaption data-i18n="cap_color">Color 色彩規範：brandColor 品牌色階、灰階與按鈕色，附色碼。色彩以 Figma Variables 管理。</figcaption></figure>
+    <figure class="shot"><img src="../assets/works/nami-design-system/color.jpg" alt="Nami Design System 色彩規範" data-i18n-attr="alt:alt_color"></figure>
   </section>
   <section class="ds" id="typography">
     <div class="sub">Typography</div>
     <h2 data-i18n-html="h_typo">字體排版<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="typo_lead">全系統統一使用 Arial，共十級字階，字距一律 0px。</p>
-    <div class="rules"><ol>
-      <li data-i18n="rule1">可依照 Case 使用對應文字類型，若有新的 Case 情境也可補充於 Case 中</li>
-    </ol></div>
-    <div class="tbl"><table>
-      <tr><th>Type</th><th>Case</th><th>Font family</th><th>Font size</th><th>Font weight</th><th>Line height</th><th>Letter spacing</th></tr>
-      <tr><td><b>Heading 5 Large</b></td><td data-i18n="case_mid">中標題</td><td>Arial</td><td>21px</td><td>Bold</td><td>24px</td><td>0px</td></tr>
-      <tr><td><b>Heading 6 Large</b></td><td data-i18n="case_small">小標題</td><td>Arial</td><td>16px</td><td>Bold</td><td>24px</td><td>0px</td></tr>
-      <tr><td><b>Body_Bold</b></td><td data-i18n="case_body_h">內文標題</td><td>Arial</td><td>14px</td><td>Bold</td><td>16px</td><td>0px</td></tr>
-      <tr><td>Body_Regular</td><td data-i18n="case_body">內文</td><td>Arial</td><td>14px</td><td>Regular</td><td>16px</td><td>0px</td></tr>
-      <tr><td><b>Caption_Bold</b></td><td data-i18n="case_cap">說明文字</td><td>Arial</td><td>12px</td><td>Bold</td><td>13.8px</td><td>0px</td></tr>
-      <tr><td>Caption_Regular</td><td data-i18n="case_cap">說明文字</td><td>Arial</td><td>12px</td><td>Regular</td><td>13.8px</td><td>0px</td></tr>
-      <tr><td><b>Hyperlink_Bold</b></td><td data-i18n="case_link">超連結</td><td>Arial</td><td>12px</td><td>Bold</td><td>13.8px</td><td>0px</td></tr>
-      <tr><td>Hyperlink_Regular</td><td data-i18n="case_link">超連結</td><td>Arial</td><td>12px</td><td>Regular</td><td>13.8px</td><td>0px</td></tr>
-      <tr><td><b>Small_Bold</b></td><td data-i18n="case_card">卡片說明文字</td><td>Arial</td><td>10px</td><td>Bold</td><td>11.5px</td><td>0px</td></tr>
-      <tr><td>Small_Regular</td><td data-i18n="case_card">卡片說明文字</td><td>Arial</td><td>10px</td><td>Regular</td><td>11.5px</td><td>0px</td></tr>
-    </table></div>
-    <figure class="shot"><img src="../assets/works/nami-design-system/typography.jpg" alt="Nami Design System 字體規範" data-i18n-attr="alt:alt_typo"><figcaption data-i18n="cap_typo">Typography 字體規範：Arial 字體、十級字階。</figcaption></figure>
+    <figure class="shot"><img src="../assets/works/nami-design-system/typography.jpg" alt="Nami Design System 字體規範" data-i18n-attr="alt:alt_typo"></figure>
   </section>
   <section class="ds" id="components">
     <div class="sub">Components</div>
     <h2 data-i18n-html="h_comp">元件<span class="dot">.</span></h2>
-    <p class="lead" data-i18n="comp_lead">每個元件都有 SPEC 規格與 USAGE 使用說明：尺寸、樣式、狀態與使用情境都寫清楚，開發與設計照同一份規範走。</p>
-    <div class="rules"><ol>
-      <li data-i18n="btn_rule1">尺寸 Default / Small 兩種；寬度 auto / 150 / 210 / 300 / 335 px</li>
-      <li data-i18n="btn_rule2">六種顏色：BrandBlue / Yellow / Indigo / Gray / Cyan / White，每種顏色都有 Fill 與 Outline 版本</li>
-      <li data-i18n="btn_rule3">狀態：Normal / Focus / Disabled / Error / Error-msg</li>
-      <li data-i18n="btn_rule4">另有 Category button；Normal 按鈕寬度 335 px / 210 px</li>
-    </ol></div>
-    <figure class="shot"><img src="../assets/works/nami-design-system/button.jpg" alt="Nami Design System Button 按鈕規範" data-i18n-attr="alt:alt_button"><figcaption data-i18n="cap_button">Button 按鈕：六種顏色 × Default / Small 兩種尺寸，每種顏色都有 Outline 版本。</figcaption></figure>
-    <p class="lead" style="margin-top:28px" data-i18n="comp_close">其他元件與模板的規格都在 Figma 檔案裡，分子層 7 個、有機體層 3 個、模板層 5 個，詳見上方架構。</p>
+    <figure class="shot"><img src="../assets/works/nami-design-system/button.jpg" alt="Nami Design System Button 按鈕規範" data-i18n-attr="alt:alt_button"></figure>
   </section>
   <div class="pager"><a href="mtbo-design-system.html"><span class="pl" data-i18n="prev">← 上一個作品</span><span data-i18n-title="mtbo-design-system">MTBO Design System</span></a><a href="twsc-onboarding.html" style="text-align:right"><span class="pl" data-i18n="next">下一個作品 →</span><span data-i18n-title="twsc-onboarding">TWSC 新人入職訓練計畫</span></a></div>
 </main>
