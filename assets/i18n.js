@@ -45,7 +45,7 @@
     "joinit": { zh: "Join It ! 線上票券與行銷平台", en: "Join It! Online Ticketing & Marketing Platform" },
     "keziliao": { zh: "安心呷魚｜高雄蚵仔寮海鮮選物網站", en: "Anxin Chi Yu (Keziliao) | Kaohsiung Keziliao Seafood Selection" },
     "kaching": { zh: "KaChing 卡鏘｜FB 直播留言自動成單", en: "KaChing | FB Livestream Comment-to-Order" },
-    "heiwei-3d": { zh: "美容 3D 模擬立體圖｜Heiwei", en: "Beauty 3D Simulation Render | Heiwei" },
+    "heiwei-3d": { zh: "保養品牌美容展 3D 展場模擬", en: "Skincare Brand Beauty Expo 3D Booth Simulation" },
     "titansoft-3d": { zh: "企業 3D 客製化公仔｜Titansoft", en: "Custom 3D Corporate Mascot | Titansoft" },
     "lowpoly-3d": { zh: "低面數 3D 模型｜農業部鳳山熱帶園區試驗所", en: "Low-Poly 3D Models | Fengshan Tropical Horticultural Experiment Branch" },
     "cleaner-3d": { zh: "The Cleaner 護攤娛樂海灘涼鞋", en: "The Cleaner Beach Sandals" }
