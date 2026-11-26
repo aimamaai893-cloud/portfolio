@@ -34,7 +34,7 @@
   var TITLES = {
     "saiyan-member": { zh: "Member Management 會員管理", en: "Member Management" },
     "saiyan-customer-service": { zh: "Customer Service 客服系統", en: "Customer Service" },
-    "saiyan-settlement": { zh: "Settlement 結算", en: "Settlement" },
+    "saiyan-settlement": { zh: "Internal Transfer 內部轉帳", en: "Internal Transfer" },
     "saiyan-design-system": { zh: "Saiyan Design System", en: "Saiyan Design System" },
     "mtbo-design-system": { zh: "MTBO Design System", en: "MTBO Design System" },
     "nami-design-system": { zh: "Nami Design System", en: "Nami Design System" },
