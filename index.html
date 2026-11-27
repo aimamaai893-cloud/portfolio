@@ -201,7 +201,7 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:6
 .logo{display:flex;flex-direction:column;line-height:1.25}.logo img{height:46px;width:auto;display:block}.logo span{font-size:11px;color:var(--mute);font-weight:400;letter-spacing:.05em}
 nav b{font-size:20px}nav a.l{margin-left:26px;font-size:14px;color:var(--mute)}nav a.l:hover{color:var(--accent)}
 .lang-switch{margin-left:26px;font:inherit;font-size:14px;color:var(--mute);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer}.lang-switch:hover{border-color:var(--accent);color:var(--accent)}
-.hero{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;text-align:left}
+.hero{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:minmax(0,auto) minmax(0,520px);justify-content:center;gap:40px;align-items:center;text-align:left}
 header.hero{max-width:1320px}
 .hero small{color:var(--accent);letter-spacing:.2em;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(26px,3.5vw,40px);line-height:1.15;margin:14px 0 18px}
@@ -256,6 +256,7 @@ footer .btn.copied{border-color:var(--accent);background:var(--accent);color:#ff
 .car{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .slide{display:none;padding:28px 32px;animation:fade .45s ease}
 #talks .wrap{max-width:1320px}
+#talks .hd{max-width:1032px;margin-left:auto;margin-right:auto}
 .slide.on{display:grid;grid-template-columns:480px 1fr;gap:28px;align-items:start}
 .slide-img img{width:100%;max-height:460px;object-fit:contain;background:#fff;border-radius:16px;display:block}
 .slide h4{font-size:19px;margin-bottom:8px}
@@ -284,12 +285,12 @@ dialog button{position:absolute;right:10px;top:6px;background:#fff;border:0;bord
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
-.hero{grid-template-columns:1fr;padding-top:28px;padding-bottom:32px;gap:24px;text-align:center}
+.hero{grid-template-columns:1fr;padding-top:28px;padding-bottom:32px;gap:40px;text-align:center}
 .slide.on{grid-template-columns:1fr;gap:16px}
 .slide{padding:20px}
 .slide-img img{max-height:300px}
-.hero-text{order:2}
 .head{order:1;max-width:320px}
+.hero-text{order:2;margin-top:-83px}
 .photo{max-width:320px;width:100%;margin:0 auto}
 section{padding:56px 0}
 .hd h2,footer h2{font-size:28px}
@@ -420,7 +421,7 @@ const P=[
 ];
 const cats=["全部","後台管理系統","企業內部系統","網站與平台設計","3D 設計","Design System"];let cur="全部";
 /* 全部：固定交錯順序（非隨機），讓各分類穿插出現；各分類頁仍維持原順序 */
-const ALL_ORDER=[1,9,2,5,8,12,13,0,6,3,7,14,4,10,15,11,16,17];
+const ALL_ORDER=[1,9,5,17,8,2,12,13,0,6,3,7,14,4,10,15,11,16];
 const $=id=>document.getElementById(id);
 function langNow(){return window.I18N?window.I18N.getLang():"zh"}
 function draw(){
